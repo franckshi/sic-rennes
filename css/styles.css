@@ -166,6 +166,33 @@ svg {
   right: 0;
 }
 
+.language-switcher {
+  display: inline-flex;
+  flex: 0 0 auto;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.language-switcher button {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: 5px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.language-switcher button.active {
+  color: white;
+  background: var(--jade-dark);
+}
+
 .nav-cta,
 .button {
   display: inline-flex;
@@ -910,6 +937,11 @@ main {
     font-size: 11.5px;
   }
 
+  .language-switcher button {
+    min-width: 25px;
+    padding-inline: 4px;
+  }
+
   .nav-cta {
     min-height: 42px;
     padding-inline: 13px;
@@ -941,6 +973,10 @@ main {
 
   .nav-shell > .nav-cta {
     display: none;
+  }
+
+  .language-switcher {
+    margin-left: auto;
   }
 
   .pathway {

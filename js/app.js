@@ -2,7 +2,7 @@
   const body = document.body;
   const root = body.dataset.root || ".";
   const view = body.dataset.view || "home";
-  const data = window.DataStore.all();
+  const data = window.SICI18n.localizeData(window.DataStore.all());
   const main = document.querySelector("#main-content");
   const directSchoolSlugs = new Set(["emile-zola"]);
 
@@ -15,7 +15,7 @@
       : `${root}/etablissements/?school=${encodeURIComponent(school.id)}`;
 
   const formatDate = (dateValue) =>
-    new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${dateValue}T12:00:00`));
+    new Intl.DateTimeFormat(window.SICI18n.locale, { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${dateValue}T12:00:00`));
 
   function header() {
     const links = [
@@ -39,6 +39,9 @@
           <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
             ${links.map(([id, label, href]) => `<a class="${view === id ? "active" : ""}" href="${href}">${label}</a>`).join("")}
           </nav>
+          <div class="language-switcher" aria-label="Language">
+            ${[["zh","中"],["fr","FR"],["en","EN"]].map(([id, label]) => `<button type="button" class="${window.SICI18n.language === id ? "active" : ""}" data-language="${id}" aria-pressed="${window.SICI18n.language === id}">${label}</button>`).join("")}
+          </div>
           <a class="nav-cta" href="${root}/programmes/?program=admission">Découvrir la SIC</a>
           <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav"><span></span></button>
         </div>
@@ -91,7 +94,7 @@
     return events.slice(0, limit || events.length).map((event) => {
       const date = new Date(`${event.date}T12:00:00`);
       const day = String(date.getDate()).padStart(2, "0");
-      const month = new Intl.DateTimeFormat("fr-FR", { month: "short" }).format(date).replace(".", "").toUpperCase();
+      const month = new Intl.DateTimeFormat(window.SICI18n.locale, { month: "short" }).format(date).replace(".", "").toUpperCase();
       return `
         <article class="event-row reveal">
           <time class="date-block" datetime="${event.date}"><strong>${day}</strong><span>${month}</span></time>
@@ -344,6 +347,7 @@
   }
 
   function initReveal() {
+    window.SICI18n.translatePage();
     const nodes = document.querySelectorAll(".reveal:not(.visible)");
     if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
       nodes.forEach((node) => node.classList.add("visible"));
@@ -367,6 +371,10 @@
       const open = nav.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(open));
     });
+    document.querySelector(".language-switcher").addEventListener("click", (event) => {
+      const button = event.target.closest("[data-language]");
+      if (button) window.SICI18n.setLanguage(button.dataset.language);
+    });
     addEventListener("pointermove", (event) => {
       document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
       document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
@@ -384,6 +392,7 @@
     teachers: renderTeachers,
     schoolDetail: () => renderSchoolDetail(body.dataset.school)
   }[view] || (() => renderNotFound("Page introuvable")))();
+  window.SICI18n.translatePage();
   initInteractions();
   initReveal();
 })();
