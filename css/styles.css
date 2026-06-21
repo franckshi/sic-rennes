@@ -266,33 +266,12 @@ main {
   overflow: hidden;
   padding: 190px 0 100px;
   isolation: isolate;
-  background:
-    linear-gradient(180deg, rgba(248, 245, 240, 0.7), rgba(248, 245, 240, 0.95)),
-    radial-gradient(circle at 75% 32%, rgba(216, 178, 110, 0.15), transparent 28%);
+  background: var(--ivory) url("../images/homepage-background.png") center / cover no-repeat;
 }
 
 .hero::before,
 .hero::after {
-  position: absolute;
-  z-index: -2;
-  color: var(--jade);
-  font-family: var(--serif);
-  line-height: 1;
-  opacity: 0.035;
-}
-
-.hero::before {
-  content: "汉";
-  top: 120px;
-  left: 3vw;
-  font-size: clamp(150px, 24vw, 360px);
-}
-
-.hero::after {
-  content: "华";
-  right: 1vw;
-  bottom: 20px;
-  font-size: clamp(180px, 28vw, 420px);
+  content: none;
 }
 
 .hero-copy {
@@ -328,13 +307,7 @@ main {
 }
 
 .culture-outline {
-  position: absolute;
-  z-index: -1;
-  right: -3vw;
-  bottom: 5px;
-  width: min(62vw, 820px);
-  color: var(--gold);
-  opacity: 0.23;
+  display: none;
 }
 
 .hanzi-rain {
