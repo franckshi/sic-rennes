@@ -278,6 +278,7 @@ main {
   position: relative;
   z-index: 2;
   max-width: 920px;
+  text-align: center;
 }
 
 .hero h1 {
@@ -295,7 +296,7 @@ main {
 
 .hero-lead {
   max-width: 610px;
-  margin: 0 0 34px;
+  margin: 0 auto 34px;
   font-size: clamp(18px, 2vw, 23px);
   line-height: 1.55;
 }
@@ -303,6 +304,7 @@ main {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 13px;
 }
 
