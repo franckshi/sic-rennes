@@ -1,6 +1,23 @@
 {
   "schools": [
     {
+      "id": "École -La-Poterie",
+      "name": "Pôle École -La Poterie",
+      "type": "École primaire",
+      "public_private": "Public",
+      "address": "167 Rue de Vern, 35200 Rennes",
+      "website": "",
+      "students": 21,
+      "teachers": [],
+      "programs": [
+        "sic-primaire",
+        "langue"
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "description": "Première école de SIC à Rennes depuis 2009"
+    },
+    {
       "id": "college-emile-zola",
       "name": "Pôle collège — Émile Zola",
       "type": "Collège",
