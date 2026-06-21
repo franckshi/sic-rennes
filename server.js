@@ -10,7 +10,18 @@ const { execFileSync, execFile } = require("child_process");
 const ROOT = __dirname;
 const PORT = Number(process.env.PORT || 4173);
 const PRODUCTION = process.env.NODE_ENV === "production";
-const GIT_SSH_KEY_FILE = process.env.GIT_SSH_KEY_FILE || "/etc/secrets/github_deploy_key";
+const GIT_SSH_KEY_B64_FILE = process.env.GIT_SSH_KEY_B64_FILE || "/etc/secrets/github_deploy_key_b64";
+
+function prepareGitKey() {
+  if (process.env.GIT_SSH_KEY_FILE) return process.env.GIT_SSH_KEY_FILE;
+  if (!fs.existsSync(GIT_SSH_KEY_B64_FILE)) return "";
+  const target = path.join("/tmp", "sic-rennes-github-key");
+  const decoded = Buffer.from(fs.readFileSync(GIT_SSH_KEY_B64_FILE, "utf8").trim(), "base64");
+  fs.writeFileSync(target, decoded, { mode: 0o600 });
+  return target;
+}
+
+const GIT_SSH_KEY_FILE = prepareGitKey();
 const CONTENT_REPO = process.env.CONTENT_REPO || (PRODUCTION && fs.existsSync(GIT_SSH_KEY_FILE) ? "git@github.com:franckshi/sic-rennes.git" : "");
 const CONTENT_BRANCH = process.env.CONTENT_BRANCH || "content";
 const DATA_DIR = process.env.DATA_DIR || (CONTENT_REPO ? path.join("/tmp", "sic-rennes-content") : path.join(ROOT, ".data"));
