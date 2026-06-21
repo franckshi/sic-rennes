@@ -5,18 +5,60 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const vm = require("vm");
+const { execFileSync, execFile } = require("child_process");
 
 const ROOT = __dirname;
 const PORT = Number(process.env.PORT || 4173);
-const DATA_DIR = process.env.DATA_DIR || path.join(ROOT, ".data");
+const CONTENT_REPO = process.env.CONTENT_REPO || "";
+const CONTENT_BRANCH = process.env.CONTENT_BRANCH || "content";
+const GIT_SSH_KEY_FILE = process.env.GIT_SSH_KEY_FILE || "";
+const DATA_DIR = process.env.DATA_DIR || (CONTENT_REPO ? path.join("/tmp", "sic-rennes-content") : path.join(ROOT, ".data"));
 const DATA_FILE = path.join(DATA_DIR, "content.json");
-const ADMIN_CODE = process.env.INITIAL_ADMIN_CODE || "SIC-RENNES-LOCAL";
-const APP_SECRET = process.env.APP_SECRET || "local-development-secret-change-me";
+const readSecret = (value, file, fallback) => {
+  if (value) return value;
+  if (file && fs.existsSync(file)) return fs.readFileSync(file, "utf8").trim();
+  return fallback;
+};
+const ADMIN_CODE = readSecret(process.env.INITIAL_ADMIN_CODE, process.env.INITIAL_ADMIN_CODE_FILE, "SIC-RENNES-LOCAL");
+const APP_SECRET = readSecret(process.env.APP_SECRET, process.env.APP_SECRET_FILE, "local-development-secret-change-me");
 const COLLECTIONS = ["schools", "teachers", "programs", "events", "activities"];
 const SESSION_SECONDS = 60 * 60 * 12;
 const BODY_LIMIT = 40 * 1024 * 1024;
 const attempts = new Map();
 let writeQueue = Promise.resolve();
+let dataReady = false;
+
+function gitEnvironment() {
+  return {
+    ...process.env,
+    GIT_TERMINAL_PROMPT: "0",
+    GIT_SSH_COMMAND: GIT_SSH_KEY_FILE
+      ? `ssh -i ${GIT_SSH_KEY_FILE} -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new`
+      : process.env.GIT_SSH_COMMAND || ""
+  };
+}
+
+function gitSync(args) {
+  return execFileSync("git", args, {
+    cwd: fs.existsSync(path.join(DATA_DIR, ".git")) ? DATA_DIR : ROOT,
+    env: gitEnvironment(),
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"]
+  });
+}
+
+function gitAsync(args) {
+  return new Promise((resolve, reject) => {
+    execFile("git", args, { cwd: DATA_DIR, env: gitEnvironment() }, (error, stdout, stderr) => {
+      if (error) {
+        error.message = `${error.message}\n${stderr}`.trim();
+        reject(error);
+        return;
+      }
+      resolve(stdout);
+    });
+  });
+}
 
 function initialData() {
   const source = fs.readFileSync(path.join(ROOT, "js", "seed-data.js"), "utf8");
@@ -30,10 +72,26 @@ function validData(value) {
 }
 
 function ensureData() {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
+  if (dataReady) return;
+  if (CONTENT_REPO) {
+    if (fs.existsSync(path.join(DATA_DIR, ".git"))) {
+      gitSync(["fetch", "origin", CONTENT_BRANCH]);
+      gitSync(["reset", "--hard", `origin/${CONTENT_BRANCH}`]);
+    } else {
+      fs.mkdirSync(path.dirname(DATA_DIR), { recursive: true });
+      execFileSync("git", ["clone", "--depth", "1", "--branch", CONTENT_BRANCH, "--single-branch", CONTENT_REPO, DATA_DIR], {
+        cwd: path.dirname(DATA_DIR),
+        env: gitEnvironment(),
+        stdio: ["ignore", "pipe", "pipe"]
+      });
+    }
+  } else {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
   if (!fs.existsSync(DATA_FILE)) {
     fs.writeFileSync(DATA_FILE, JSON.stringify(initialData(), null, 2));
   }
+  dataReady = true;
 }
 
 function readData() {
@@ -57,6 +115,18 @@ function writeData(data) {
     const temporary = `${DATA_FILE}.${process.pid}.tmp`;
     await fs.promises.writeFile(temporary, JSON.stringify(data, null, 2));
     await fs.promises.rename(temporary, DATA_FILE);
+    if (CONTENT_REPO) {
+      await gitAsync(["config", "user.name", "SIC Rennes Admin"]);
+      await gitAsync(["config", "user.email", "admin@sic-rennes.fr"]);
+      await gitAsync(["add", "content.json"]);
+      const changed = await new Promise((resolve) => {
+        execFile("git", ["diff", "--cached", "--quiet"], { cwd: DATA_DIR, env: gitEnvironment() }, (error) => resolve(Boolean(error)));
+      });
+      if (changed) {
+        await gitAsync(["commit", "-m", `Update website content ${new Date().toISOString()}`]);
+        await gitAsync(["push", "origin", CONTENT_BRANCH]);
+      }
+    }
   });
   return writeQueue;
 }
