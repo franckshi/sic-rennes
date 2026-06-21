@@ -82,7 +82,7 @@
   function schoolRows(schools, limit) {
     return schools.slice(0, limit || schools.length).map((school) => `
       <a class="school-row reveal" href="${schoolURL(school)}">
-        <span class="school-monogram">${escapeHTML(school.name.split(" ").filter(Boolean).slice(-2).map((part) => part[0]).join(""))}</span>
+        <span class="school-monogram">${escapeHTML(school.monogram || school.name.split(" ").filter(Boolean).slice(-2).map((part) => part[0]).join(""))}</span>
         <span><h3>${escapeHTML(school.name)}</h3><p>${escapeHTML(school.address)}</p></span>
         <p>${escapeHTML(school.description)}</p>
         <span class="tag">${escapeHTML(school.type)}</span>
@@ -138,7 +138,7 @@
       </section>
       <section class="stats-band" aria-label="Chiffres clés">
         <div class="container stats-grid">
-          <div class="stat"><strong>2</strong><span>pôles collège et lycée</span></div>
+          <div class="stat"><strong>${data.schools.length}</strong><span>établissements SIC à Rennes</span></div>
           <div class="stat"><strong>7</strong><span>années de parcours continu</span></div>
           <div class="stat"><strong>2</strong><span>langues au quotidien</span></div>
           <div class="stat"><strong>${data.programs.length}</strong><span>volets du parcours expliqués</span></div>
@@ -188,10 +188,10 @@
       return;
     }
     main.innerHTML = `
-      <section class="page-hero" data-watermark="校"><div class="container"><h1>Les pôles SIC</h1><p>Découvrez la continuité du parcours entre le collège et le lycée, ainsi que les équipes et enseignements associés.</p></div></section>
+      <section class="page-hero" data-watermark="校"><div class="container"><h1>Les pôles SIC</h1><p>Découvrez les sept établissements SIC à Rennes, de l’école primaire au lycée.</p></div></section>
       <section class="section"><div class="container">
         <div class="toolbar" id="school-filters">
-          ${["Tous","Collège","Lycée"].map((label, index) => `<button class="filter-button ${index === 0 ? "active" : ""}" data-filter="${label}">${label}</button>`).join("")}
+          ${["Tous","École primaire","Collège","Lycée"].map((label, index) => `<button class="filter-button ${index === 0 ? "active" : ""}" data-filter="${label}">${label}</button>`).join("")}
           <input class="search-input" id="school-search" type="search" placeholder="Rechercher un pôle" aria-label="Rechercher un pôle">
         </div>
         <div class="school-list" id="school-results">${schoolRows(data.schools)}</div>
@@ -232,7 +232,7 @@
           <section class="detail-section reveal"><h2>Équipe enseignante</h2>
             ${teachers.length ? `<div class="cards">${teachers.map((teacher) => `<article class="info-card"><div class="teacher-avatar">${teacher.name.split(" ").map((part) => part[0]).join("")}</div><h3>${escapeHTML(teacher.name)}</h3><p>${escapeHTML(teacher.biography)}</p></article>`).join("")}</div>` : `<div class="empty-state">La présentation de l’équipe sera publiée après validation.</div>`}
           </section>
-          <section class="detail-section reveal"><h2>Localisation</h2><div class="map-placeholder"><div><div class="map-pin"></div><strong>${escapeHTML(school.address)}</strong><br><small>${school.latitude}, ${school.longitude}</small></div></div></section>
+          <section class="detail-section reveal"><h2>Localisation</h2><div class="map-placeholder"><div><div class="map-pin"></div><strong>${escapeHTML(school.address)}</strong>${Number.isFinite(school.latitude) && Number.isFinite(school.longitude) ? `<br><small>${school.latitude}, ${school.longitude}</small>` : ""}</div></div></section>
         </div>
         <aside class="detail-aside reveal">
           <dl>

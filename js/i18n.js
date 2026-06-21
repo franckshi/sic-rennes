@@ -41,6 +41,7 @@
       "Explorer les projets": "浏览学生项目",
       "Chiffres clés": "关键数据",
       "pôles collège et lycée": "初中部与高中部",
+      "établissements SIC à Rennes": "所雷恩 SIC 学校",
       "années de parcours continu": "年连续课程",
       "langues au quotidien": "种日常使用语言",
       "volets du parcours expliqués": "个课程模块",
@@ -61,7 +62,9 @@
       "Consulter l’agenda →": "查看全部日程 →",
       "Voir tous les projets →": "查看全部项目 →",
       "Découvrez la continuité du parcours entre le collège et le lycée, ainsi que les équipes et enseignements associés.": "了解从初中到高中的连续培养路径，以及相关教学团队和课程。",
+      "Découvrez les sept établissements SIC à Rennes, de l’école primaire au lycée.": "了解雷恩从小学到高中的七所 SIC 学校。",
       "Tous": "全部",
+      "École primaire": "小学",
       "Collège": "初中",
       "Rechercher un pôle": "搜索校区",
       "Aucun pôle ne correspond à cette recherche.": "没有符合搜索条件的校区。",
@@ -147,6 +150,7 @@
       "Explorer les projets": "Explore projects",
       "Chiffres clés": "Key figures",
       "pôles collège et lycée": "middle and high school campuses",
+      "établissements SIC à Rennes": "SIC schools in Rennes",
       "années de parcours continu": "years of continuous learning",
       "langues au quotidien": "languages used every day",
       "volets du parcours expliqués": "programme areas explained",
@@ -171,7 +175,9 @@
       "Consulter l’agenda →": "View the calendar →",
       "Voir tous les projets →": "View all projects →",
       "Découvrez la continuité du parcours entre le collège et le lycée, ainsi que les équipes et enseignements associés.": "Discover the continuous pathway from middle to high school, together with its teams and teaching programme.",
+      "Découvrez les sept établissements SIC à Rennes, de l’école primaire au lycée.": "Discover the seven SIC schools in Rennes, from primary to high school.",
       "Tous": "All",
+      "École primaire": "Primary school",
       "Collège": "Middle school",
       "Rechercher un pôle": "Search campuses",
       "Aucun pôle ne correspond à cette recherche.": "No campus matches your search.",
@@ -227,6 +233,26 @@
   const content = {
     zh: {
       schools: {
+        "ecole-lille": {
+          name: "小学部——L'Ille小学",
+          description: "雷恩第四所 SIC 小学，2022 年开设。"
+        },
+        "college-le-landry": {
+          name: "初中部——Le Landry学校",
+          description: "雷恩第二所 SIC 初中，2021 年开设。"
+        },
+        "ecole-carle-bahon": {
+          name: "小学部——Carle Bahon小学",
+          description: "雷恩第三所 SIC 小学，2021 年开设。"
+        },
+        "ecole-jules-ferry": {
+          name: "小学部——Jules Ferry小学",
+          description: "雷恩第二所 SIC 小学，2016 年开设。"
+        },
+        "ecole-la-poterie": {
+          name: "小学部——La Poterie小学",
+          description: "雷恩第一所 SIC 小学，2009 年开设。"
+        },
         "college-emile-zola": {
           name: "初中部——埃米尔·左拉学校",
           description: "中文国际班初中阶段：强化中文学习，并结合文化、文学和跨学科项目。"
@@ -300,6 +326,26 @@
     },
     en: {
       schools: {
+        "ecole-lille": {
+          name: "Primary School Division — L'Ille",
+          description: "Rennes' fourth SIC primary school, established in 2022."
+        },
+        "college-le-landry": {
+          name: "Middle School Division — Le Landry",
+          description: "Rennes' second SIC middle school, established in 2021."
+        },
+        "ecole-carle-bahon": {
+          name: "Primary School Division — Carle Bahon",
+          description: "Rennes' third SIC primary school, established in 2021."
+        },
+        "ecole-jules-ferry": {
+          name: "Primary School Division — Jules Ferry",
+          description: "Rennes' second SIC primary school, established in 2016."
+        },
+        "ecole-la-poterie": {
+          name: "Primary School Division — La Poterie",
+          description: "Rennes' first SIC primary school, established in 2009."
+        },
         "college-emile-zola": {
           name: "Middle School Division — Émile Zola",
           description: "The first stage of the SIC programme: enhanced Chinese, culture, literature and interdisciplinary projects."

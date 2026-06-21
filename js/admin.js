@@ -8,6 +8,7 @@
       media: { field: "photos", accept: "image/*", label: "Photos" },
       fields: [
         ["id", "Identifiant", "text", "Identifiant URL unique"],
+        ["monogram", "Monogramme", "text", "Initiales affichées dans la liste"],
         ["name", "Nom", "text", ""],
         ["type", "Type", "select", ["École primaire", "Collège", "Lycée", "Université", "Formation adultes"]],
         ["public_private", "Statut", "text", "Public, privé, association…"],
