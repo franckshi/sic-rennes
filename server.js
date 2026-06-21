@@ -11,12 +11,20 @@ const ROOT = __dirname;
 const PORT = Number(process.env.PORT || 4173);
 const PRODUCTION = process.env.NODE_ENV === "production";
 const GIT_SSH_KEY_B64_FILE = process.env.GIT_SSH_KEY_B64_FILE || "/etc/secrets/github_deploy_key_b64";
+const GIT_SSH_KEY_LEGACY_FILE = "/etc/secrets/github_deploy_key";
 
 function prepareGitKey() {
   if (process.env.GIT_SSH_KEY_FILE) return process.env.GIT_SSH_KEY_FILE;
-  if (!fs.existsSync(GIT_SSH_KEY_B64_FILE)) return "";
+  const source = fs.existsSync(GIT_SSH_KEY_B64_FILE)
+    ? GIT_SSH_KEY_B64_FILE
+    : fs.existsSync(GIT_SSH_KEY_LEGACY_FILE)
+      ? GIT_SSH_KEY_LEGACY_FILE
+      : "";
+  if (!source) return "";
+  const value = fs.readFileSync(source, "utf8").trim();
+  if (value.startsWith("-----BEGIN")) return source;
   const target = path.join("/tmp", "sic-rennes-github-key");
-  const decoded = Buffer.from(fs.readFileSync(GIT_SSH_KEY_B64_FILE, "utf8").trim(), "base64");
+  const decoded = Buffer.from(value, "base64");
   fs.writeFileSync(target, decoded, { mode: 0o600 });
   return target;
 }
@@ -274,7 +282,8 @@ async function api(request, response, pathname) {
       secrets: {
         adminCode: fs.existsSync(ADMIN_CODE_FILE),
         appSecret: fs.existsSync(APP_SECRET_FILE),
-        githubKeyBase64: fs.existsSync(GIT_SSH_KEY_B64_FILE)
+        githubKeyBase64: fs.existsSync(GIT_SSH_KEY_B64_FILE),
+        githubKeyLegacy: fs.existsSync(GIT_SSH_KEY_LEGACY_FILE)
       }
     });
   }
