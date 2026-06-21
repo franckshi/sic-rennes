@@ -182,11 +182,11 @@
       "higher_education": "Le parcours prépare naturellement à la poursuite de la SIC au collège."
     },
     {
-      "id": "sic-lycee",
-      "name": "Lycée",
+      "id": "sic-Collège",
+      "name": "Collège",
       "title": "Approfondir et s’ouvrir au monde",
       "description": "Un cycle d’approfondissement pour consolider la langue, l’analyse et l’autonomie dans un environnement international.",
-      "target": "Lycéens souhaitant valoriser un profil bilingue exigeant et ouvert sur l’international.",
+      "target": "Collègéens souhaitant valoriser un profil bilingue exigeant et ouvert sur l’international.",
       "advantages": [
         "Expression écrite et orale avancée",
         "Culture et littérature",
