@@ -1,6 +1,20 @@
 {
   "schools": [
     {
+      "id": "École primaire Jules Ferry",
+      "name": "Pôle École primaire - Jules Ferry",
+      "type": "École primaire",
+      "public_private": "Public",
+      "address": "21 Rue Emile Bernard, 35700 Rennes",
+      "website": "",
+      "students": 0,
+      "teachers": [],
+      "programs": [],
+      "latitude": 0,
+      "longitude": 0,
+      "description": "Deuxième école primaire SIC à Rennes depuis 2016"
+    },
+    {
       "id": "École -La-Poterie",
       "name": "Pôle École -La Poterie",
       "type": "École primaire",
