@@ -280,18 +280,7 @@ function staticFile(requestPath, response) {
 
 async function api(request, response, pathname) {
   if (pathname === "/api/health" && request.method === "GET") {
-    return json(response, 200, {
-      ok: true,
-      adminConfigured: ADMIN_CONFIGURED,
-      secrets: {
-        adminCode: fs.existsSync(ADMIN_CODE_FILE),
-        appSecret: fs.existsSync(APP_SECRET_FILE),
-        githubKeyBase64: fs.existsSync(GIT_SSH_KEY_B64_FILE),
-        githubKeyLegacy: fs.existsSync(GIT_SSH_KEY_LEGACY_FILE),
-        githubKeyEnvironmentFile: fs.existsSync(GIT_SSH_KEY_ENV_FILE),
-        githubKeyEnvironment: Boolean(process.env.GIT_SSH_KEY_B64)
-      }
-    });
+    return json(response, 200, { ok: true });
   }
 
   if (pathname === "/api/auth/status" && request.method === "GET") {
