@@ -169,6 +169,15 @@
   ],
   "programs": [
     {
+      "id": "Sic Lycée",
+      "name": "Lycée",
+      "title": "",
+      "target": "",
+      "advantages": [],
+      "higher_education": "",
+      "description": ""
+    },
+    {
       "id": "sic-college",
       "name": "Primaire",
       "title": "Construire des bases solides",
