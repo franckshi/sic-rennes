@@ -9,9 +9,10 @@ const { execFileSync, execFile } = require("child_process");
 
 const ROOT = __dirname;
 const PORT = Number(process.env.PORT || 4173);
-const CONTENT_REPO = process.env.CONTENT_REPO || "";
+const PRODUCTION = process.env.NODE_ENV === "production";
+const GIT_SSH_KEY_FILE = process.env.GIT_SSH_KEY_FILE || "/etc/secrets/github_deploy_key";
+const CONTENT_REPO = process.env.CONTENT_REPO || (PRODUCTION && fs.existsSync(GIT_SSH_KEY_FILE) ? "git@github.com:franckshi/sic-rennes.git" : "");
 const CONTENT_BRANCH = process.env.CONTENT_BRANCH || "content";
-const GIT_SSH_KEY_FILE = process.env.GIT_SSH_KEY_FILE || "";
 const DATA_DIR = process.env.DATA_DIR || (CONTENT_REPO ? path.join("/tmp", "sic-rennes-content") : path.join(ROOT, ".data"));
 const DATA_FILE = path.join(DATA_DIR, "content.json");
 const readSecret = (value, file, fallback) => {
@@ -19,11 +20,14 @@ const readSecret = (value, file, fallback) => {
   if (file && fs.existsSync(file)) return fs.readFileSync(file, "utf8").trim();
   return fallback;
 };
-const ADMIN_CODE = readSecret(process.env.INITIAL_ADMIN_CODE, process.env.INITIAL_ADMIN_CODE_FILE, "SIC-RENNES-LOCAL");
-const APP_SECRET = readSecret(process.env.APP_SECRET, process.env.APP_SECRET_FILE, "local-development-secret-change-me");
-const ADMIN_CONFIGURED = process.env.NODE_ENV !== "production" || Boolean(
-  (process.env.INITIAL_ADMIN_CODE || (process.env.INITIAL_ADMIN_CODE_FILE && fs.existsSync(process.env.INITIAL_ADMIN_CODE_FILE))) &&
-  (process.env.APP_SECRET || (process.env.APP_SECRET_FILE && fs.existsSync(process.env.APP_SECRET_FILE)))
+const ADMIN_CODE_FILE = process.env.INITIAL_ADMIN_CODE_FILE || "/etc/secrets/admin_code";
+const APP_SECRET_FILE = process.env.APP_SECRET_FILE || "/etc/secrets/app_secret";
+const ADMIN_CODE = readSecret(process.env.INITIAL_ADMIN_CODE, ADMIN_CODE_FILE, "SIC-RENNES-LOCAL");
+const APP_SECRET = readSecret(process.env.APP_SECRET, APP_SECRET_FILE, "local-development-secret-change-me");
+const ADMIN_CONFIGURED = !PRODUCTION || Boolean(
+  (process.env.INITIAL_ADMIN_CODE || fs.existsSync(ADMIN_CODE_FILE)) &&
+  (process.env.APP_SECRET || fs.existsSync(APP_SECRET_FILE)) &&
+  fs.existsSync(GIT_SSH_KEY_FILE)
 );
 const COLLECTIONS = ["schools", "teachers", "programs", "events", "activities"];
 const SESSION_SECONDS = 60 * 60 * 12;

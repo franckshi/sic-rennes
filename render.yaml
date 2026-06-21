@@ -11,13 +11,3 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: CONTENT_REPO
-        value: git@github.com:franckshi/sic-rennes.git
-      - key: CONTENT_BRANCH
-        value: content
-      - key: GIT_SSH_KEY_FILE
-        value: /etc/secrets/github_deploy_key
-      - key: APP_SECRET_FILE
-        value: /etc/secrets/app_secret
-      - key: INITIAL_ADMIN_CODE_FILE
-        value: /etc/secrets/admin_code
