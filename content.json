@@ -1,6 +1,20 @@
 {
   "schools": [
     {
+      "id": "École primaire L'Ille",
+      "name": "Pôle École primaire - L'Ille",
+      "type": "École primaire",
+      "public_private": "Public",
+      "address": "24 Bd de Verdun, 35000 Rennes",
+      "website": "",
+      "students": 0,
+      "teachers": [],
+      "programs": [],
+      "latitude": 0,
+      "longitude": 0,
+      "description": "Quatrième école primaire SIC à Rennes depuis 2022"
+    },
+    {
       "id": "Collège Le Landry",
       "name": "Pôle Collège - Le Landry",
       "type": "Collège",
