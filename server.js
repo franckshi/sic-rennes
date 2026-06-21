@@ -15,13 +15,14 @@ const GIT_SSH_KEY_LEGACY_FILE = "/etc/secrets/github_deploy_key";
 
 function prepareGitKey() {
   if (process.env.GIT_SSH_KEY_FILE) return process.env.GIT_SSH_KEY_FILE;
+  const environmentValue = process.env.GIT_SSH_KEY_B64?.trim();
   const source = fs.existsSync(GIT_SSH_KEY_B64_FILE)
     ? GIT_SSH_KEY_B64_FILE
     : fs.existsSync(GIT_SSH_KEY_LEGACY_FILE)
       ? GIT_SSH_KEY_LEGACY_FILE
       : "";
-  if (!source) return "";
-  const value = fs.readFileSync(source, "utf8").trim();
+  if (!environmentValue && !source) return "";
+  const value = environmentValue || fs.readFileSync(source, "utf8").trim();
   if (value.startsWith("-----BEGIN")) return source;
   const target = path.join("/tmp", "sic-rennes-github-key");
   const decoded = Buffer.from(value, "base64");
@@ -283,7 +284,8 @@ async function api(request, response, pathname) {
         adminCode: fs.existsSync(ADMIN_CODE_FILE),
         appSecret: fs.existsSync(APP_SECRET_FILE),
         githubKeyBase64: fs.existsSync(GIT_SSH_KEY_B64_FILE),
-        githubKeyLegacy: fs.existsSync(GIT_SSH_KEY_LEGACY_FILE)
+        githubKeyLegacy: fs.existsSync(GIT_SSH_KEY_LEGACY_FILE),
+        githubKeyEnvironment: Boolean(process.env.GIT_SSH_KEY_B64)
       }
     });
   }
