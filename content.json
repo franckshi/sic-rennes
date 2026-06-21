@@ -163,6 +163,11 @@
       "name": "Coordination SIC",
       "photo": "",
       "schools": [
+        "ecole-lille",
+        "college-le-landry",
+        "ecole-carle-bahon",
+        "ecole-jules-ferry",
+        "ecole-la-poterie",
         "college-emile-zola",
         "emile-zola"
       ],
@@ -178,6 +183,11 @@
       "name": "Équipe de chinois",
       "photo": "",
       "schools": [
+        "ecole-lille",
+        "college-le-landry",
+        "ecole-carle-bahon",
+        "ecole-jules-ferry",
+        "ecole-la-poterie",
         "college-emile-zola",
         "emile-zola"
       ],
@@ -192,6 +202,7 @@
       "name": "Équipe interdisciplinaire",
       "photo": "",
       "schools": [
+        "college-le-landry",
         "college-emile-zola",
         "emile-zola"
       ],
