@@ -1,0 +1,13 @@
+{
+  "name": "sic-rennes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plateforme web administrable de la Section internationale chinoise à Rennes",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check js/app.js && node --check js/admin.js && node --check js/data-store.js && node --check js/seed-data.js"
+  }
+}

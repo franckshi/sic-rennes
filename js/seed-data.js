@@ -1,0 +1,204 @@
+window.SEED_DATA = {
+  schools: [
+    {
+      id: "college-emile-zola",
+      name: "Pôle collège — Émile Zola",
+      type: "Collège",
+      public_private: "Public",
+      address: "2 avenue Janvier, Rennes",
+      website: "https://www.lycee-emile-zola-rennes.fr/",
+      teachers: ["coordination-sic", "equipe-chinois", "equipe-dnl"],
+      students: 0,
+      programs: ["sic-college", "langue-litterature", "dnl"],
+      description: "Le premier cycle du parcours SIC : approfondissement du chinois, culture, littérature et projets interdisciplinaires.",
+      latitude: 48.1077,
+      longitude: -1.6721,
+      photos: []
+    },
+    {
+      id: "emile-zola",
+      name: "Pôle lycée — Émile Zola",
+      type: "Lycée",
+      public_private: "Public",
+      address: "2 avenue Janvier, Rennes",
+      website: "https://www.lycee-emile-zola-rennes.fr/",
+      teachers: ["coordination-sic", "equipe-chinois", "equipe-dnl"],
+      students: 0,
+      programs: ["sic-lycee", "langue-litterature", "dnl"],
+      description: "Le second cycle du parcours SIC : maîtrise linguistique, culture générale et préparation aux études internationales.",
+      latitude: 48.1077,
+      longitude: -1.6721,
+      photos: []
+    }
+  ],
+  teachers: [
+    {
+      id: "coordination-sic",
+      name: "Coordination SIC",
+      photo: "",
+      schools: ["college-emile-zola", "emile-zola"],
+      programs: ["sic-college", "sic-lycee"],
+      biography: "Accueil des familles, suivi du parcours et coordination des projets de la section internationale chinoise.",
+      email: ""
+    },
+    {
+      id: "equipe-chinois",
+      name: "Équipe de chinois",
+      photo: "",
+      schools: ["college-emile-zola", "emile-zola"],
+      programs: ["langue-litterature"],
+      biography: "Enseignement renforcé de la langue, de la littérature et des cultures du monde chinois.",
+      email: ""
+    },
+    {
+      id: "equipe-dnl",
+      name: "Équipe interdisciplinaire",
+      photo: "",
+      schools: ["college-emile-zola", "emile-zola"],
+      programs: ["dnl"],
+      biography: "Projets croisés et enseignements disciplinaires mobilisant le chinois dans des situations concrètes.",
+      email: ""
+    }
+  ],
+  programs: [
+    {
+      id: "sic-college",
+      name: "Collège",
+      title: "Construire des bases solides",
+      description: "Un parcours progressif qui développe la compréhension, l’expression et la confiance dans les deux langues.",
+      target: "Élèves motivés par un cursus bilingue et interculturel dès le collège.",
+      advantages: ["Pratique régulière du chinois", "Méthodes de travail bilingues", "Projets culturels collectifs"],
+      higher_education: "Le parcours prépare naturellement à la poursuite de la SIC au lycée."
+    },
+    {
+      id: "sic-lycee",
+      name: "Lycée",
+      title: "Approfondir et s’ouvrir au monde",
+      description: "Un cycle d’approfondissement pour consolider la langue, l’analyse et l’autonomie dans un environnement international.",
+      target: "Lycéens souhaitant valoriser un profil bilingue exigeant et ouvert sur l’international.",
+      advantages: ["Expression écrite et orale avancée", "Culture et littérature", "Préparation aux études internationales"],
+      higher_education: "Le cursus ouvre vers les études de langues, les parcours sélectifs et les formations internationales."
+    },
+    {
+      id: "langue-litterature",
+      name: "中文",
+      title: "Langue, culture et littérature",
+      description: "Lire, écrire, argumenter et découvrir des œuvres et repères culturels dans une progression adaptée.",
+      target: "Tous les élèves inscrits dans le parcours SIC.",
+      advantages: ["Compétences bilingues", "Références culturelles", "Prise de parole"],
+      higher_education: "Ces acquis constituent une base durable pour les études et la mobilité internationale."
+    },
+    {
+      id: "dnl",
+      name: "DNL",
+      title: "Apprendre aussi par les disciplines",
+      description: "Le chinois devient une langue de travail à travers des projets et contenus interdisciplinaires.",
+      target: "Élèves prêts à utiliser le chinois au-delà du seul cours de langue.",
+      advantages: ["Vocabulaire spécialisé", "Travail en équipe", "Usage concret de la langue"],
+      higher_education: "L’approche développe l’autonomie, l’analyse et la capacité à travailler dans plusieurs langues."
+    },
+    {
+      id: "admission",
+      name: "Entrée",
+      title: "Préparer sa candidature",
+      description: "Comprendre le parcours, rencontrer l’équipe et préparer les étapes d’admission avec les informations officielles.",
+      target: "Familles et élèves intéressés par la SIC à Rennes.",
+      advantages: ["Projet scolaire clarifié", "Échange avec l’équipe", "Préparation progressive"],
+      higher_education: "Les modalités et dates doivent toujours être confirmées auprès de l’établissement."
+    }
+  ],
+  events: [
+    {
+      id: "rentree-sic-2026",
+      date: "2026-09-01",
+      title: "Rentrée SIC — date à confirmer",
+      location: "Rennes",
+      description: "Accueil des élèves et présentation du fonctionnement de la section.",
+      school: "emile-zola",
+      category: "Information"
+    },
+    {
+      id: "reunion-familles-2026",
+      date: "2026-10-10",
+      title: "Rencontre des familles — calendrier indicatif",
+      location: "Rennes",
+      description: "Temps d’échange avec l’équipe pédagogique et présentation des projets.",
+      school: "emile-zola",
+      category: "Rencontre"
+    },
+    {
+      id: "atelier-culture-2026",
+      date: "2026-11-21",
+      title: "Atelier culturel des élèves",
+      location: "Rennes",
+      description: "Un atelier pratique autour de la langue, des arts et des cultures chinoises.",
+      school: "college-emile-zola",
+      category: "Atelier"
+    },
+    {
+      id: "portes-ouvertes-2027",
+      date: "2027-02-06",
+      title: "Présentation de la SIC — date à confirmer",
+      location: "Rennes",
+      description: "Découverte du parcours, des enseignements et des projets de la section.",
+      school: "emile-zola",
+      category: "Information"
+    }
+  ],
+  activities: [
+    {
+      id: "journal-bilingue",
+      title: "Journal bilingue des élèves",
+      year: 2026,
+      category: "Productions d’élèves",
+      description: "Articles, entretiens et créations publiés en français et en chinois.",
+      photos: [],
+      videos: []
+    },
+    {
+      id: "lecture-partagee",
+      title: "Lectures croisées",
+      year: 2026,
+      category: "Langue et littérature",
+      description: "Lire, présenter et discuter des textes issus de plusieurs traditions.",
+      photos: [],
+      videos: []
+    },
+    {
+      id: "calligraphie",
+      title: "Atelier de calligraphie",
+      year: 2026,
+      category: "Arts",
+      description: "Découvrir le geste, les caractères et la relation entre écriture et création.",
+      photos: [],
+      videos: []
+    },
+    {
+      id: "nouvel-an",
+      title: "Projet du Nouvel An chinois",
+      year: 2026,
+      category: "Vie de la section",
+      description: "Une réalisation collective associant recherche, expression orale et création.",
+      photos: [],
+      videos: []
+    },
+    {
+      id: "correspondance",
+      title: "Correspondance internationale",
+      year: 2026,
+      category: "Échanges",
+      description: "Pratiquer la langue à travers des échanges et des productions collaboratives.",
+      photos: [],
+      videos: []
+    },
+    {
+      id: "portfolio",
+      title: "Portfolio du parcours SIC",
+      year: 2026,
+      category: "Productions d’élèves",
+      description: "Conserver les travaux marquants et visualiser les progrès au fil des années.",
+      photos: [],
+      videos: []
+    }
+  ]
+};
