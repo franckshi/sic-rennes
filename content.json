@@ -170,16 +170,16 @@
   "programs": [
     {
       "id": "sic-college",
-      "name": "Collège",
+      "name": "Primaire",
       "title": "Construire des bases solides",
       "description": "Un parcours progressif qui développe la compréhension, l’expression et la confiance dans les deux langues.",
-      "target": "Élèves motivés par un cursus bilingue et interculturel dès le collège.",
+      "target": "Élèves motivés par un cursus bilingue et interculturel dès le primaire.",
       "advantages": [
         "Pratique régulière du chinois",
         "Méthodes de travail bilingues",
         "Projets culturels collectifs"
       ],
-      "higher_education": "Le parcours prépare naturellement à la poursuite de la SIC au lycée."
+      "higher_education": "Le parcours prépare naturellement à la poursuite de la SIC au collège."
     },
     {
       "id": "sic-lycee",
