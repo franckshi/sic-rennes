@@ -1,6 +1,20 @@
 {
   "schools": [
     {
+      "id": "Collège Le Landry",
+      "name": "Pôle Collège - Le Landry",
+      "type": "Collège",
+      "public_private": "Public",
+      "address": "29 Av. de Cork, 35200 Rennes",
+      "website": "",
+      "students": 0,
+      "teachers": [],
+      "programs": [],
+      "latitude": 0,
+      "longitude": 0,
+      "description": "Deuxième collège SIC à Rennes depuis 2021"
+    },
+    {
       "id": "École primaire Carle Bahon",
       "name": "Pôle École primaire - Carle Bahon",
       "type": "École primaire",
