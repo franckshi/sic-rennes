@@ -199,56 +199,11 @@
   ],
   "activities": [
     {
-      "id": "journal-bilingue",
-      "title": "Journal bilingue des élèves",
+      "id": "git-persistence-test",
+      "title": "Git persistence test",
       "year": 2026,
-      "category": "Productions d’élèves",
-      "description": "Articles, entretiens et créations publiés en français et en chinois.",
-      "photos": [],
-      "videos": []
-    },
-    {
-      "id": "lecture-partagee",
-      "title": "Lectures croisées",
-      "year": 2026,
-      "category": "Langue et littérature",
-      "description": "Lire, présenter et discuter des textes issus de plusieurs traditions.",
-      "photos": [],
-      "videos": []
-    },
-    {
-      "id": "calligraphie",
-      "title": "Atelier de calligraphie",
-      "year": 2026,
-      "category": "Arts",
-      "description": "Découvrir le geste, les caractères et la relation entre écriture et création.",
-      "photos": [],
-      "videos": []
-    },
-    {
-      "id": "nouvel-an",
-      "title": "Projet du Nouvel An chinois",
-      "year": 2026,
-      "category": "Vie de la section",
-      "description": "Une réalisation collective associant recherche, expression orale et création.",
-      "photos": [],
-      "videos": []
-    },
-    {
-      "id": "correspondance",
-      "title": "Correspondance internationale",
-      "year": 2026,
-      "category": "Échanges",
-      "description": "Pratiquer la langue à travers des échanges et des productions collaboratives.",
-      "photos": [],
-      "videos": []
-    },
-    {
-      "id": "portfolio",
-      "title": "Portfolio du parcours SIC",
-      "year": 2026,
-      "category": "Productions d’élèves",
-      "description": "Conserver les travaux marquants et visualiser les progrès au fil des années.",
+      "category": "Test",
+      "description": "Temporary test",
       "photos": [],
       "videos": []
     }
