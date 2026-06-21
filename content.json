@@ -251,6 +251,15 @@
       "description": "Conserver les travaux marquants et visualiser les progrès au fil des années.",
       "photos": [],
       "videos": []
+    },
+    {
+      "id": "production-persistence-check",
+      "title": "Production persistence check",
+      "year": 2026,
+      "category": "Test",
+      "description": "Temporary automated verification",
+      "photos": [],
+      "videos": []
     }
   ]
 }
