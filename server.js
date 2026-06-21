@@ -21,6 +21,10 @@ const readSecret = (value, file, fallback) => {
 };
 const ADMIN_CODE = readSecret(process.env.INITIAL_ADMIN_CODE, process.env.INITIAL_ADMIN_CODE_FILE, "SIC-RENNES-LOCAL");
 const APP_SECRET = readSecret(process.env.APP_SECRET, process.env.APP_SECRET_FILE, "local-development-secret-change-me");
+const ADMIN_CONFIGURED = process.env.NODE_ENV !== "production" || Boolean(
+  (process.env.INITIAL_ADMIN_CODE || (process.env.INITIAL_ADMIN_CODE_FILE && fs.existsSync(process.env.INITIAL_ADMIN_CODE_FILE))) &&
+  (process.env.APP_SECRET || (process.env.APP_SECRET_FILE && fs.existsSync(process.env.APP_SECRET_FILE)))
+);
 const COLLECTIONS = ["schools", "teachers", "programs", "events", "activities"];
 const SESSION_SECONDS = 60 * 60 * 12;
 const BODY_LIMIT = 40 * 1024 * 1024;
@@ -257,6 +261,7 @@ async function api(request, response, pathname) {
   }
 
   if (pathname === "/api/login" && request.method === "POST") {
+    if (!ADMIN_CONFIGURED) return json(response, 503, { error: "Administration en attente de configuration Render" });
     const ip = request.headers["x-forwarded-for"]?.split(",")[0].trim() || request.socket.remoteAddress || "unknown";
     const recent = (attempts.get(ip) || []).filter((time) => Date.now() - time < 10 * 60 * 1000);
     if (recent.length >= 8) return json(response, 429, { error: "Trop de tentatives. Réessayez plus tard." });
