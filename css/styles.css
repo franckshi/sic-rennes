@@ -746,6 +746,75 @@ main {
   color: var(--muted);
 }
 
+.teaching-timeline {
+  border-top: 1px solid var(--line);
+}
+
+.teaching-stage {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.7fr) minmax(0, 1.3fr);
+  gap: 28px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.teaching-stage .program-code {
+  display: block;
+  font-size: 24px;
+}
+
+.teaching-stage strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--jade-dark);
+  font-size: 13px;
+}
+
+.teaching-stage p,
+.teaching-feature p {
+  margin: 0;
+}
+
+.teaching-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.teaching-feature {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 13px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 253, 249, 0.72);
+}
+
+.teaching-feature > span {
+  color: var(--brick);
+  font: 600 20px var(--serif);
+}
+
+.source-note {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.source-note strong {
+  color: var(--jade-dark);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.source-note p {
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
 .detail-aside {
   align-self: start;
   padding: 28px;
@@ -1023,6 +1092,15 @@ main {
 
   .hero-actions .button {
     width: 100%;
+  }
+
+  .teaching-stage {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .teaching-features {
+    grid-template-columns: 1fr;
   }
 
   .culture-outline {

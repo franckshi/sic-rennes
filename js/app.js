@@ -90,6 +90,20 @@
       </a>`).join("");
   }
 
+  function teachingStages(items) {
+    return items.map((item) => {
+      const [level, schedule, ...description] = item.split("|").map((part) => part.trim());
+      return `<article class="teaching-stage">
+        <div><span class="program-code">${escapeHTML(level)}</span>${schedule ? `<strong>${escapeHTML(schedule)}</strong>` : ""}</div>
+        <p>${escapeHTML(description.join(" | ") || schedule || "")}</p>
+      </article>`;
+    }).join("");
+  }
+
+  function teachingFeatures(items) {
+    return items.map((item, index) => `<article class="teaching-feature"><span>${String(index + 1).padStart(2, "0")}</span><p>${escapeHTML(item)}</p></article>`).join("");
+  }
+
   function eventRows(events, limit) {
     return events.slice(0, limit || events.length).map((event) => {
       const date = new Date(`${event.date}T12:00:00`);
@@ -269,10 +283,13 @@
         <div>
           <section class="detail-section reveal"><h2>À qui s’adresse ce parcours ?</h2><p>${escapeHTML(program.target)}</p></section>
           <section class="detail-section reveal"><h2>Principaux avantages</h2><div class="cards">${program.advantages.map((advantage, index) => `<article class="info-card"><span class="program-code">0${index + 1}</span><h3>${escapeHTML(advantage)}</h3></article>`).join("")}</div></section>
+          ${program.stage_details?.length ? `<section class="detail-section reveal"><h2>Une progression du primaire au BFI</h2><div class="teaching-timeline">${teachingStages(program.stage_details)}</div></section>` : ""}
+          ${program.teaching_methods?.length ? `<section class="detail-section reveal"><h2>Méthodes d’enseignement</h2><div class="teaching-features">${teachingFeatures(program.teaching_methods)}</div></section>` : ""}
+          ${program.cultural_projects?.length ? `<section class="detail-section reveal"><h2>Culture et projets</h2><div class="teaching-features">${teachingFeatures(program.cultural_projects)}</div></section>` : ""}
           <section class="detail-section reveal"><h2>Après ce parcours</h2><p>${escapeHTML(program.higher_education)}</p></section>
           <section class="detail-section reveal"><h2>Où suivre ce volet ?</h2><div class="school-list">${schools.length ? schoolRows(schools) : `<div class="empty-state">Les informations pratiques seront ajoutées après validation.</div>`}</div></section>
         </div>
-        <aside class="detail-aside reveal"><h3>Préparer son projet</h3><p>Découvrez les deux pôles SIC puis confirmez les modalités et dates auprès de l’établissement.</p><a class="button button-primary" style="width:100%" href="${root}/etablissements/">Voir les pôles SIC</a></aside>
+        <aside class="detail-aside reveal"><h3>Préparer son projet</h3><p>Découvrez les sept pôles SIC puis confirmez les modalités et dates auprès de l’établissement.</p><a class="button button-primary" style="width:100%" href="${root}/etablissements/">Voir les pôles SIC</a>${program.source_note ? `<div class="source-note"><strong>Source pédagogique</strong><p>${escapeHTML(program.source_note)}</p></div>` : ""}</aside>
       </div></section>`;
   }
 

@@ -88,11 +88,16 @@
       "Programme introuvable": "未找到该课程",
       "À qui s’adresse ce parcours ?": "课程适合谁？",
       "Principaux avantages": "主要优势",
+      "Une progression du primaire au BFI": "从小学到 BFI 的连续培养",
+      "Méthodes d’enseignement": "教学方法",
+      "Culture et projets": "文化与项目",
+      "Source pédagogique": "教学资料来源",
       "Après ce parcours": "课程之后",
       "Où suivre ce volet ?": "在哪里学习？",
       "Les informations pratiques seront ajoutées après validation.": "实用信息将在确认后发布。",
       "Préparer son projet": "准备申请",
       "Découvrez les deux pôles SIC puis confirmez les modalités et dates auprès de l’établissement.": "了解两个国际班校区，并向学校确认申请方式和日期。",
+      "Découvrez les sept pôles SIC puis confirmez les modalités et dates auprès de l’établissement.": "了解七个 SIC 教学点，并向学校确认具体方式和日期。",
       "Voir les pôles SIC": "查看国际班校区",
       "Réunions, ateliers, présentations et temps forts de la Section internationale chinoise. Les dates indiquées doivent être confirmées.": "中文国际班的会议、工作坊、介绍会和重要活动。所列日期需进一步确认。",
       "Toutes": "全部",
@@ -201,11 +206,16 @@
       "Programme introuvable": "Programme not found",
       "À qui s’adresse ce parcours ?": "Who is this programme for?",
       "Principaux avantages": "Key benefits",
+      "Une progression du primaire au BFI": "A continuous pathway from primary school to the BFI",
+      "Méthodes d’enseignement": "Teaching methods",
+      "Culture et projets": "Culture and projects",
+      "Source pédagogique": "Teaching source",
       "Après ce parcours": "After the programme",
       "Où suivre ce volet ?": "Where is it taught?",
       "Les informations pratiques seront ajoutées après validation.": "Practical information will be added after approval.",
       "Préparer son projet": "Plan your application",
       "Découvrez les deux pôles SIC puis confirmez les modalités et dates auprès de l’établissement.": "Explore both SIC campuses, then confirm procedures and dates with the school.",
+      "Découvrez les sept pôles SIC puis confirmez les modalités et dates auprès de l’établissement.": "Explore the seven SIC sites, then confirm procedures and dates with the school.",
       "Voir les pôles SIC": "View SIC campuses",
       "Réunions, ateliers, présentations et temps forts de la Section internationale chinoise. Les dates indiquées doivent être confirmées.": "Meetings, workshops, presentations and highlights from the Chinese International Section. Listed dates must be confirmed.",
       "Toutes": "All",
@@ -268,6 +278,34 @@
         "equipe-dnl": { name: "跨学科教学团队", biography: "通过跨学科内容和项目，让学生在真实情境中使用中文。" }
       },
       programs: {
+        "enseignement-chinois": {
+          name: "教学",
+          title: "雷恩中文国际班的汉语教学",
+          description: "从小学 CE2 到高中毕业班的连续课程，融合汉语、文学、中文学科教学和跨文化学习。",
+          target: "面向雷恩各 SIC 教学点从小学到高中的学生，并根据年龄和学段循序推进。",
+          advantages: ["从 CE2 到高三的连续培养", "汉语、文学与中文数学相结合", "主动参与式与跨文化教学"],
+          stage_details: [
+            "小学（CE2-CM2） | 每周约 3 小时 | 通过生活主题、歌曲、游戏和创意活动学习语音、词汇、基础句式与初步汉字。",
+            "初中（6e-3e） | 每周 7.5 小时 | 汉语 3 小时、中国文学 3 小时、中文数学（DNL）1.5 小时。",
+            "高一（Seconde） | 每周 8.5 小时 | 汉语 3 小时、中国文学 4 小时、中文数学（DNL）1.5 小时。",
+            "高二（Première） | 每周 8 小时 | 汉语 2.5 小时、文学 2 小时、DNL 1.5 小时、了解当代中国 2 小时。",
+            "高三（Terminale） | 每周 7.5 小时 | 汉语 2 小时、文学 2 小时、DNL 1.5 小时、了解当代中国 2 小时，并准备 BFI 考试。"
+          ],
+          teaching_methods: [
+            "通过节奏、手势、歌曲、模仿和引导练习训练声调与发音。",
+            "结合字形、字音、字义、部件和汉字家族理解汉字构形。",
+            "在交际情境中学习句式，并比较法语与汉语的表达规律。",
+            "在文学、数学、戏剧和集体项目中使用中文进行学习、推理与创作。"
+          ],
+          cultural_projects: [
+            "通过词汇、故事、图片和手工活动了解中国节日与传统。",
+            "开展书法、剪纸、绘画、歌曲、诗歌和中法文学比较阅读。",
+            "参加中文文化晚会、戏剧、口头展示和学生创作项目。",
+            "比较中法文化参照，培养理解、尊重与跨文化视野。"
+          ],
+          higher_education: "高中阶段重点发展论述表达、文本分析和当代中国知识。高三课程还为法国国际高中毕业会考 BFI 做准备。",
+          source_note: "依据 2025 年大学研究《雷恩中文国际班项目中的汉语教学》整理，内容来自课堂经验及文中引用的教学文件。课时仅供参考，请以各学校最新安排为准。"
+        },
         "sic-college": {
           name: "初中",
           title: "打下坚实基础",
@@ -361,6 +399,34 @@
         "equipe-dnl": { name: "Interdisciplinary Team", biography: "Cross-curricular projects that use Chinese in practical learning situations." }
       },
       programs: {
+        "enseignement-chinois": {
+          name: "Teaching",
+          title: "Chinese teaching in the Rennes SIC programme",
+          description: "A continuous pathway from CE2 to the final year of high school, combining language, literature, subjects taught in Chinese and intercultural learning.",
+          target: "Students at the Rennes SIC sites from primary to high school, with progression adapted to each age group.",
+          advantages: ["Continuity from CE2 to the final year", "Chinese, literature and mathematics in Chinese", "Active and intercultural teaching"],
+          stage_details: [
+            "Primary school (CE2-CM2) | About 3 hours per week | Pronunciation, vocabulary, simple structures and first characters through everyday themes, songs, games and creative activities.",
+            "Middle school (6e-3e) | 7.5 hours per week | 3 hours of Chinese, 3 hours of Chinese literature and 1.5 hours of mathematics in Chinese (CLIL).",
+            "Seconde | 8.5 hours per week | 3 hours of language, 4 hours of literature and 1.5 hours of mathematics in Chinese.",
+            "Première | 8 hours per week | 2.5 hours of language, 2 hours of literature, 1.5 hours of CLIL and 2 hours on contemporary China.",
+            "Terminale | 7.5 hours per week | 2 hours of language, 2 hours of literature, 1.5 hours of CLIL and 2 hours on contemporary China, with BFI preparation."
+          ],
+          teaching_methods: [
+            "Develop tones and pronunciation through rhythm, gesture, songs, imitation and guided repetition.",
+            "Understand characters through form, sound, meaning, components and character families.",
+            "Learn grammar through communication and comparisons between French and Chinese.",
+            "Use Chinese to learn, reason and create through literature, mathematics, theatre and group projects."
+          ],
+          cultural_projects: [
+            "Discover Chinese festivals and traditions through language, stories, images and hands-on activities.",
+            "Calligraphy, paper cutting, painting, songs, poetry and comparative reading.",
+            "Chinese cultural evening, theatre, oral presentations and student productions.",
+            "Compare Chinese and French cultural references to develop understanding, respect and intercultural awareness."
+          ],
+          higher_education: "In high school, students develop reasoned expression, text analysis and knowledge of contemporary China. The final year also prepares students for the French International Baccalaureate (BFI).",
+          source_note: "Summary based on the 2025 university paper «雷恩中文国际班项目中的汉语教学», drawing on classroom experience and the teaching documents it cites. Timetables are indicative and must be confirmed with each school."
+        },
         "sic-college": {
           name: "Middle school",
           title: "Build strong foundations",

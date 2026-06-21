@@ -48,7 +48,11 @@
         ["title", "Titre", "text", ""],
         ["target", "Public concerné", "textarea", ""],
         ["advantages", "Avantages", "array", "Séparés par des virgules"],
+        ["stage_details", "Progression par niveau", "multiline", "Une étape par ligne. Format conseillé : Niveau | Horaire | Description"],
+        ["teaching_methods", "Méthodes d’enseignement", "multiline", "Une méthode par ligne"],
+        ["cultural_projects", "Culture et projets", "multiline", "Un projet ou axe par ligne"],
         ["higher_education", "Après ce parcours", "textarea", ""],
+        ["source_note", "Source et précision", "textarea", "Source publique et éventuelles réserves"],
         ["description", "Description", "textarea", ""]
       ]
     },
@@ -125,10 +129,10 @@
 
   function fieldMarkup([name, label, type, helper], item) {
     const raw = item[name] ?? "";
-    const value = Array.isArray(raw) ? raw.join(", ") : raw;
-    const wide = type === "textarea" || name === "name" || name === "title" ? "wide" : "";
+    const value = Array.isArray(raw) ? raw.join(type === "multiline" ? "\n" : ", ") : raw;
+    const wide = type === "textarea" || type === "multiline" || name === "name" || name === "title" ? "wide" : "";
     let control = "";
-    if (type === "textarea") {
+    if (type === "textarea" || type === "multiline") {
       control = `<textarea id="field-${name}" name="${name}">${escapeHTML(value)}</textarea>`;
     } else if (type === "select") {
       control = `<select id="field-${name}" name="${name}">${helper.map((option) => `<option ${value === option ? "selected" : ""}>${escapeHTML(option)}</option>`).join("")}</select>`;
@@ -192,6 +196,7 @@
     const [name, , type] = field;
     const value = formData.get(name);
     if (type === "array") return value.split(",").map((part) => part.trim()).filter(Boolean);
+    if (type === "multiline") return value.split("\n").map((part) => part.trim()).filter(Boolean);
     if (type === "number") return value === "" ? 0 : Number(value);
     return value.trim();
   }

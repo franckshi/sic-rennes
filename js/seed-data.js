@@ -10,7 +10,7 @@ window.SEED_DATA = {
       website: "",
       teachers: ["coordination-sic", "equipe-chinois"],
       students: 0,
-      programs: ["langue-litterature"],
+      programs: ["enseignement-chinois", "langue-litterature"],
       description: "Quatrième école primaire SIC à Rennes depuis 2022.",
       latitude: null,
       longitude: null,
@@ -26,7 +26,7 @@ window.SEED_DATA = {
       website: "",
       teachers: ["coordination-sic", "equipe-chinois", "equipe-dnl"],
       students: 0,
-      programs: ["sic-college", "langue-litterature", "dnl"],
+      programs: ["enseignement-chinois", "sic-college", "langue-litterature", "dnl"],
       description: "Deuxième collège SIC à Rennes depuis 2021.",
       latitude: null,
       longitude: null,
@@ -42,7 +42,7 @@ window.SEED_DATA = {
       website: "",
       teachers: ["coordination-sic", "equipe-chinois"],
       students: 0,
-      programs: ["langue-litterature"],
+      programs: ["enseignement-chinois", "langue-litterature"],
       description: "Troisième école primaire SIC à Rennes depuis 2021.",
       latitude: null,
       longitude: null,
@@ -58,7 +58,7 @@ window.SEED_DATA = {
       website: "",
       teachers: ["coordination-sic", "equipe-chinois"],
       students: 0,
-      programs: ["langue-litterature"],
+      programs: ["enseignement-chinois", "langue-litterature"],
       description: "Deuxième école primaire SIC à Rennes depuis 2016.",
       latitude: null,
       longitude: null,
@@ -74,7 +74,7 @@ window.SEED_DATA = {
       website: "",
       teachers: ["coordination-sic", "equipe-chinois"],
       students: 0,
-      programs: ["langue-litterature"],
+      programs: ["enseignement-chinois", "langue-litterature"],
       description: "Première école SIC à Rennes depuis 2009.",
       latitude: null,
       longitude: null,
@@ -90,7 +90,7 @@ window.SEED_DATA = {
       website: "https://www.lycee-emile-zola-rennes.fr/",
       teachers: ["coordination-sic", "equipe-chinois", "equipe-dnl"],
       students: 0,
-      programs: ["sic-college", "langue-litterature", "dnl"],
+      programs: ["enseignement-chinois", "sic-college", "langue-litterature", "dnl"],
       description: "Le premier cycle du parcours SIC : approfondissement du chinois, culture, littérature et projets interdisciplinaires.",
       latitude: 48.1077,
       longitude: -1.6721,
@@ -106,7 +106,7 @@ window.SEED_DATA = {
       website: "https://www.lycee-emile-zola-rennes.fr/",
       teachers: ["coordination-sic", "equipe-chinois", "equipe-dnl"],
       students: 0,
-      programs: ["sic-lycee", "langue-litterature", "dnl"],
+      programs: ["enseignement-chinois", "sic-lycee", "langue-litterature", "dnl"],
       description: "Le second cycle du parcours SIC : maîtrise linguistique, culture générale et préparation aux études internationales.",
       latitude: 48.1077,
       longitude: -1.6721,
@@ -143,6 +143,35 @@ window.SEED_DATA = {
     }
   ],
   programs: [
+    {
+      id: "enseignement-chinois",
+      name: "教学",
+      title: "L’enseignement du chinois à Rennes",
+      description: "Un parcours continu du CE2 à la terminale qui associe langue, littérature, disciplines en chinois et apprentissage interculturel.",
+      target: "Les élèves des pôles SIC de Rennes, de l’école primaire au lycée, avec une progression adaptée à chaque âge.",
+      advantages: ["Continuité du CE2 à la terminale", "Langue, littérature et mathématiques en chinois", "Pédagogie active et interculturelle"],
+      stage_details: [
+        "École primaire (CE2-CM2) | Environ 3 h par semaine | Prononciation, vocabulaire, structures simples et premiers caractères à travers des thèmes du quotidien, des chansons, des jeux et des activités créatives.",
+        "Collège (6e-3e) | 7 h 30 par semaine | 3 h de langue chinoise, 3 h de littérature chinoise et 1 h 30 de mathématiques en chinois (DNL).",
+        "Seconde | 8 h 30 par semaine | 3 h de langue, 4 h de littérature et 1 h 30 de mathématiques en chinois (DNL).",
+        "Première | 8 h par semaine | 2 h 30 de langue, 2 h de littérature, 1 h 30 de DNL et 2 h de connaissance du monde chinois.",
+        "Terminale | 7 h 30 par semaine | 2 h de langue, 2 h de littérature, 1 h 30 de DNL et 2 h de connaissance du monde chinois, avec préparation au BFI."
+      ],
+      teaching_methods: [
+        "Travailler les tons et la prononciation par le rythme, les gestes, les chansons, l’imitation et la répétition guidée.",
+        "Comprendre les caractères par leur forme, leur son, leur sens, les composants et les familles de caractères.",
+        "Apprendre les structures grammaticales dans des situations de communication et comparer les fonctionnements du français et du chinois.",
+        "Utiliser le chinois pour apprendre, raisonner et créer dans la littérature, les mathématiques, le théâtre et les projets collectifs."
+      ],
+      cultural_projects: [
+        "Découverte des fêtes et traditions chinoises par le vocabulaire, les récits, les images et les activités manuelles.",
+        "Calligraphie, découpage, peinture, chansons, poésie et lectures comparées.",
+        "Soirée culturelle chinoise, théâtre, présentations orales et productions réalisées par les élèves.",
+        "Comparaison des références chinoises et françaises pour développer compréhension, respect et regard interculturel."
+      ],
+      higher_education: "Au lycée, les élèves développent l’expression argumentée, l’analyse de textes et la connaissance du monde chinois. En terminale, le parcours prépare notamment aux épreuves du Baccalauréat français international (BFI).",
+      source_note: "Synthèse issue du travail universitaire «雷恩中文国际班项目中的汉语教学» (2025), fondé sur l’expérience de classe et des documents pédagogiques cités. Les horaires sont indicatifs et doivent être confirmés auprès des établissements."
+    },
     {
       id: "sic-college",
       name: "Collège",
