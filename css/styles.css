@@ -846,7 +846,7 @@ main {
 
 .cohort-class {
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
+  grid-template-columns: minmax(58px, max-content) minmax(0, 1fr);
   gap: 12px;
   padding: 12px;
   border-radius: 10px;
@@ -854,14 +854,16 @@ main {
 }
 
 .cohort-level {
-  width: 46px;
+  min-width: 46px;
   height: 46px;
+  padding: 0 8px;
   display: grid;
   place-items: center;
   color: var(--jade-dark);
-  border-radius: 50%;
+  border-radius: 999px;
   background: white;
   font: 650 15px var(--serif);
+  white-space: nowrap;
 }
 
 .cohort-class strong {
