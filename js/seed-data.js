@@ -8,12 +8,12 @@ window.SEED_DATA = {
       public_private: "Public",
       address: "3 rue Francisco Ferrer, 35200 Rennes",
       website: "",
-      teachers: ["coordination-sic", "equipe-chinois"],
+      teachers: ["equipe-primaire"],
       students: 0,
-      programs: ["enseignement-chinois", "langue-litterature"],
+      programs: ["cycle-primaire", "langue-litterature"],
       description: "Groupe A vers Collège Landry. 2026-2027 : CE2 effectif inconnu, CM1 19 élèves, CM2 14 élèves ; chinois 3 h/semaine.",
-      latitude: null,
-      longitude: null,
+      latitude: 48.0972194,
+      longitude: -1.6547958,
       photos: []
     },
     {
@@ -24,12 +24,12 @@ window.SEED_DATA = {
       public_private: "Public",
       address: "167 rue de Vern, 35200 Rennes",
       website: "",
-      teachers: ["coordination-sic", "equipe-chinois"],
+      teachers: ["equipe-primaire"],
       students: 0,
-      programs: ["enseignement-chinois", "langue-litterature"],
+      programs: ["cycle-primaire", "langue-litterature"],
       description: "Groupe A vers Collège Landry. 2026-2027 : CE2 fermé, CM1 5 élèves, CM2 16 élèves ; chinois 3 h/semaine.",
-      latitude: null,
-      longitude: null,
+      latitude: 48.0925182,
+      longitude: -1.6458375,
       photos: []
     },
     {
@@ -40,12 +40,12 @@ window.SEED_DATA = {
       public_private: "Public",
       address: "29 avenue de Cork, 35200 Rennes",
       website: "",
-      teachers: ["coordination-sic", "equipe-chinois", "equipe-dnl"],
+      teachers: ["equipe-college"],
       students: 0,
-      programs: ["enseignement-chinois", "sic-college", "langue-litterature", "dnl"],
+      programs: ["sic-college", "langue-litterature", "mathematiques-chinois"],
       description: "Collège SIC du groupe A, alimenté par Carle Bahon et La Poterie. 2026-2027 : 6e 17-18 élèves ; autres effectifs à confirmer.",
-      latitude: null,
-      longitude: null,
+      latitude: 48.0988406,
+      longitude: -1.6491991,
       photos: []
     },
     {
@@ -56,12 +56,12 @@ window.SEED_DATA = {
       public_private: "Public",
       address: "21 rue Émile Bernard, 35700 Rennes",
       website: "",
-      teachers: ["coordination-sic", "equipe-chinois"],
+      teachers: ["equipe-primaire"],
       students: 0,
-      programs: ["enseignement-chinois", "langue-litterature"],
+      programs: ["cycle-primaire", "langue-litterature"],
       description: "Groupe B vers Collège Émile Zola. 2026-2027 : CE2 effectif inconnu, CM1 11 élèves, CM2 21 élèves ; chinois 3 h/semaine.",
-      latitude: null,
-      longitude: null,
+      latitude: 48.1388686,
+      longitude: -1.6678226,
       photos: []
     },
     {
@@ -72,12 +72,12 @@ window.SEED_DATA = {
       public_private: "Public",
       address: "24 boulevard de Verdun, 35000 Rennes",
       website: "",
-      teachers: ["coordination-sic", "equipe-chinois"],
+      teachers: ["equipe-primaire"],
       students: 0,
-      programs: ["enseignement-chinois", "langue-litterature"],
+      programs: ["cycle-primaire", "langue-litterature"],
       description: "Groupe B vers Collège Émile Zola. 2026-2027 : CE2 effectif inconnu, CM1 13 élèves, CM2 9 élèves ; chinois 3 h/semaine.",
-      latitude: null,
-      longitude: null,
+      latitude: 48.1139231,
+      longitude: -1.6921516,
       photos: []
     },
     {
@@ -88,12 +88,12 @@ window.SEED_DATA = {
       public_private: "Public",
       address: "2 avenue Janvier, Rennes",
       website: "https://www.lycee-emile-zola-rennes.fr/",
-      teachers: ["coordination-sic", "equipe-chinois", "equipe-dnl"],
+      teachers: ["equipe-college"],
       students: 0,
-      programs: ["enseignement-chinois", "sic-college", "langue-litterature", "dnl"],
+      programs: ["sic-college", "langue-litterature", "mathematiques-chinois"],
       description: "Collège SIC du groupe B, alimenté par Jules Ferry et L'Ille. 2026-2027 : 6e 11-12, 5e 13, 4e 6-7, 3e 10 élèves.",
-      latitude: 48.1077,
-      longitude: -1.6721,
+      latitude: 48.1087464,
+      longitude: -1.6753032,
       photos: []
     },
     {
@@ -104,49 +104,100 @@ window.SEED_DATA = {
       public_private: "Public",
       address: "2 avenue Janvier, Rennes",
       website: "https://www.lycee-emile-zola-rennes.fr/",
-      teachers: ["coordination-sic", "equipe-chinois", "equipe-dnl"],
+      teachers: ["equipe-lycee"],
       students: 0,
-      programs: ["enseignement-chinois", "sic-lycee", "langue-litterature", "dnl"],
+      programs: ["sic-lycee", "langue-litterature", "mathematiques-chinois", "connaissance-monde", "avenir"],
       description: "Lycée de poursuite pour les deux collèges SIC. 2026-2027 : 2nde 9 élèves, 1ère 6-7 élèves, terminale 5 élèves.",
-      latitude: 48.1077,
-      longitude: -1.6721,
+      latitude: 48.1086802,
+      longitude: -1.6750253,
       photos: []
     }
   ],
   teachers: [
     {
-      id: "coordination-sic",
-      name: "Coordination SIC",
+      id: "equipe-primaire",
+      name: "Équipe primaire",
+      level: "Primaire",
+      coordo: "Coordination primaire à confirmer",
       photo: "",
-      schools: ["ecole-lille", "college-le-landry", "ecole-carle-bahon", "ecole-jules-ferry", "ecole-la-poterie", "college-emile-zola", "emile-zola"],
-      programs: ["sic-college", "sic-lycee"],
-      biography: "Accueil des familles, suivi du parcours et coordination des projets de la section internationale chinoise.",
+      schools: ["ecole-carle-bahon", "ecole-la-poterie", "ecole-jules-ferry", "ecole-lille"],
+      programs: ["cycle-primaire", "langue-litterature"],
+      members: [
+        "Audrey HELEU — CE2, École Carle Bahon",
+        "Anne-Sophie GUINET — CM1, École Carle Bahon",
+        "Corentin CAVE — CM1, École La Poterie, directeur de l’école",
+        "Emilie LIU — CM2, École La Poterie",
+        "Lauria Moisson — CE2, École Jules Ferry",
+        "Marika ISNARD — CM1-CM2, École Jules Ferry",
+        "Genevive XU — CE2, École L'Ille, départ à la retraite en octobre",
+        "Cécile CHANDERIS — CM2, École L'Ille",
+        "Référents à confirmer — CM2 Carle Bahon et CM1 L'Ille"
+      ],
+      biography: "L’équipe primaire fait entrer les élèves dans le chinois par l’oral, les jeux, les chants, les gestes, les histoires, les images et les premiers caractères. L’objectif est d’installer le plaisir d’apprendre et des bases solides avant le collège.",
       email: ""
     },
     {
-      id: "equipe-chinois",
-      name: "Équipe de chinois",
+      id: "equipe-college",
+      name: "Équipe collège",
+      level: "Collège",
+      coordo: "Coordination collège à confirmer",
       photo: "",
-      schools: ["ecole-lille", "college-le-landry", "ecole-carle-bahon", "ecole-jules-ferry", "ecole-la-poterie", "college-emile-zola", "emile-zola"],
-      programs: ["langue-litterature"],
-      biography: "Enseignement renforcé de la langue, de la littérature et des cultures du monde chinois.",
+      schools: ["college-le-landry", "college-emile-zola"],
+      programs: ["sic-college", "langue-litterature", "mathematiques-chinois"],
+      members: [
+        "Wu Lirou — chinois et mathématiques, Collège Émile Zola",
+        "Cédric Quennesson — chinois, Collège Émile Zola",
+        "Shi Chengyu — littérature, Collège Émile Zola",
+        "Wang Lu — mathématiques, Collège Landry",
+        "Enseignants de chinois à confirmer — Collège Landry",
+        "Enseignants de littérature à confirmer — Collège Landry et certains niveaux de Collège Émile Zola"
+      ],
+      biography: "Au collège, l’équipe accompagne l’entrée dans une pratique plus structurée : langue chinoise plus approfondie, premières approches de la littérature chinoise et utilisation du chinois comme langue de raisonnement en mathématiques.",
       email: ""
     },
     {
-      id: "equipe-dnl",
-      name: "Équipe interdisciplinaire",
+      id: "equipe-lycee",
+      name: "Équipe lycée",
+      level: "Lycée",
+      coordo: "Coordination lycée à confirmer",
       photo: "",
-      schools: ["college-le-landry", "college-emile-zola", "emile-zola"],
-      programs: ["dnl"],
-      biography: "Projets croisés et enseignements disciplinaires mobilisant le chinois dans des situations concrètes.",
+      schools: ["emile-zola"],
+      programs: ["sic-lycee", "langue-litterature", "mathematiques-chinois", "connaissance-monde", "avenir"],
+      members: [
+        "Wu Lirou — chinois, niveau 2nde",
+        "Cédric Quennesson — chinois et connaissance du monde, niveaux 1ère et terminale",
+        "Wang Lu — mathématiques, lycée",
+        "Enseignants de littérature à confirmer — lycée"
+      ],
+      biography: "Au lycée, l’équipe développe la profondeur linguistique, la culture littéraire, les mathématiques en chinois et Connaissance du monde. Les élèves apprennent à argumenter, comparer les points de vue et utiliser le chinois pour comprendre le monde autrement.",
       email: ""
     }
   ],
   programs: [
     {
+      id: "cycle-primaire",
+      name: "Primaire",
+      title: "Découvrir le chinois et construire les bases",
+      description: "Au primaire, les élèves entrent dans la langue par l’oral, les jeux, les chants, les images, les gestes et les premiers caractères.",
+      target: "Élèves de CE2, CM1 et CM2 inscrits dans les écoles primaires SIC de Rennes.",
+      advantages: ["Plaisir de découvrir la langue", "Bases d’oral, de sons et de caractères", "Activités ludiques et culturelles"],
+      stage_details: [
+        "CE2-CM2 | 3 h de chinois par semaine | La priorité est de donner confiance : écouter, répéter, reconnaître des mots, jouer avec les sons, découvrir les tons et entrer progressivement dans l’écriture.",
+        "Activités | Jeux, chants, histoires, images, gestes et créations | Les activités rendent la langue concrète et permettent de lier apprentissage linguistique, curiosité culturelle et expression personnelle.",
+        "Passage au collège | Continuité vers 6e | Les élèves arrivent au collège avec des repères d’oral, de vocabulaire, de classe et une première familiarité avec les caractères."
+      ],
+      teaching_methods: [
+        "Découvrir le chinois par des situations simples, ritualisées et rassurantes.",
+        "Associer sons, gestes, images et caractères pour éviter un apprentissage trop abstrait.",
+        "Valoriser la participation orale et la créativité avant l’exigence académique."
+      ],
+      higher_education: "Le primaire prépare l’entrée dans une section plus structurée au collège, où apparaissent la littérature et les mathématiques en chinois."
+    },
+    {
       id: "enseignement-chinois",
       name: "教学",
       title: "L’enseignement du chinois à Rennes",
+      visible: false,
       description: "Un parcours continu du CE2 à la terminale qui associe langue, littérature, disciplines en chinois et apprentissage interculturel.",
       target: "Les élèves des pôles SIC de Rennes, de l’école primaire au lycée, avec une progression adaptée à chaque âge.",
       advantages: ["Continuité du CE2 à la terminale", "Langue, littérature et mathématiques en chinois", "Pédagogie active et interculturelle"],
@@ -198,34 +249,122 @@ window.SEED_DATA = {
     {
       id: "sic-college",
       name: "Collège",
-      title: "Construire des bases solides",
-      description: "Un parcours progressif qui développe la compréhension, l’expression et la confiance dans les deux langues.",
-      target: "Élèves motivés par un cursus bilingue et interculturel dès le collège.",
-      advantages: ["Pratique régulière du chinois", "Méthodes de travail bilingues", "Projets culturels collectifs"],
-      higher_education: "Le parcours prépare naturellement à la poursuite de la SIC au lycée."
+      title: "Approfondir la langue et entrer dans les disciplines",
+      description: "Au collège, les élèves approfondissent le chinois, commencent la littérature chinoise et utilisent la langue pour apprendre les mathématiques.",
+      target: "Élèves de 6e à 3e dans les deux collèges SIC : Collège Landry et Collège Émile Zola.",
+      advantages: ["Langue chinoise plus structurée", "Première approche de la littérature", "Mathématiques en chinois selon le niveau"],
+      stage_details: [
+        "Langue chinoise | 3 h par semaine | Les élèves consolident prononciation, lexique, caractères, compréhension et expression, avec des exigences qui augmentent progressivement.",
+        "Littérature | 3 h par semaine | Les élèves découvrent textes, récits, références culturelles et premières analyses adaptées au niveau du collège.",
+        "Mathématiques en chinois | 1 h à 2 h par semaine selon le niveau | La langue devient un outil de raisonnement : expliquer une démarche, manipuler le vocabulaire mathématique et résoudre des problèmes en chinois."
+      ],
+      teaching_methods: [
+        "Passer d’une découverte ludique à une pratique régulière et plus exigeante.",
+        "Faire lire, expliquer, comparer et reformuler pour construire une pensée bilingue.",
+        "Relier la langue aux disciplines pour donner un usage concret au chinois."
+      ],
+      higher_education: "Le collège prépare la poursuite au Lycée Émile Zola, où la littérature, les mathématiques et l’ouverture sur le monde gagnent en profondeur."
     },
     {
       id: "sic-lycee",
       name: "Lycée",
-      title: "Approfondir et s’ouvrir au monde",
-      description: "Un cycle d’approfondissement pour consolider la langue, l’analyse et l’autonomie dans un environnement international.",
-      target: "Lycéens souhaitant valoriser un profil bilingue exigeant et ouvert sur l’international.",
-      advantages: ["Expression écrite et orale avancée", "Culture et littérature", "Préparation aux études internationales"],
-      higher_education: "Le cursus ouvre vers les études de langues, les parcours sélectifs et les formations internationales."
+      title: "Gagner en profondeur et préparer le BFI",
+      description: "Au lycée, les élèves renforcent la langue, élargissent leur culture littéraire, approfondissent les mathématiques et découvrent le monde en chinois.",
+      target: "Élèves de 2nde, 1ère et terminale poursuivant la SIC au Lycée Émile Zola.",
+      advantages: ["Analyse et argumentation en chinois", "Littérature plus large et plus exigeante", "Ouverture par Connaissance du monde"],
+      stage_details: [
+        "2nde | Consolidation | Les élèves stabilisent leurs acquis, renforcent l’expression et continuent les mathématiques en chinois selon l’organisation du lycée.",
+        "1ère-Terminale | Approfondissement | La langue devient un outil d’analyse : argumenter, interpréter, comparer, présenter et défendre un point de vue.",
+        "BFI et après-bac | Valorisation | Le parcours prépare un profil bilingue et interculturel utile pour les études supérieures."
+      ],
+      teaching_methods: [
+        "Travailler des documents plus longs, des œuvres, des problématiques et des exposés.",
+        "Utiliser le chinois pour analyser, raisonner et ouvrir un regard différent sur le monde.",
+        "Préparer progressivement l’autonomie attendue dans les études supérieures."
+      ],
+      higher_education: "Le lycée permet de valoriser un parcours exigeant dans les candidatures post-bac : langues, sciences humaines, classes préparatoires, doubles cursus, écoles internationales ou mobilités."
     },
     {
       id: "langue-litterature",
-      name: "中文",
-      title: "Langue, culture et littérature",
-      description: "Lire, écrire, argumenter et découvrir des œuvres et repères culturels dans une progression adaptée.",
-      target: "Tous les élèves inscrits dans le parcours SIC.",
-      advantages: ["Compétences bilingues", "Références culturelles", "Prise de parole"],
-      higher_education: "Ces acquis constituent une base durable pour les études et la mobilité internationale."
+      name: "Littérature",
+      title: "Langue, culture et littérature chinoises",
+      description: "De l’oral et des premiers textes vers l’analyse littéraire : les élèves apprennent à lire, interpréter et argumenter en chinois.",
+      target: "Élèves du collège et du lycée, avec une progression adaptée à chaque niveau.",
+      advantages: ["Lire et interpréter des textes", "Construire des références culturelles", "Argumenter avec précision"],
+      stage_details: [
+        "Collège | Découvrir | Les élèves entrent dans les récits, les textes courts, les références culturelles et les premières formes d’analyse.",
+        "Lycée | Approfondir | La littérature gagne en profondeur et en largeur : textes plus exigeants, problématiques, comparaison des points de vue et expression argumentée.",
+        "Culture | Relier | Les œuvres servent aussi à comprendre des imaginaires, des valeurs, des contextes historiques et des visions du monde."
+      ],
+      teaching_methods: [
+        "Lire, reformuler, expliquer et comparer les textes.",
+        "Relier langue, culture et histoire pour construire du sens.",
+        "Passer progressivement de la compréhension à l’interprétation argumentée."
+      ],
+      higher_education: "Ces acquis renforcent l’expression, la culture générale et la capacité à travailler dans plusieurs langues."
+    },
+    {
+      id: "mathematiques-chinois",
+      name: "Maths",
+      title: "Mathématiques en chinois",
+      description: "Les mathématiques permettent d’utiliser le chinois comme langue de raisonnement, pas seulement comme langue de communication.",
+      target: "Élèves du collège et du lycée selon les horaires définis par niveau.",
+      advantages: ["Vocabulaire mathématique spécialisé", "Raisonnement expliqué en chinois", "Passage concret de la langue à la discipline"],
+      stage_details: [
+        "Collège | Installer les outils | Les élèves apprennent à nommer, expliquer et manipuler des notions mathématiques en chinois.",
+        "Lycée | Approfondir | Les contenus gagnent en exigence et la langue sert à justifier une démarche, présenter une solution et structurer un raisonnement.",
+        "Méthode | Penser autrement | Changer de langue oblige à clarifier les étapes et à construire une pensée plus précise."
+      ],
+      teaching_methods: [
+        "Introduire progressivement le vocabulaire spécialisé.",
+        "Faire verbaliser les démarches et les étapes de résolution.",
+        "Relier rigueur mathématique et précision linguistique."
+      ],
+      higher_education: "Cette approche renforce les profils capables de travailler en contexte scientifique et international."
+    },
+    {
+      id: "connaissance-monde",
+      name: "Monde",
+      title: "Connaissance du monde",
+      description: "Au lycée, Connaissance du monde invite les élèves à découvrir le monde en chinois, avec d’autres références et d’autres angles de vue.",
+      target: "Élèves de 1ère et terminale au Lycée Émile Zola.",
+      advantages: ["Regard interculturel", "Analyse de l’actualité et des sociétés", "Expression orale argumentée"],
+      stage_details: [
+        "1ère-Terminale | Ouvrir le regard | Les élèves utilisent le chinois pour observer les sociétés, les cultures, les enjeux contemporains et les circulations d’idées.",
+        "Méthode | Comparer les points de vue | Le cours aide à comprendre qu’une même question peut être lue différemment selon les langues, les histoires et les références.",
+        "Production | Présenter et argumenter | Les élèves apprennent à organiser des exposés, défendre une analyse et enrichir leur culture générale."
+      ],
+      teaching_methods: [
+        "Travailler à partir de documents, d’exemples, d’images, de débats et de présentations.",
+        "Développer une pensée comparative entre monde chinois, monde français et enjeux internationaux.",
+        "Utiliser le chinois comme langue d’analyse du réel."
+      ],
+      higher_education: "Connaissance du monde renforce les candidatures orientées vers international, sciences politiques, commerce, langues, sciences humaines et doubles cursus."
+    },
+    {
+      id: "avenir",
+      name: "Avenir",
+      title: "Après le lycée : construire un profil international",
+      description: "Le parcours SIC aide les élèves à valoriser un profil bilingue, exigeant et ouvert pour l’enseignement supérieur.",
+      target: "Élèves de lycée et familles qui préparent les choix post-bac.",
+      advantages: ["Profil bilingue valorisable", "Culture générale internationale", "Autonomie et capacité d’analyse"],
+      stage_details: [
+        "Compétences | Langue, méthode, culture | Les élèves peuvent mettre en avant une capacité à apprendre et penser entre plusieurs langues et références.",
+        "Orientation | France et international | Le parcours soutient des projets variés : université, classes préparatoires, doubles diplômes, écoles, mobilité et cursus internationaux.",
+        "Projet personnel | Se différencier | La SIC donne matière à raconter un parcours, des engagements, une curiosité culturelle et une capacité de travail."
+      ],
+      teaching_methods: [
+        "Aider les élèves à identifier les compétences transférables acquises dans le parcours.",
+        "Relier les apprentissages à des projets d’études et de mobilité.",
+        "Valoriser la capacité à comparer, expliquer et argumenter dans un cadre international."
+      ],
+      higher_education: "Après le bac, la SIC peut soutenir des orientations linguistiques, scientifiques, économiques, juridiques, politiques, culturelles ou internationales."
     },
     {
       id: "dnl",
       name: "DNL",
       title: "Apprendre aussi par les disciplines",
+      visible: false,
       description: "Le chinois devient une langue de travail à travers des projets et contenus interdisciplinaires.",
       target: "Élèves prêts à utiliser le chinois au-delà du seul cours de langue.",
       advantages: ["Vocabulaire spécialisé", "Travail en équipe", "Usage concret de la langue"],
@@ -235,6 +374,7 @@ window.SEED_DATA = {
       id: "admission",
       name: "Entrée",
       title: "Préparer sa candidature",
+      visible: false,
       description: "Comprendre le parcours, rencontrer l’équipe et préparer les étapes d’admission avec les informations officielles.",
       target: "Familles et élèves intéressés par la SIC à Rennes.",
       advantages: ["Projet scolaire clarifié", "Échange avec l’équipe", "Préparation progressive"],

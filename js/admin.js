@@ -31,8 +31,11 @@
       fields: [
         ["id", "Identifiant", "text", ""],
         ["name", "Nom", "text", ""],
+        ["level", "Niveau", "text", "Primaire, Collège, Lycée…"],
+        ["coordo", "Coordo", "text", "Coordination ou référent principal"],
         ["schools", "Pôles SIC", "array", "Identifiants séparés par des virgules"],
         ["programs", "Programmes", "array", "Identifiants séparés par des virgules"],
+        ["members", "Membres de l’équipe", "multiline", "Une personne ou mission par ligne"],
         ["email", "E-mail", "email", "Optionnel"],
         ["biography", "Biographie", "textarea", ""]
       ]
@@ -46,6 +49,7 @@
         ["id", "Identifiant", "text", ""],
         ["name", "Nom court", "text", "Ex. Collège, Lycée, DNL"],
         ["title", "Titre", "text", ""],
+        ["visible", "Afficher dans la liste des parcours", "boolean", "Décochez pour garder la page accessible sans afficher la carte"],
         ["target", "Public concerné", "textarea", ""],
         ["advantages", "Avantages", "array", "Séparés par des virgules"],
         ["cohort_map_2026", "Organisation 2026-2027", "multiline", "Une ligne par classe. Format : Parcours | Établissement | Niveau | Effectif | Enseignants | Horaire | Note"],
@@ -90,6 +94,7 @@
 
   let collection = "schools";
   let selectedId = null;
+  let draggedId = null;
   let pendingMedia = [];
   const tabs = document.querySelector("#admin-tabs");
   const list = document.querySelector("#record-list");
@@ -124,7 +129,14 @@
     const cfg = config[collection];
     const filtered = items().filter((item) => `${cfg.title(item)} ${cfg.subtitle(item)}`.toLowerCase().includes(term));
     list.innerHTML = filtered.length
-      ? filtered.map((item) => `<button class="record-item ${item.id === selectedId ? "active" : ""}" data-id="${escapeHTML(item.id)}"><strong>${escapeHTML(cfg.title(item) || "Sans titre")}</strong><small>${escapeHTML(cfg.subtitle(item))}</small></button>`).join("")
+      ? filtered.map((item) => `<div class="record-item ${item.id === selectedId ? "active" : ""}" data-id="${escapeHTML(item.id)}" draggable="true">
+          <span class="drag-handle" aria-hidden="true">↕</span>
+          <button class="record-main" type="button" data-open-id="${escapeHTML(item.id)}"><strong>${escapeHTML(cfg.title(item) || "Sans titre")}</strong><small>${escapeHTML(cfg.subtitle(item))}</small></button>
+          <span class="record-actions" aria-label="Changer l’ordre">
+            <button type="button" data-order="-1" title="Monter">↑</button>
+            <button type="button" data-order="1" title="Descendre">↓</button>
+          </span>
+        </div>`).join("")
       : `<div class="admin-empty">Aucun résultat.</div>`;
   }
 
@@ -135,6 +147,9 @@
     let control = "";
     if (type === "textarea" || type === "multiline") {
       control = `<textarea id="field-${name}" name="${name}">${escapeHTML(value)}</textarea>`;
+    } else if (type === "boolean") {
+      const checked = raw !== false ? "checked" : "";
+      control = `<label class="checkbox-field"><input id="field-${name}" name="${name}" type="checkbox" ${checked}> <span>Afficher</span></label>`;
     } else if (type === "select") {
       control = `<select id="field-${name}" name="${name}">${helper.map((option) => `<option ${value === option ? "selected" : ""}>${escapeHTML(option)}</option>`).join("")}</select>`;
     } else {
@@ -199,7 +214,44 @@
     if (type === "array") return value.split(",").map((part) => part.trim()).filter(Boolean);
     if (type === "multiline") return value.split("\n").map((part) => part.trim()).filter(Boolean);
     if (type === "number") return value === "" ? 0 : Number(value);
+    if (type === "boolean") return formData.has(name);
     return value.trim();
+  }
+
+  async function moveRecord(sourceId, targetId) {
+    if (!sourceId || !targetId || sourceId === targetId || search.value.trim()) return;
+    const records = items();
+    const from = records.findIndex((record) => record.id === sourceId);
+    const to = records.findIndex((record) => record.id === targetId);
+    if (from < 0 || to < 0) return;
+    const [moved] = records.splice(from, 1);
+    records.splice(to, 0, moved);
+    try {
+      await DataStore.set(collection, records);
+      renderList();
+      toast("Ordre mis à jour.");
+    } catch (error) {
+      console.error(error);
+      toast(error.message);
+    }
+  }
+
+  async function moveRecordByOffset(id, offset) {
+    if (!id || search.value.trim()) return;
+    const records = items();
+    const from = records.findIndex((record) => record.id === id);
+    const to = from + offset;
+    if (from < 0 || to < 0 || to >= records.length) return;
+    const [moved] = records.splice(from, 1);
+    records.splice(to, 0, moved);
+    try {
+      await DataStore.set(collection, records);
+      renderList();
+      toast("Ordre mis à jour.");
+    } catch (error) {
+      console.error(error);
+      toast(error.message);
+    }
   }
 
   async function save(event) {
@@ -299,8 +351,43 @@
     renderList();
   });
   list.addEventListener("click", (event) => {
+    const orderButton = event.target.closest("[data-order]");
+    if (orderButton) {
+      const item = orderButton.closest("[data-id]");
+      moveRecordByOffset(item?.dataset.id, Number(orderButton.dataset.order));
+      return;
+    }
+    const button = event.target.closest("[data-open-id]");
+    if (button) openEditor(button.dataset.openId);
+  });
+  list.addEventListener("dragstart", (event) => {
     const button = event.target.closest("[data-id]");
-    if (button) openEditor(button.dataset.id);
+    if (!button) return;
+    draggedId = button.dataset.id;
+    button.classList.add("dragging");
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", draggedId);
+  });
+  list.addEventListener("dragover", (event) => {
+    const button = event.target.closest("[data-id]");
+    if (!button || !draggedId || search.value.trim()) return;
+    event.preventDefault();
+    button.classList.add("drag-over");
+  });
+  list.addEventListener("dragleave", (event) => {
+    event.target.closest("[data-id]")?.classList.remove("drag-over");
+  });
+  list.addEventListener("drop", async (event) => {
+    const button = event.target.closest("[data-id]");
+    if (!button) return;
+    event.preventDefault();
+    document.querySelectorAll(".drag-over").forEach((node) => node.classList.remove("drag-over"));
+    await moveRecord(draggedId || event.dataTransfer.getData("text/plain"), button.dataset.id);
+    draggedId = null;
+  });
+  list.addEventListener("dragend", () => {
+    draggedId = null;
+    document.querySelectorAll(".dragging,.drag-over").forEach((node) => node.classList.remove("dragging", "drag-over"));
   });
   search.addEventListener("input", renderList);
   document.querySelector("#new-button").addEventListener("click", () => openEditor());

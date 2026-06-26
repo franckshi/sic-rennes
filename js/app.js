@@ -14,6 +14,8 @@
       ? `${root}/${school.id}/`
       : `${root}/etablissements/?school=${encodeURIComponent(school.id)}`;
 
+  const visiblePrograms = () => data.programs.filter((program) => program.visible !== false);
+
   const formatDate = (dateValue) =>
     new Intl.DateTimeFormat(window.SICI18n.locale, { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${dateValue}T12:00:00`));
 
@@ -88,6 +90,77 @@
         <span class="tag">${escapeHTML(school.type)}</span>
         <span aria-hidden="true">→</span>
       </a>`).join("");
+  }
+
+  function schoolChip(id, label) {
+    const school = data.schools.find((item) => item.id === id);
+    if (!school) return "";
+    return `<a class="school-chip" href="${schoolURL(school)}"><span>${escapeHTML(school.monogram || label || school.name.slice(0, 1))}</span>${escapeHTML(label || school.name)}</a>`;
+  }
+
+  function schoolPathways() {
+    const groups = [
+      {
+        title: "Groupe A primaire → Collège Landry",
+        text: "Carle Bahon et La Poterie forment le groupe A. Les CM2 poursuivent vers Collège Landry, puis vers Lycée Émile Zola.",
+        primary: [["ecole-carle-bahon", "Carle Bahon"], ["ecole-la-poterie", "La Poterie"]],
+        middle: ["college-le-landry", "Collège Landry"]
+      },
+      {
+        title: "Groupe B primaire → Collège Émile Zola",
+        text: "Jules Ferry et L'Ille forment le groupe B. Les CM2 poursuivent vers Collège Émile Zola, puis vers Lycée Émile Zola.",
+        primary: [["ecole-jules-ferry", "Jules Ferry"], ["ecole-lille", "L'Ille"]],
+        middle: ["college-emile-zola", "Collège Émile Zola"]
+      }
+    ];
+    return `<div class="school-pathways">${groups.map((group) => `
+      <article class="school-pathway-card reveal">
+        <h3>${escapeHTML(group.title)}</h3>
+        <p>${escapeHTML(group.text)}</p>
+        <div class="pathway-flow">
+          <div>${group.primary.map(([id, label]) => schoolChip(id, label)).join("")}</div>
+          <span aria-hidden="true">→</span>
+          <div>${schoolChip(group.middle[0], group.middle[1])}</div>
+          <span aria-hidden="true">→</span>
+          <div>${schoolChip("emile-zola", "Lycée Émile Zola")}</div>
+        </div>
+      </article>`).join("")}</div>`;
+  }
+
+  function campusMap(schools) {
+    const points = schools.filter((school) => Number.isFinite(school.latitude) && Number.isFinite(school.longitude));
+    const lats = points.map((school) => school.latitude);
+    const lngs = points.map((school) => school.longitude);
+    const minLat = Math.min(...lats);
+    const maxLat = Math.max(...lats);
+    const minLng = Math.min(...lngs);
+    const maxLng = Math.max(...lngs);
+    const width = Math.max(maxLng - minLng, 0.01);
+    const height = Math.max(maxLat - minLat, 0.01);
+    const markers = points.map((school) => {
+      const x = 8 + ((school.longitude - minLng) / width) * 84 + (school.id === "emile-zola" ? 2.6 : 0);
+      const y = 10 + ((maxLat - school.latitude) / height) * 78 + (school.id === "emile-zola" ? 4 : 0);
+      return `<a class="campus-pin campus-pin-${escapeHTML(school.type.toLowerCase().replaceAll(" ", "-"))}" href="${schoolURL(school)}" style="--x:${x.toFixed(2)}%;--y:${y.toFixed(2)}%" aria-label="${escapeHTML(school.name)}">
+        <span class="pin-dot"><span>${escapeHTML(school.monogram || "•")}</span></span>
+        <span class="pin-tooltip"><strong>${escapeHTML(school.name)}</strong><small>${escapeHTML(school.address)}</small><em>${escapeHTML(school.description)}</em></span>
+      </a>`;
+    }).join("");
+    return `<div class="campus-map reveal">
+      <div class="map-copy">
+        <h3>Carte des 7 pôles SIC à Rennes</h3>
+        <p>Survolez un repère pour lire le résumé de l’établissement. Cliquez sur le repère pour ouvrir sa page.</p>
+        <div class="map-legend"><span>● Primaire</span><span>● Collège</span><span>● Lycée</span></div>
+      </div>
+      <div class="map-canvas" aria-label="Carte interactive des pôles SIC">
+        <span class="map-river"></span>
+        <span class="map-road map-road-a"></span>
+        <span class="map-road map-road-b"></span>
+        <span class="map-label map-label-north">Nord</span>
+        <span class="map-label map-label-centre">Centre</span>
+        <span class="map-label map-label-south">Sud-Est</span>
+        ${markers}
+      </div>
+    </div>`;
   }
 
   function teachingStages(items) {
@@ -201,7 +274,7 @@
           <div class="stat"><strong>${data.schools.length}</strong><span>établissements SIC à Rennes</span></div>
           <div class="stat"><strong>10</strong><span>années de parcours continu</span></div>
           <div class="stat"><strong>2</strong><span>langues au quotidien</span></div>
-          <div class="stat"><strong>${data.programs.length}</strong><span>volets du parcours expliqués</span></div>
+          <div class="stat"><strong>${visiblePrograms().length}</strong><span>volets du parcours expliqués</span></div>
           <div class="stat"><strong>${data.activities.length}</strong><span>projets à découvrir</span></div>
         </div>
       </section>
@@ -210,12 +283,10 @@
           <div class="section-heading reveal"><div><h2>Grandir dans un parcours international</h2></div><p>Une progression continue qui articule langue, culture, disciplines et projets collectifs.</p></div>
           <div class="pathway">
             ${[
-              ["启", "CE2", "Entrer dans le parcours et construire ses repères."],
-              ["读", "CM1-CM2", "Lire, écouter et s’exprimer avec plus d’aisance."],
-              ["思", "6e-3e", "Développer l’analyse, la littérature et les mathématiques en chinois."],
-              ["进", "2nde", "Consolider les acquis et préparer le cycle terminal."],
-              ["深", "1ère-Terminale", "Approfondir la langue, la culture et les disciplines."],
-              ["远", "Après-bac", "Valoriser un profil bilingue et international."]
+              ["启", "Primaire · CE2-CM2", "Découvrir le chinois par l’oral, les jeux, les chants, les images, les gestes et les premiers caractères."],
+              ["思", "Collège · 6e-3e", "Approfondir la langue, entrer dans la littérature chinoise et utiliser le chinois en mathématiques."],
+              ["深", "Lycée · 2nde-Terminale", "Élargir la littérature, renforcer les mathématiques et découvrir le monde en chinois."],
+              ["远", "Après-bac", "Valoriser un profil bilingue, interculturel et international pour construire son projet d’études."]
             ].map(([icon, title, text]) => `<div class="path-step reveal"><div class="path-icon">${icon}</div><h3>${title}</h3><p>${text}</p></div>`).join("")}
           </div>
         </div>
@@ -249,6 +320,14 @@
     }
     main.innerHTML = `
       <section class="page-hero" data-watermark="校"><div class="container"><h1>Les pôles SIC</h1><p>Découvrez les sept établissements SIC à Rennes, de l’école primaire au lycée.</p></div></section>
+      <section class="section"><div class="container">
+        <div class="section-heading reveal"><div><h2>Deux chemins, un même lycée</h2></div><p>Les écoles primaires sont organisées en deux groupes de poursuite vers deux collèges, puis tous les élèves rejoignent le Lycée Émile Zola.</p></div>
+        ${schoolPathways()}
+      </div></section>
+      <section class="section section-white"><div class="container">
+        <div class="section-heading reveal"><h2>Carte des pôles</h2><p>Une lecture rapide de la répartition des sept sites dans Rennes.</p></div>
+        ${campusMap(data.schools)}
+      </div></section>
       <section class="section"><div class="container">
         <div class="toolbar" id="school-filters">
           ${["Tous","École primaire","Collège","Lycée"].map((label, index) => `<button class="filter-button ${index === 0 ? "active" : ""}" data-filter="${label}">${label}</button>`).join("")}
@@ -299,7 +378,7 @@
             <dt>Type</dt><dd>${escapeHTML(school.type)} · ${escapeHTML(school.public_private)}</dd>
             <dt>Adresse</dt><dd>${escapeHTML(school.address)}</dd>
             <dt>Parcours</dt><dd>Section internationale chinoise</dd>
-            <dt>Volets</dt><dd>${school.programs.map((item) => escapeHTML(item.toUpperCase())).join(", ") || "À confirmer"}</dd>
+            <dt>Volets</dt><dd>${programs.map((program) => escapeHTML(program.name)).join(", ") || "À confirmer"}</dd>
           </dl>
           ${school.website ? `<a class="button button-primary" style="width:100%;margin-top:24px" href="${escapeHTML(school.website)}" target="_blank" rel="noopener">Visiter le site officiel</a>` : ""}
         </aside>
@@ -315,7 +394,7 @@
     main.innerHTML = `
       <section class="page-hero" data-watermark="学"><div class="container"><h1>Le parcours SIC</h1><p>Comprendre la progression du primaire au lycée, les apprentissages renforcés et la préparation de son entrée dans la section.</p></div></section>
       <section class="section"><div class="container"><div class="cards">
-        ${data.programs.map((program) => `<a class="info-card reveal" href="${root}/programmes/?program=${program.id}"><span class="program-code">${escapeHTML(program.name)}</span><h2>${escapeHTML(program.title)}</h2><p>${escapeHTML(program.description)}</p><div class="card-meta"><span class="tag">Voir le parcours →</span></div></a>`).join("")}
+        ${visiblePrograms().map((program) => `<a class="info-card reveal" href="${root}/programmes/?program=${program.id}"><span class="program-code">${escapeHTML(program.name)}</span><h2>${escapeHTML(program.title)}</h2><p>${escapeHTML(program.description)}</p><div class="card-meta"><span class="tag">Voir le parcours →</span></div></a>`).join("")}
       </div></div></section>`;
   }
 
@@ -385,10 +464,16 @@
   function renderTeachers() {
     main.innerHTML = `
       <section class="page-hero" data-watermark="师"><div class="container"><h1>L’équipe SIC</h1><p>Les fonctions pédagogiques qui accompagnent les élèves et relient langue, disciplines, projets et familles.</p></div></section>
-      <section class="section"><div class="container"><div class="cards">
+      <section class="section"><div class="container"><div class="team-grid">
         ${data.teachers.map((teacher) => {
           const schools = teacher.schools.map((id) => data.schools.find((school) => school.id === id)).filter(Boolean);
-          return `<article class="info-card reveal"><div class="teacher-avatar">${teacher.name.split(" ").map((part) => part[0]).join("")}</div><h2>${escapeHTML(teacher.name)}</h2><p>${escapeHTML(teacher.biography)}</p><div class="card-meta">${schools.map((school) => `<a class="tag" href="${schoolURL(school)}">${escapeHTML(school.name)}</a>`).join("")}</div></article>`;
+          return `<article class="team-card reveal">
+            <div class="teacher-avatar">${escapeHTML(teacher.level?.[0] || teacher.name.split(" ").map((part) => part[0]).join(""))}</div>
+            <div class="team-meta"><span>${escapeHTML(teacher.level || "SIC")}</span><h2>${escapeHTML(teacher.name)}</h2><strong>${escapeHTML(teacher.coordo || "Coordination à confirmer")}</strong></div>
+            <p>${escapeHTML(teacher.biography)}</p>
+            ${teacher.members?.length ? `<div class="teacher-members"><h3>Enseignants et référents</h3>${teacher.members.map((member) => `<p>${escapeHTML(member)}</p>`).join("")}</div>` : ""}
+            <div class="card-meta">${schools.map((school) => `<a class="tag" href="${schoolURL(school)}">${escapeHTML(school.name)}</a>`).join("")}</div>
+          </article>`;
         }).join("")}
       </div></div></section>`;
   }

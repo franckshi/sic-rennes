@@ -50,6 +50,13 @@
       "projets à découvrir": "个学生项目",
       "Grandir dans un parcours international": "在国际课程中成长",
       "Une progression continue qui articule langue, culture, disciplines et projets collectifs.": "将语言、文化、学科与集体项目融为一体的连续培养体系。",
+      "Primaire · CE2-CM2": "小学 · CE2-CM2",
+      "Découvrir le chinois par l’oral, les jeux, les chants, les images, les gestes et les premiers caractères.": "通过口语、游戏、歌曲、图片、动作和最初的汉字发现中文。",
+      "Collège · 6e-3e": "初中 · 6e-3e",
+      "Approfondir la langue, entrer dans la littérature chinoise et utiliser le chinois en mathématiques.": "加深中文学习，进入中国文学，并用中文学习数学。",
+      "Lycée · 2nde-Terminale": "高中 · 2nde-Terminale",
+      "Élargir la littérature, renforcer les mathématiques et découvrir le monde en chinois.": "拓宽文学学习，加强数学深度，并用中文发现世界。",
+      "Valoriser un profil bilingue, interculturel et international pour construire son projet d’études.": "发挥双语、跨文化与国际化背景，规划未来学习路径。",
       "Entrer dans le parcours et construire ses repères.": "进入课程体系，建立学习基础。",
       "Lire, écouter et s’exprimer avec plus d’aisance.": "提升阅读、听力和表达能力。",
       "Développer l’analyse et les projets bilingues.": "发展分析能力并参与双语项目。",
@@ -68,6 +75,22 @@
       "Voir tous les projets →": "查看全部项目 →",
       "Découvrez la continuité du parcours entre le collège et le lycée, ainsi que les équipes et enseignements associés.": "了解从初中到高中的连续培养路径，以及相关教学团队和课程。",
       "Découvrez les sept établissements SIC à Rennes, de l’école primaire au lycée.": "了解雷恩从小学到高中的七所 SIC 学校。",
+      "Deux chemins, un même lycée": "两条升学路径，一个共同高中",
+      "Les écoles primaires sont organisées en deux groupes de poursuite vers deux collèges, puis tous les élèves rejoignent le Lycée Émile Zola.": "小学分成两个升学组，分别进入两个 SIC 初中，之后所有学生进入埃米尔·左拉高中。",
+      "Groupe A primaire → Collège Landry": "小学组 A → Collège Landry",
+      "Groupe B primaire → Collège Émile Zola": "小学组 B → Collège Émile Zola",
+      "Carle Bahon et La Poterie forment le groupe A. Les CM2 poursuivent vers Collège Landry, puis vers Lycée Émile Zola.": "Carle Bahon 和 La Poterie 组成 A 组，CM2 后升入 Collège Landry，再升入 Lycée Émile Zola。",
+      "Jules Ferry et L'Ille forment le groupe B. Les CM2 poursuivent vers Collège Émile Zola, puis vers Lycée Émile Zola.": "Jules Ferry 和 L'Ille 组成 B 组，CM2 后升入 Collège Émile Zola，再升入 Lycée Émile Zola。",
+      "Carte des pôles": "校区分布图",
+      "Une lecture rapide de la répartition des sept sites dans Rennes.": "快速查看七个教学点在雷恩的分布。",
+      "Carte des 7 pôles SIC à Rennes": "雷恩 7 个 SIC 教学点地图",
+      "Survolez un repère pour lire le résumé de l’établissement. Cliquez sur le repère pour ouvrir sa page.": "鼠标移到图钉上可查看学校简介，点击图钉进入学校页面。",
+      "Carte interactive des pôles SIC": "SIC 教学点互动地图",
+      "● Primaire": "● 小学",
+      "● Lycée": "● 高中",
+      "Nord": "北部",
+      "Centre": "市中心",
+      "Sud-Est": "东南部",
       "Tous": "全部",
       "École primaire": "小学",
       "Collège": "初中",
@@ -115,6 +138,8 @@
       "Aucune activité ne correspond à ces filtres.": "没有符合筛选条件的项目。",
       "L’équipe SIC": "国际班教学团队",
       "Les fonctions pédagogiques qui accompagnent les élèves et relient langue, disciplines, projets et familles.": "教学团队陪伴学生成长，并连接语言、学科、项目与家庭。",
+      "Enseignants et référents": "教师与负责人",
+      "Coordination à confirmer": "Coordo 待确认",
       "Cette page n’est pas encore disponible.": "该页面暂未开放。",
       "Revenir à l’accueil": "返回首页",
       "Page introuvable": "页面未找到",
@@ -172,6 +197,13 @@
       "projets à découvrir": "projects to discover",
       "Grandir dans un parcours international": "Grow through an international programme",
       "Une progression continue qui articule langue, culture, disciplines et projets collectifs.": "A continuous pathway combining language, culture, academic subjects and collaborative projects.",
+      "Primaire · CE2-CM2": "Primary · CE2-CM2",
+      "Découvrir le chinois par l’oral, les jeux, les chants, les images, les gestes et les premiers caractères.": "Discover Chinese through speaking, games, songs, images, gestures and first characters.",
+      "Collège · 6e-3e": "Middle school · 6e-3e",
+      "Approfondir la langue, entrer dans la littérature chinoise et utiliser le chinois en mathématiques.": "Deepen Chinese, enter Chinese literature and use Chinese in mathematics.",
+      "Lycée · 2nde-Terminale": "High school · 2nde-Terminale",
+      "Élargir la littérature, renforcer les mathématiques et découvrir le monde en chinois.": "Broaden literature, strengthen mathematics and discover the world in Chinese.",
+      "Valoriser un profil bilingue, interculturel et international pour construire son projet d’études.": "Build on a bilingual, intercultural and international profile for future studies.",
       "6e": "Grade 6",
       "Entrer dans le parcours et construire ses repères.": "Join the programme and build strong foundations.",
       "5e": "Grade 7",
@@ -194,6 +226,22 @@
       "Voir tous les projets →": "View all projects →",
       "Découvrez la continuité du parcours entre le collège et le lycée, ainsi que les équipes et enseignements associés.": "Discover the continuous pathway from middle to high school, together with its teams and teaching programme.",
       "Découvrez les sept établissements SIC à Rennes, de l’école primaire au lycée.": "Discover the seven SIC schools in Rennes, from primary to high school.",
+      "Deux chemins, un même lycée": "Two pathways, one shared high school",
+      "Les écoles primaires sont organisées en deux groupes de poursuite vers deux collèges, puis tous les élèves rejoignent le Lycée Émile Zola.": "The primary schools are organised into two progression groups feeding two middle schools, then all pupils continue to Lycée Émile Zola.",
+      "Groupe A primaire → Collège Landry": "Primary group A → Collège Landry",
+      "Groupe B primaire → Collège Émile Zola": "Primary group B → Collège Émile Zola",
+      "Carle Bahon et La Poterie forment le groupe A. Les CM2 poursuivent vers Collège Landry, puis vers Lycée Émile Zola.": "Carle Bahon and La Poterie form group A. CM2 pupils continue to Collège Landry, then to Lycée Émile Zola.",
+      "Jules Ferry et L'Ille forment le groupe B. Les CM2 poursuivent vers Collège Émile Zola, puis vers Lycée Émile Zola.": "Jules Ferry and L'Ille form group B. CM2 pupils continue to Collège Émile Zola, then to Lycée Émile Zola.",
+      "Carte des pôles": "Campus map",
+      "Une lecture rapide de la répartition des sept sites dans Rennes.": "A quick view of the seven sites across Rennes.",
+      "Carte des 7 pôles SIC à Rennes": "Map of the 7 SIC sites in Rennes",
+      "Survolez un repère pour lire le résumé de l’établissement. Cliquez sur le repère pour ouvrir sa page.": "Hover over a marker to read the school summary. Click the marker to open the school page.",
+      "Carte interactive des pôles SIC": "Interactive SIC campus map",
+      "● Primaire": "● Primary",
+      "● Lycée": "● High school",
+      "Nord": "North",
+      "Centre": "Centre",
+      "Sud-Est": "South-East",
       "Tous": "All",
       "École primaire": "Primary school",
       "Collège": "Middle school",
@@ -241,6 +289,8 @@
       "Aucune activité ne correspond à ces filtres.": "No project matches these filters.",
       "L’équipe SIC": "The SIC team",
       "Les fonctions pédagogiques qui accompagnent les élèves et relient langue, disciplines, projets et familles.": "The teaching team supporting students and connecting language, subjects, projects and families.",
+      "Enseignants et référents": "Teachers and coordinators",
+      "Coordination à confirmer": "Coordination to be confirmed",
       "Cette page n’est pas encore disponible.": "This page is not available yet.",
       "Revenir à l’accueil": "Return home",
       "Page introuvable": "Page not found",
@@ -289,11 +339,69 @@
         }
       },
       teachers: {
-        "coordination-sic": { name: "国际班协调团队", biography: "负责家庭接待、学生跟进以及中文国际班各类项目的协调工作。" },
-        "equipe-chinois": { name: "中文教学团队", biography: "开展强化中文教学，涵盖语言、文学和中国文化。" },
-        "equipe-dnl": { name: "跨学科教学团队", biography: "通过跨学科内容和项目，让学生在真实情境中使用中文。" }
+        "equipe-primaire": {
+          name: "小学团队",
+          level: "小学",
+          coordo: "小学 coordo 待确认",
+          members: [
+            "Audrey HELEU — CE2，École Carle Bahon",
+            "Anne-Sophie GUINET — CM1，École Carle Bahon",
+            "Corentin CAVE — CM1，École La Poterie，小学校长",
+            "Emilie LIU — CM2，École La Poterie",
+            "Lauria Moisson — CE2，École Jules Ferry",
+            "Marika ISNARD — CM1-CM2，École Jules Ferry",
+            "Genevive XU — CE2，École L'Ille，10 月退休",
+            "Cécile CHANDERIS — CM2，École L'Ille",
+            "待确认负责人 — Carle Bahon CM2 与 L'Ille CM1"
+          ],
+          biography: "小学团队通过口语、游戏、歌曲、动作、故事、图片和最初的汉字，让学生在活动中发现中文、敢于开口，并为初中阶段建立稳定基础。"
+        },
+        "equipe-college": {
+          name: "初中团队",
+          level: "初中",
+          coordo: "初中 coordo 待确认",
+          members: [
+            "吴立柔 — 中文与数学，Collège Émile Zola",
+            "Cédric Quennesson — 中文，Collège Émile Zola",
+            "时成玉 — 文学，Collège Émile Zola",
+            "王璐 — 数学，Collège Landry",
+            "中文老师待确认 — Collège Landry",
+            "文学老师待确认 — Collège Landry 及 Collège Émile Zola 部分年级"
+          ],
+          biography: "初中团队带领学生进入更系统的中文学习：语言课不断加深，同时开始接触中国文学，并把中文作为数学推理和表达的工具。"
+        },
+        "equipe-lycee": {
+          name: "高中团队",
+          level: "高中",
+          coordo: "高中 coordo 待确认",
+          members: [
+            "吴立柔 — 中文，2nde",
+            "Cédric Quennesson — 中文与 Connaissance du monde，1ère 与 Terminale",
+            "王璐 — 数学，高中部",
+            "文学老师待确认 — 高中部"
+          ],
+          biography: "高中团队加强语言深度、文学广度、数学表达和 Connaissance du monde。学生用中文分析、比较、论证，并从不同视角理解世界。"
+        }
       },
       programs: {
+        "cycle-primaire": {
+          name: "小学",
+          title: "发现中文，建立基础",
+          description: "小学阶段通过口语、游戏、歌曲、图片、动作和最初的汉字进入中文学习。",
+          target: "雷恩 SIC 小学 CE2、CM1、CM2 学生。",
+          advantages: ["在活动中发现中文", "建立语音、词汇和汉字基础", "用游戏和文化活动培养学习兴趣"],
+          stage_details: [
+            "CE2-CM2 | 每周中文 3 小时 | 重点是建立信心：听、说、模仿、认读词语、感知声调，并逐步进入汉字。",
+            "活动方式 | 游戏、歌曲、故事、图片、动作和创作 | 让语言变得具体，把中文学习、文化好奇心和个人表达连接起来。",
+            "升入初中 | 延续到 6e | 学生带着基本课堂习惯、口语基础、词汇和汉字意识进入初中。"
+          ],
+          teaching_methods: [
+            "在简单、重复、有安全感的情境中接触中文。",
+            "把声音、动作、图片和汉字联系起来，避免过早抽象化。",
+            "优先鼓励参与、表达和创造，再逐步提高学术要求。"
+          ],
+          higher_education: "小学阶段为初中更系统的课程做准备；从初中开始，文学和中文数学会逐步加入。"
+        },
         "enseignement-chinois": {
           name: "教学",
           title: "雷恩中文国际班的汉语教学",
@@ -347,27 +455,95 @@
         },
         "sic-college": {
           name: "初中",
-          title: "打下坚实基础",
-          description: "循序渐进地培养双语理解、表达和学习自信。",
-          target: "希望从初中开始接受双语及跨文化教育的学生。",
-          advantages: ["持续使用中文", "掌握双语学习方法", "参与集体文化项目"],
-          higher_education: "为高中阶段继续学习中文国际班课程做好准备。"
+          title: "深化语言，进入学科学习",
+          description: "初中阶段继续加深中文，同时开始接触中国文学，并用中文学习数学。",
+          target: "Collège Landry 与 Collège Émile Zola 两个 SIC 初中 6e 到 3e 学生。",
+          advantages: ["更系统的中文学习", "开始进入中国文学", "按年级安排中文数学"],
+          stage_details: [
+            "中文语言 | 每周 3 小时 | 学生持续巩固语音、词汇、汉字、理解和表达，要求逐年提高。",
+            "文学 | 每周 3 小时 | 学生接触文本、故事、文化参照，并开始进行适合初中阶段的分析。",
+            "中文数学 | 每周 1 到 2 小时，按年级不同 | 中文成为推理语言：解释步骤、使用数学词汇，并用中文解决问题。"
+          ],
+          teaching_methods: [
+            "从小学的活动式发现，过渡到更规律、更有要求的学习。",
+            "通过阅读、解释、比较和复述，建立双语思考能力。",
+            "把语言连接到文学和数学，让中文有真实用途。"
+          ],
+          higher_education: "初中为升入 Lycée Émile Zola 做准备；高中阶段文学、数学和世界认知会进一步加深。"
         },
         "sic-lycee": {
           name: "高中",
-          title: "深入学习，放眼世界",
-          description: "进一步提升语言、分析能力和国际学习环境中的自主性。",
-          target: "希望发展高水平双语能力和国际化背景的高中生。",
-          advantages: ["高级口头与书面表达", "文化与文学素养", "国际高等教育准备"],
-          higher_education: "为语言类、选拔性课程和国际教育项目打开更多选择。"
+          title: "提高深度，准备 BFI",
+          description: "高中阶段加强语言能力，拓宽中国文学学习，加深中文数学，并通过 Connaissance du monde 用中文发现世界。",
+          target: "在 Lycée Émile Zola 继续 SIC 的 2nde、1ère 与 Terminale 学生。",
+          advantages: ["用中文分析与论证", "文学学习更深更广", "通过 Connaissance du monde 打开世界视角"],
+          stage_details: [
+            "2nde | 巩固与过渡 | 学生稳定初中阶段所学，加强表达，并根据高中安排继续中文数学。",
+            "1ère-Terminale | 深入学习 | 中文成为分析工具：论证、解释、比较、展示并表达个人观点。",
+            "BFI 与高中毕业后 | 价值体现 | 课程帮助学生形成双语、跨文化、国际化的学习档案。"
+          ],
+          teaching_methods: [
+            "处理更长的文本、作品、问题意识和口头展示。",
+            "用中文分析、推理，并从不同角度理解世界。",
+            "逐步培养高等教育所需的自主学习能力。"
+          ],
+          higher_education: "高中 SIC 有助于学生在 Parcoursup 和未来申请中展示语言、方法、文化与国际化背景。"
         },
         "langue-litterature": {
-          name: "中文",
-          title: "语言、文化与文学",
-          description: "在适合学生水平的进阶课程中学习阅读、写作、论述和文化作品。",
-          target: "所有参加中文国际班课程的学生。",
-          advantages: ["双语能力", "文化知识", "公众表达"],
-          higher_education: "为未来学习和国际交流建立持久的语言基础。"
+          name: "文学",
+          title: "语言、文化与中国文学",
+          description: "从口语和初级文本逐步走向文学分析，学生学习用中文阅读、解释和论证。",
+          target: "初中与高中学生，内容根据年级逐步提高。",
+          advantages: ["阅读并解释文本", "建立文化参照", "提高中文论述精确度"],
+          stage_details: [
+            "初中 | 进入文本 | 学生接触故事、短文、文化背景和基础分析方法。",
+            "高中 | 深化与拓宽 | 文学内容更有深度和广度，加入问题意识、观点比较和论证表达。",
+            "文化 | 建立联系 | 通过作品理解不同想象、价值、历史背景和世界观。"
+          ],
+          teaching_methods: ["阅读、复述、解释和比较文本。", "把语言、文化和历史连接起来。", "从理解逐步走向有论据的解释。"],
+          higher_education: "文学学习强化表达、文化素养和多语言学习能力。"
+        },
+        "mathematiques-chinois": {
+          name: "数学",
+          title: "用中文学习数学",
+          description: "中文数学让学生把中文作为推理语言，而不只是交流语言。",
+          target: "初中与高中学生，具体课时按年级安排。",
+          advantages: ["掌握数学专业词汇", "用中文解释推理过程", "把语言学习转化为学科学习"],
+          stage_details: [
+            "初中 | 建立工具 | 学生学习用中文命名、解释和操作数学概念。",
+            "高中 | 加深要求 | 内容更复杂，中文用于证明步骤、展示解法和组织推理。",
+            "方法 | 换一种语言思考 | 更换语言迫使学生澄清步骤，让思维更精确。"
+          ],
+          teaching_methods: ["逐步引入专业词汇。", "让学生口头和书面说明解题过程。", "把数学严谨性与语言准确性结合起来。"],
+          higher_education: "这种学习方式强化学生在科学和国际环境中工作的能力。"
+        },
+        "connaissance-monde": {
+          name: "世界",
+          title: "Connaissance du monde",
+          description: "高中阶段通过 Connaissance du monde 用中文发现世界，看到不同参照和不同视角。",
+          target: "Lycée Émile Zola 的 1ère 与 Terminale 学生。",
+          advantages: ["跨文化视角", "分析社会与当代议题", "提高有论点的口头表达"],
+          stage_details: [
+            "1ère-Terminale | 打开视野 | 学生用中文观察社会、文化、当代问题和思想流动。",
+            "方法 | 比较观点 | 课程帮助学生理解同一个问题在不同语言、历史和文化参照中会有不同读法。",
+            "产出 | 展示与论证 | 学生学习组织展示、提出分析并丰富文化背景。"
+          ],
+          teaching_methods: ["通过文献、案例、图片、讨论和展示开展学习。", "在中文世界、法国世界和国际问题之间建立比较思维。", "把中文作为理解现实世界的分析语言。"],
+          higher_education: "Connaissance du monde 对国际关系、政治学、商科、语言、人文社科和双学位方向都有帮助。"
+        },
+        "avenir": {
+          name: "未来",
+          title: "高中毕业后：建设国际化学习档案",
+          description: "SIC 帮助学生把双语能力、学习要求和国际视野转化为高等教育优势。",
+          target: "准备高中毕业后方向的高中学生和家庭。",
+          advantages: ["可展示的双语背景", "国际化文化素养", "自主学习和分析能力"],
+          stage_details: [
+            "能力 | 语言、方法与文化 | 学生可以展示在多语言和多文化参照中学习、思考和表达的能力。",
+            "方向 | 法国与国际 | 支持大学、预科、双文凭、学校、交换和国际课程等多种路径。",
+            "个人项目 | 形成差异化 | SIC 为学生提供讲述个人路径、投入、文化好奇心和学习能力的素材。"
+          ],
+          teaching_methods: ["帮助学生识别课程中形成的可迁移能力。", "把课程学习和未来专业、流动项目连接起来。", "突出比较、解释和论证的国际化能力。"],
+          higher_education: "高中毕业后，SIC 可支持语言、科学、经济、法律、政治、文化和国际方向的多种选择。"
         },
         "dnl": {
           name: "跨学科",
@@ -433,11 +609,69 @@
         }
       },
       teachers: {
-        "coordination-sic": { name: "SIC Coordination", biography: "Welcoming families, monitoring student progress and coordinating Chinese International Section projects." },
-        "equipe-chinois": { name: "Chinese Teaching Team", biography: "Enhanced teaching of Chinese language, literature and cultures." },
-        "equipe-dnl": { name: "Interdisciplinary Team", biography: "Cross-curricular projects that use Chinese in practical learning situations." }
+        "equipe-primaire": {
+          name: "Primary team",
+          level: "Primary",
+          coordo: "Primary coordinator to be confirmed",
+          members: [
+            "Audrey HELEU — CE2, École Carle Bahon",
+            "Anne-Sophie GUINET — CM1, École Carle Bahon",
+            "Corentin CAVE — CM1, École La Poterie, school head",
+            "Emilie LIU — CM2, École La Poterie",
+            "Lauria Moisson — CE2, École Jules Ferry",
+            "Marika ISNARD — CM1-CM2, École Jules Ferry",
+            "Genevive XU — CE2, École L'Ille, retiring in October",
+            "Cécile CHANDERIS — CM2, École L'Ille",
+            "Referents to be confirmed — Carle Bahon CM2 and L'Ille CM1"
+          ],
+          biography: "The primary team introduces Chinese through speaking, games, songs, gestures, stories, images and first characters, helping pupils discover the language, gain confidence and build foundations for middle school."
+        },
+        "equipe-college": {
+          name: "Middle school team",
+          level: "Middle school",
+          coordo: "Middle school coordinator to be confirmed",
+          members: [
+            "Wu Lirou — Chinese and mathematics, Collège Émile Zola",
+            "Cédric Quennesson — Chinese, Collège Émile Zola",
+            "Shi Chengyu — literature, Collège Émile Zola",
+            "Wang Lu — mathematics, Collège Landry",
+            "Chinese teachers to be confirmed — Collège Landry",
+            "Literature teachers to be confirmed — Collège Landry and some Collège Émile Zola levels"
+          ],
+          biography: "The middle school team moves pupils into more structured Chinese: language becomes deeper, Chinese literature begins, and Chinese is used as a tool for mathematical reasoning and expression."
+        },
+        "equipe-lycee": {
+          name: "High school team",
+          level: "High school",
+          coordo: "High school coordinator to be confirmed",
+          members: [
+            "Wu Lirou — Chinese, 2nde",
+            "Cédric Quennesson — Chinese and Connaissance du monde, 1ère and Terminale",
+            "Wang Lu — mathematics, high school",
+            "Literature teachers to be confirmed — high school"
+          ],
+          biography: "The high school team deepens language, broadens literary culture, strengthens mathematics and develops Connaissance du monde. Students use Chinese to analyse, compare, argue and understand the world from different perspectives."
+        }
       },
       programs: {
+        "cycle-primaire": {
+          name: "Primary",
+          title: "Discover Chinese and build foundations",
+          description: "In primary school, pupils enter Chinese through speaking, games, songs, images, gestures and first characters.",
+          target: "CE2, CM1 and CM2 pupils enrolled in the Rennes SIC primary schools.",
+          advantages: ["Discover Chinese through activities", "Build sound, word and character foundations", "Learn through games and culture"],
+          stage_details: [
+            "CE2-CM2 | 3 hours of Chinese per week | The priority is confidence: listening, speaking, imitating, recognising words, sensing tones and gradually entering characters.",
+            "Activities | Games, songs, stories, images, gestures and creation | Activities make language concrete and connect language learning, cultural curiosity and personal expression.",
+            "Towards middle school | Continuity into 6e | Pupils enter middle school with classroom routines, oral foundations, vocabulary and first character awareness."
+          ],
+          teaching_methods: [
+            "Discover Chinese in simple, repeated and reassuring situations.",
+            "Connect sounds, gestures, images and characters so learning is not too abstract.",
+            "Value participation, expression and creativity before academic demand increases."
+          ],
+          higher_education: "Primary school prepares pupils for the more structured middle school cycle, where literature and mathematics in Chinese are gradually added."
+        },
         "enseignement-chinois": {
           name: "Teaching",
           title: "Chinese teaching in the Rennes SIC programme",
@@ -491,27 +725,95 @@
         },
         "sic-college": {
           name: "Middle school",
-          title: "Build strong foundations",
-          description: "A progressive programme developing bilingual comprehension, communication and confidence.",
-          target: "Students motivated by bilingual and intercultural education from middle school.",
-          advantages: ["Regular use of Chinese", "Bilingual learning methods", "Collaborative cultural projects"],
-          higher_education: "A natural preparation for continuing the SIC programme in high school."
+          title: "Deepen the language and enter academic subjects",
+          description: "In middle school, pupils deepen Chinese, begin Chinese literature and use the language to learn mathematics.",
+          target: "Students from 6e to 3e in the two SIC middle schools: Collège Landry and Collège Émile Zola.",
+          advantages: ["More structured Chinese learning", "First approach to Chinese literature", "Mathematics in Chinese depending on the year group"],
+          stage_details: [
+            "Chinese language | 3 hours per week | Pupils consolidate pronunciation, vocabulary, characters, comprehension and expression, with increasing expectations each year.",
+            "Literature | 3 hours per week | Pupils discover texts, narratives, cultural references and first levels of analysis adapted to middle school.",
+            "Mathematics in Chinese | 1 to 2 hours per week depending on level | Chinese becomes a reasoning language: explain steps, use mathematical vocabulary and solve problems in Chinese."
+          ],
+          teaching_methods: [
+            "Move from playful discovery to regular and more demanding practice.",
+            "Read, explain, compare and reformulate to build bilingual thinking.",
+            "Connect language with literature and mathematics so Chinese has concrete uses."
+          ],
+          higher_education: "Middle school prepares pupils for Lycée Émile Zola, where literature, mathematics and world perspectives become deeper."
         },
         "sic-lycee": {
           name: "High school",
-          title: "Deepen learning and open up to the world",
-          description: "An advanced stage consolidating language, analytical ability and independence in an international environment.",
-          target: "High school students seeking a demanding bilingual and internationally minded profile.",
-          advantages: ["Advanced spoken and written communication", "Culture and literature", "Preparation for international study"],
-          higher_education: "Opens pathways to language studies, selective programmes and international degrees."
+          title: "Gain depth and prepare the BFI",
+          description: "In high school, students strengthen the language, broaden Chinese literature, deepen mathematics and discover the world in Chinese through Connaissance du monde.",
+          target: "2nde, 1ère and Terminale students continuing the SIC programme at Lycée Émile Zola.",
+          advantages: ["Analysis and argumentation in Chinese", "Broader and deeper literature", "A world perspective through Connaissance du monde"],
+          stage_details: [
+            "2nde | Consolidation and transition | Students stabilise middle school learning, strengthen expression and continue mathematics in Chinese according to the high school timetable.",
+            "1ère-Terminale | Deepening | Chinese becomes an analytical tool: argue, interpret, compare, present and defend a point of view.",
+            "BFI and after graduation | Profile building | The programme helps students build a bilingual, intercultural and international learning profile."
+          ],
+          teaching_methods: [
+            "Work with longer documents, literary works, issues and presentations.",
+            "Use Chinese to analyse, reason and understand the world from different angles.",
+            "Gradually prepare the autonomy expected in higher education."
+          ],
+          higher_education: "High school SIC helps students show language, method, culture and international background in future applications."
         },
         "langue-litterature": {
-          name: "中文",
-          title: "Language, culture and literature",
-          description: "Read, write, discuss and discover literary works and cultural references through a structured progression.",
-          target: "All students enrolled in the SIC programme.",
-          advantages: ["Bilingual skills", "Cultural knowledge", "Public speaking"],
-          higher_education: "A lasting foundation for future study and international mobility."
+          name: "Literature",
+          title: "Chinese language, culture and literature",
+          description: "From spoken language and early texts towards literary analysis, students learn to read, interpret and argue in Chinese.",
+          target: "Middle and high school students, with content adapted to each level.",
+          advantages: ["Read and interpret texts", "Build cultural references", "Argue with precision in Chinese"],
+          stage_details: [
+            "Middle school | Entering texts | Pupils discover stories, short texts, cultural contexts and basic analytical methods.",
+            "High school | Deepening and broadening | Literature becomes deeper and wider, with issues, viewpoint comparison and argued expression.",
+            "Culture | Making connections | Works help students understand imaginaries, values, historical contexts and worldviews."
+          ],
+          teaching_methods: ["Read, reformulate, explain and compare texts.", "Connect language, culture and history to build meaning.", "Move gradually from comprehension to argued interpretation."],
+          higher_education: "Literature strengthens expression, cultural knowledge and the ability to work in several languages."
+        },
+        "mathematiques-chinois": {
+          name: "Maths",
+          title: "Mathematics in Chinese",
+          description: "Mathematics turns Chinese into a language of reasoning, not only a language of communication.",
+          target: "Middle and high school students according to the timetable for each year group.",
+          advantages: ["Specialised mathematical vocabulary", "Reasoning explained in Chinese", "A concrete bridge from language to subject learning"],
+          stage_details: [
+            "Middle school | Building tools | Pupils learn to name, explain and use mathematical concepts in Chinese.",
+            "High school | Greater depth | Content becomes more demanding and Chinese is used to justify steps, present solutions and structure reasoning.",
+            "Method | Thinking in another language | Changing language forces students to clarify steps and build more precise thinking."
+          ],
+          teaching_methods: ["Introduce specialised vocabulary progressively.", "Ask students to verbalise problem-solving steps.", "Connect mathematical rigour with linguistic precision."],
+          higher_education: "This approach strengthens profiles able to work in scientific and international contexts."
+        },
+        "connaissance-monde": {
+          name: "World",
+          title: "Connaissance du monde",
+          description: "In high school, Connaissance du monde invites students to discover the world in Chinese, with different references and perspectives.",
+          target: "1ère and Terminale students at Lycée Émile Zola.",
+          advantages: ["Intercultural perspective", "Analysis of society and contemporary issues", "Argued oral expression"],
+          stage_details: [
+            "1ère-Terminale | Opening perspectives | Students use Chinese to observe societies, cultures, contemporary issues and the circulation of ideas.",
+            "Method | Comparing viewpoints | The course helps students understand that the same question can be read differently through different languages, histories and references.",
+            "Production | Presenting and arguing | Students learn to organise presentations, defend an analysis and enrich general culture."
+          ],
+          teaching_methods: ["Work from documents, examples, images, debates and presentations.", "Develop comparative thinking between Chinese, French and international contexts.", "Use Chinese as a language for analysing the real world."],
+          higher_education: "Connaissance du monde supports pathways in international relations, politics, business, languages, humanities and dual degrees."
+        },
+        "avenir": {
+          name: "Future",
+          title: "After high school: build an international profile",
+          description: "The SIC programme helps students turn bilingual skills, academic demand and international perspective into higher-education strengths.",
+          target: "High school students and families preparing post-baccalaureate choices.",
+          advantages: ["A valuable bilingual profile", "International cultural knowledge", "Autonomy and analytical ability"],
+          stage_details: [
+            "Skills | Language, method and culture | Students can highlight the ability to learn, think and express themselves across languages and references.",
+            "Orientation | France and abroad | The programme supports university, preparatory classes, dual degrees, schools, mobility and international programmes.",
+            "Personal project | Standing out | SIC gives students material to explain their path, commitments, cultural curiosity and capacity for work."
+          ],
+          teaching_methods: ["Help students identify transferable skills developed in the programme.", "Connect learning with study projects and mobility.", "Value the ability to compare, explain and argue in an international setting."],
+          higher_education: "After the baccalaureate, SIC can support linguistic, scientific, economic, legal, political, cultural and international pathways."
         },
         "dnl": {
           name: "CLIL",

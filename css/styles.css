@@ -411,7 +411,7 @@ main {
 
 .pathway {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   margin-top: 55px;
 }
 
@@ -466,6 +466,256 @@ main {
 .school-list,
 .event-list {
   border-top: 1px solid var(--line);
+}
+
+.school-pathways {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.school-pathway-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.72);
+}
+
+.school-pathway-card h3 {
+  margin: 0 0 10px;
+  color: var(--jade-dark);
+  font: 650 24px/1.25 var(--serif);
+}
+
+.school-pathway-card p {
+  margin: 0 0 22px;
+  color: var(--muted);
+}
+
+.pathway-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto minmax(0, 0.9fr) auto minmax(0, 0.9fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.pathway-flow > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pathway-flow > span {
+  color: var(--brick);
+  font-weight: 800;
+}
+
+.school-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  color: var(--jade-dark);
+  background: var(--jade-pale);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.school-chip span {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  color: white;
+  border-radius: 50%;
+  background: var(--jade-dark);
+  font: 700 10px var(--serif);
+}
+
+.campus-map {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.46fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.map-copy {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.72);
+}
+
+.map-copy h3 {
+  margin: 0 0 12px;
+  font: 650 26px/1.2 var(--serif);
+}
+
+.map-copy p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.map-legend {
+  display: grid;
+  gap: 8px;
+  margin-top: 22px;
+  color: var(--jade-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.map-canvas {
+  position: relative;
+  min-height: 480px;
+  overflow: visible;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 58% 42%, rgba(216, 178, 110, 0.18), transparent 24%),
+    linear-gradient(120deg, rgba(107, 144, 128, 0.1), transparent 35%),
+    #f4f0e9;
+}
+
+.map-canvas::before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(71, 108, 93, 0.14);
+  border-radius: 46% 54% 42% 58%;
+}
+
+.map-river,
+.map-road {
+  position: absolute;
+  pointer-events: none;
+}
+
+.map-river {
+  left: -5%;
+  right: -5%;
+  top: 58%;
+  height: 60px;
+  border: solid rgba(107, 144, 128, 0.28);
+  border-width: 4px 0 0;
+  border-radius: 50%;
+  transform: rotate(-8deg);
+}
+
+.map-road {
+  width: 120%;
+  height: 1px;
+  background: rgba(181, 101, 74, 0.18);
+}
+
+.map-road-a {
+  top: 36%;
+  left: -10%;
+  transform: rotate(14deg);
+}
+
+.map-road-b {
+  top: 70%;
+  left: -8%;
+  transform: rotate(-18deg);
+}
+
+.map-label {
+  position: absolute;
+  color: rgba(47, 52, 55, 0.32);
+  font: 700 11px var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.map-label-north { top: 9%; left: 53%; }
+.map-label-centre { top: 47%; left: 37%; }
+.map-label-south { bottom: 13%; right: 11%; }
+
+.campus-pin {
+  position: absolute;
+  z-index: 2;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+}
+
+.pin-dot {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: white;
+  border: 3px solid rgba(255, 253, 249, 0.92);
+  border-radius: 50% 50% 50% 0;
+  background: var(--brick);
+  box-shadow: 0 10px 22px rgba(47, 52, 55, 0.14);
+  font: 800 12px var(--serif);
+  transform: rotate(-45deg);
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.pin-dot > span {
+  transform: rotate(45deg);
+}
+
+.campus-pin:hover,
+.campus-pin:focus-visible {
+  z-index: 5;
+}
+
+.campus-pin:hover .pin-dot,
+.campus-pin:focus-visible .pin-dot {
+  background: var(--jade-dark);
+  transform: rotate(-45deg) translateY(-4px);
+}
+
+.pin-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  width: 260px;
+  padding: 14px;
+  opacity: 0;
+  pointer-events: none;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  transform: translate(-50%, 8px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.campus-pin:hover .pin-tooltip,
+.campus-pin:focus-visible .pin-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.pin-tooltip strong,
+.pin-tooltip small,
+.pin-tooltip em {
+  display: block;
+}
+
+.pin-tooltip strong {
+  color: var(--jade-dark);
+  font: 650 15px/1.25 var(--serif);
+}
+
+.pin-tooltip small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.pin-tooltip em {
+  margin-top: 7px;
+  color: var(--ink);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.35;
 }
 
 .school-row,
@@ -725,6 +975,70 @@ main {
   border-radius: 50%;
   background: var(--jade);
   font: 600 24px var(--serif);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.team-card {
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.72);
+}
+
+.team-meta {
+  margin-top: 18px;
+}
+
+.team-meta > span {
+  display: inline-flex;
+  padding: 5px 10px;
+  color: var(--jade-dark);
+  border-radius: 999px;
+  background: var(--jade-pale);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.team-meta h2 {
+  margin: 12px 0 6px;
+  font: 650 28px/1.18 var(--serif);
+}
+
+.team-meta strong {
+  display: block;
+  color: var(--brick);
+  font-size: 13px;
+}
+
+.team-card > p {
+  color: var(--muted);
+}
+
+.teacher-members {
+  margin: 22px 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.teacher-members h3 {
+  margin: 0 0 10px;
+  color: var(--jade-dark);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.teacher-members p {
+  margin: 7px 0;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .detail-layout {
@@ -1114,17 +1428,33 @@ main {
   }
 
   .pathway {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 42px;
   }
 
-  .path-step:nth-child(3)::after {
+  .path-step:nth-child(even)::after {
     display: none;
   }
 
   .cards,
-  .activity-grid {
+  .activity-grid,
+  .school-pathways,
+  .team-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .campus-map {
+    grid-template-columns: 1fr;
+  }
+
+  .pathway-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .pathway-flow > span {
+    transform: rotate(90deg);
+    justify-self: start;
+    margin-left: 18px;
   }
 
   .school-row {
@@ -1263,8 +1593,18 @@ main {
   }
 
   .cards,
-  .activity-grid {
+  .activity-grid,
+  .school-pathways,
+  .team-grid {
     grid-template-columns: 1fr;
+  }
+
+  .map-canvas {
+    min-height: 430px;
+  }
+
+  .pin-tooltip {
+    width: 220px;
   }
 
   .page-hero {

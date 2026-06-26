@@ -234,13 +234,19 @@
 .record-item {
   width: 100%;
   padding: 16px;
-  display: block;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  gap: 4px 10px;
   border: 0;
   border-bottom: 1px solid var(--line);
   color: var(--ink);
   background: transparent;
-  cursor: pointer;
+  cursor: grab;
   text-align: left;
+}
+
+.record-item:active {
+  cursor: grabbing;
 }
 
 .record-item:hover,
@@ -248,9 +254,36 @@
   background: var(--jade-pale);
 }
 
+.record-item.dragging {
+  opacity: 0.45;
+}
+
+.record-item.drag-over {
+  box-shadow: inset 0 2px 0 var(--brick);
+}
+
+.drag-handle {
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.record-main {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
 .record-item strong,
 .record-item small {
   display: block;
+  min-width: 0;
 }
 
 .record-item small {
@@ -259,6 +292,28 @@
   color: var(--muted);
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.record-actions {
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.record-actions button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--jade-dark);
+  background: #fff;
+  cursor: pointer;
+}
+
+.record-actions button:hover {
+  border-color: var(--jade-dark);
+  background: var(--jade-pale);
 }
 
 .editor-panel {
@@ -333,6 +388,24 @@
   border-radius: 8px;
   color: var(--ink);
   background: white;
+}
+
+.checkbox-field {
+  min-height: 42px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+
+.checkbox-field input {
+  width: auto;
+  min-height: 0;
+  padding: 0;
+  border: 0;
 }
 
 .form-field textarea {
