@@ -36,8 +36,10 @@
       "Contact": "联系我们",
       "Mentions légales": "法律声明",
       "Un parcours bilingue du collège au baccalauréat,": "从初中到高中毕业的双语课程，",
+      "Un parcours bilingue du CE2 au baccalauréat,": "从小学 CE2 到高中毕业的双语课程，",
       "pour apprendre, comprendre et grandir entre deux cultures.": "在两种文化之间学习、理解与成长。",
       "Voir les deux pôles": "查看两个校区",
+      "Voir les sept pôles": "查看七个教学点",
       "Explorer les projets": "浏览学生项目",
       "Chiffres clés": "关键数据",
       "pôles collège et lycée": "初中部与高中部",
@@ -51,12 +53,15 @@
       "Entrer dans le parcours et construire ses repères.": "进入课程体系，建立学习基础。",
       "Lire, écouter et s’exprimer avec plus d’aisance.": "提升阅读、听力和表达能力。",
       "Développer l’analyse et les projets bilingues.": "发展分析能力并参与双语项目。",
+      "Développer l’analyse, la littérature et les mathématiques en chinois.": "通过中文发展分析能力、文学学习和数学学习。",
       "Consolider les acquis et préparer la suite.": "巩固所学，为下一阶段做好准备。",
+      "Consolider les acquis et préparer le cycle terminal.": "巩固所学，为高中后两年做好准备。",
       "Lycée": "高中",
       "Approfondir la langue, la culture et les disciplines.": "深入学习语言、文化与学科内容。",
       "Après-bac": "高中毕业后",
       "Valoriser un profil bilingue et international.": "发挥双语和国际化背景的优势。",
       "Les deux pôles de la SIC": "国际班的两个校区",
+      "Les sept pôles de la SIC": "国际班的七个教学点",
       "Découvrir le parcours →": "了解课程体系 →",
       "Agenda prévisionnel": "近期日程",
       "Consulter l’agenda →": "查看全部日程 →",
@@ -84,10 +89,13 @@
       "Visiter le site officiel": "访问官方网站",
       "Le parcours SIC": "中文国际班课程体系",
       "Comprendre la progression du collège au lycée, les apprentissages renforcés et la préparation de son entrée dans la section.": "了解从初中到高中的学习进阶、强化课程和入班准备。",
+      "Comprendre la progression du primaire au lycée, les apprentissages renforcés et la préparation de son entrée dans la section.": "了解从小学到高中的学习进阶、强化课程和入班准备。",
       "Voir le parcours →": "查看课程 →",
       "Programme introuvable": "未找到该课程",
       "À qui s’adresse ce parcours ?": "课程适合谁？",
       "Principaux avantages": "主要优势",
+      "Organisation 2026-2027": "2026-2027 学年组织图",
+      "D’après l’arbre fourni : deux groupes d’écoles primaires alimentent deux collèges SIC, puis les deux collèges poursuivent vers le lycée Émile Zola.": "根据提供的树状图：两个小学组分别升入两个 SIC 初中，之后两个初中都升入埃米尔·左拉高中。",
       "Une progression du primaire au BFI": "从小学到 BFI 的连续培养",
       "Méthodes d’enseignement": "教学方法",
       "Culture et projets": "文化与项目",
@@ -150,8 +158,10 @@
       "Contact": "Contact",
       "Mentions légales": "Legal notice",
       "Un parcours bilingue du collège au baccalauréat,": "A bilingual programme from middle school to the baccalaureate,",
+      "Un parcours bilingue du CE2 au baccalauréat,": "A bilingual programme from CE2 to the baccalaureate,",
       "pour apprendre, comprendre et grandir entre deux cultures.": "to learn, understand and grow between two cultures.",
       "Voir les deux pôles": "View both campuses",
+      "Voir les sept pôles": "View the seven sites",
       "Explorer les projets": "Explore projects",
       "Chiffres clés": "Key figures",
       "pôles collège et lycée": "middle and high school campuses",
@@ -168,13 +178,16 @@
       "Lire, écouter et s’exprimer avec plus d’aisance.": "Read, listen and communicate with greater confidence.",
       "4e": "Grade 8",
       "Développer l’analyse et les projets bilingues.": "Develop analytical skills through bilingual projects.",
+      "Développer l’analyse, la littérature et les mathématiques en chinois.": "Develop analysis, literature and mathematics through Chinese.",
       "3e": "Grade 9",
       "Consolider les acquis et préparer la suite.": "Consolidate learning and prepare for the next stage.",
+      "Consolider les acquis et préparer le cycle terminal.": "Consolidate learning and prepare for the upper high school cycle.",
       "Lycée": "High school",
       "Approfondir la langue, la culture et les disciplines.": "Deepen language, cultural and academic knowledge.",
       "Après-bac": "After graduation",
       "Valoriser un profil bilingue et international.": "Build on a bilingual, internationally minded profile.",
       "Les deux pôles de la SIC": "The two SIC campuses",
+      "Les sept pôles de la SIC": "The seven SIC sites",
       "Découvrir le parcours →": "Discover the programme →",
       "Agenda prévisionnel": "Upcoming calendar",
       "Consulter l’agenda →": "View the calendar →",
@@ -202,10 +215,13 @@
       "Visiter le site officiel": "Visit the official website",
       "Le parcours SIC": "The SIC programme",
       "Comprendre la progression du collège au lycée, les apprentissages renforcés et la préparation de son entrée dans la section.": "Understand the progression from middle to high school, enhanced learning and preparation for joining the section.",
+      "Comprendre la progression du primaire au lycée, les apprentissages renforcés et la préparation de son entrée dans la section.": "Understand the progression from primary to high school, enhanced learning and preparation for joining the section.",
       "Voir le parcours →": "View programme →",
       "Programme introuvable": "Programme not found",
       "À qui s’adresse ce parcours ?": "Who is this programme for?",
       "Principaux avantages": "Key benefits",
+      "Organisation 2026-2027": "2026-2027 organisation",
+      "D’après l’arbre fourni : deux groupes d’écoles primaires alimentent deux collèges SIC, puis les deux collèges poursuivent vers le lycée Émile Zola.": "Based on the supplied tree: two primary-school groups feed into two SIC middle schools, and both middle schools then continue to Lycée Émile Zola.",
       "Une progression du primaire au BFI": "A continuous pathway from primary school to the BFI",
       "Méthodes d’enseignement": "Teaching methods",
       "Culture et projets": "Culture and projects",
@@ -245,31 +261,31 @@
       schools: {
         "ecole-lille": {
           name: "小学部——L'Ille小学",
-          description: "雷恩第四所 SIC 小学，2022 年开设。"
+          description: "小学组 B，CM2 升入 Collège Émile Zola。2026-2027：CE2 学生未知，CM1 13 人，CM2 9 人；每周中文课 3 小时。"
         },
         "college-le-landry": {
           name: "初中部——Le Landry学校",
-          description: "雷恩第二所 SIC 初中，2021 年开设。"
+          description: "小学组 A 的升学初中，接收 Carle Bahon 和 La Poterie。2026-2027：6e 17-18 人，其他年级人数待确认。"
         },
         "ecole-carle-bahon": {
           name: "小学部——Carle Bahon小学",
-          description: "雷恩第三所 SIC 小学，2021 年开设。"
+          description: "小学组 A，CM2 升入 Collège Landry。2026-2027：CE2 学生未知，CM1 19 人，CM2 14 人；每周中文课 3 小时。"
         },
         "ecole-jules-ferry": {
           name: "小学部——Jules Ferry小学",
-          description: "雷恩第二所 SIC 小学，2016 年开设。"
+          description: "小学组 B，CM2 升入 Collège Émile Zola。2026-2027：CE2 学生未知，CM1 11 人，CM2 21 人；每周中文课 3 小时。"
         },
         "ecole-la-poterie": {
           name: "小学部——La Poterie小学",
-          description: "雷恩第一所 SIC 小学，2009 年开设。"
+          description: "小学组 A，CM2 升入 Collège Landry。2026-2027：CE2 明年关闭，CM1 5 人，CM2 16 人；每周中文课 3 小时。"
         },
         "college-emile-zola": {
           name: "初中部——埃米尔·左拉学校",
-          description: "中文国际班初中阶段：强化中文学习，并结合文化、文学和跨学科项目。"
+          description: "小学组 B 的升学初中，接收 Jules Ferry 和 L'Ille。2026-2027：6e 11-12 人，5e 13 人，4e 6-7 人，3e 10 人。"
         },
         "emile-zola": {
           name: "高中部——埃米尔·左拉学校",
-          description: "中文国际班高中阶段：提升语言能力、文化素养，并为国际化高等教育做好准备。"
+          description: "两个 SIC 初中共同升入的高中。2026-2027：2nde 9 人，1ère 6-7 人，Terminale 5 人。"
         }
       },
       teachers: {
@@ -284,12 +300,35 @@
           description: "从小学 CE2 到高中毕业班的连续课程，融合汉语、文学、中文学科教学和跨文化学习。",
           target: "面向雷恩各 SIC 教学点从小学到高中的学生，并根据年龄和学段循序推进。",
           advantages: ["从 CE2 到高三的连续培养", "汉语、文学与中文数学相结合", "主动参与式与跨文化教学"],
+          cohort_map_2026: [
+            "小学组 A → Collège Landry | École Carle Bahon | CE2 | 学生未知 | 法方老师 Audrey HELEU | 每周中文课 3h |",
+            "小学组 A → Collège Landry | École Carle Bahon | CM1 | 19 人 | 法方老师 Anne-Sophie GUINET | 每周中文课 3h |",
+            "小学组 A → Collège Landry | École Carle Bahon | CM2 | 14 人 | 暂无法方老师 | 每周中文课 3h |",
+            "小学组 A → Collège Landry | École La Poterie | CE2 | 明年关闭 | — | 每周中文课 3h |",
+            "小学组 A → Collège Landry | École La Poterie | CM1 | 5 人 | 法方老师 Corentin CAVE，小学校长 | 每周中文课 3h |",
+            "小学组 A → Collège Landry | École La Poterie | CM2 | 16 人 | 法方老师 Emilie LIU | 每周中文课 3h |",
+            "小学组 A → Collège Landry | Collège Landry | 6e | 17-18 人 | 中文老师未知；数学 王璐；文学未知 | 语言课 3h + 文学课 3h + 数学课 1h/周 |",
+            "小学组 A → Collège Landry | Collège Landry | 5e | 学生未知 | 中文老师未知；数学 王璐；文学未知 | 语言课 3h + 文学课 3h + 数学课 1.5h/周 |",
+            "小学组 A → Collège Landry | Collège Landry | 4e | 学生未知 | 中文老师未知；数学 王璐；文学未知 | 语言课 3h + 文学课 3h + 数学课 1.5h/周 |",
+            "小学组 A → Collège Landry | Collège Landry | 3e | 学生未知 | 中文老师未知；数学 王璐；文学未知 | 语言课 3h + 文学课 3h + 数学课 2h/周 |",
+            "小学组 B → Collège Émile Zola | École Jules Ferry | CE2 | 学生未知 | 法方老师 Lauria Moisson | 每周中文课 3h |",
+            "小学组 B → Collège Émile Zola | École Jules Ferry | CM1 | 11 人 | 法方老师 Marika ISNARD | 每周中文课 3h |",
+            "小学组 B → Collège Émile Zola | École Jules Ferry | CM2 | 21 人 | 法方老师 Marika ISNARD | 每周中文课 3h |",
+            "小学组 B → Collège Émile Zola | École L'Ille | CE2 | 学生未知 | 法方老师 Genevive XU | 每周中文课 3h | 10 月退休，新法方老师待定",
+            "小学组 B → Collège Émile Zola | École L'Ille | CM1 | 13 人 | 暂无法方老师 | 每周中文课 3h |",
+            "小学组 B → Collège Émile Zola | École L'Ille | CM2 | 9 人 | 法方老师 Cécile CHANDERIS | 每周中文课 3h |",
+            "小学组 B → Collège Émile Zola | Collège Émile Zola | 6e | 11-12 人 | 中文 吴立柔；数学 吴立柔；文学 时成玉 | 语言课 3h + 文学课 3h + 数学课 1h/周 |",
+            "小学组 B → Collège Émile Zola | Collège Émile Zola | 5e | 13 人 | 中文 吴立柔；数学 吴立柔；文学 时成玉 | 语言课 3h + 文学课 3h + 数学课 1h/周 |",
+            "小学组 B → Collège Émile Zola | Collège Émile Zola | 4e | 6-7 人 | 中文 Cédric Quennesson；数学 吴立柔；文学未知 | 语言课 3h + 文学课 3h + 数学课 1.5h/周 |",
+            "小学组 B → Collège Émile Zola | Collège Émile Zola | 3e | 10 人 | 中文 吴立柔；数学 吴立柔；文学未知 | 语言课 3h + 文学课 3h + 数学课 2h/周 |",
+            "两个初中 SIC → Lycée Émile Zola | Lycée Émile Zola | 2nde | 9 人 | 中文 吴立柔；数学 王璐；文学未知 | 按现行安排 |",
+            "两个初中 SIC → Lycée Émile Zola | Lycée Émile Zola | 1ère | 6-7 人 | 中文 Cédric Quennesson；数学 王璐；文学未知；Connaissance du monde Cédric Quennesson | 按现行安排 |",
+            "两个初中 SIC → Lycée Émile Zola | Lycée Émile Zola | Terminale | 5 人 | 中文 Cédric Quennesson；数学 王璐；文学未知；Connaissance du monde Cédric Quennesson | 按现行安排 |"
+          ],
           stage_details: [
-            "小学（CE2-CM2） | 每周约 3 小时 | 通过生活主题、歌曲、游戏和创意活动学习语音、词汇、基础句式与初步汉字。",
-            "初中（6e-3e） | 每周 7.5 小时 | 汉语 3 小时、中国文学 3 小时、中文数学（DNL）1.5 小时。",
-            "高一（Seconde） | 每周 8.5 小时 | 汉语 3 小时、中国文学 4 小时、中文数学（DNL）1.5 小时。",
-            "高二（Première） | 每周 8 小时 | 汉语 2.5 小时、文学 2 小时、DNL 1.5 小时、了解当代中国 2 小时。",
-            "高三（Terminale） | 每周 7.5 小时 | 汉语 2 小时、文学 2 小时、DNL 1.5 小时、了解当代中国 2 小时，并准备 BFI 考试。"
+            "小学（CE2-CM2） | 每周 3 小时 | 所有小学班级每周中文课 3 小时。",
+            "初中（6e-3e） | 语言课 3h + 文学课 3h + 数学课按年级不同 | 中文数学根据年级和校区安排为每周 1h、1.5h 或 2h。",
+            "高中（2nde-Terminale） | 按现行安排 | 中文、数学、文学和 Connaissance du monde 按高中当年安排执行。"
           ],
           teaching_methods: [
             "通过节奏、手势、歌曲、模仿和引导练习训练声调与发音。",
@@ -304,7 +343,7 @@
             "比较中法文化参照，培养理解、尊重与跨文化视野。"
           ],
           higher_education: "高中阶段重点发展论述表达、文本分析和当代中国知识。高三课程还为法国国际高中毕业会考 BFI 做准备。",
-          source_note: "依据 2025 年大学研究《雷恩中文国际班项目中的汉语教学》整理，内容来自课堂经验及文中引用的教学文件。课时仅供参考，请以各学校最新安排为准。"
+          source_note: "2026-2027 组织图依据 SIC 团队提供的树状图整理。教学部分同时参考 2025 年大学研究《雷恩中文国际班项目中的汉语教学》。人数、老师和课时请以各学校最终安排为准。"
         },
         "sic-college": {
           name: "初中",
@@ -366,31 +405,31 @@
       schools: {
         "ecole-lille": {
           name: "Primary School Division — L'Ille",
-          description: "Rennes' fourth SIC primary school, established in 2022."
+          description: "Primary group B, with CM2 pupils continuing to Collège Émile Zola. 2026-2027: CE2 numbers unknown, CM1 13 pupils, CM2 9 pupils; Chinese 3 h/week."
         },
         "college-le-landry": {
           name: "Middle School Division — Le Landry",
-          description: "Rennes' second SIC middle school, established in 2021."
+          description: "Middle school for primary group A, receiving pupils from Carle Bahon and La Poterie. 2026-2027: 6e 17-18 pupils; other year-group numbers to be confirmed."
         },
         "ecole-carle-bahon": {
           name: "Primary School Division — Carle Bahon",
-          description: "Rennes' third SIC primary school, established in 2021."
+          description: "Primary group A, with CM2 pupils continuing to Collège Landry. 2026-2027: CE2 numbers unknown, CM1 19 pupils, CM2 14 pupils; Chinese 3 h/week."
         },
         "ecole-jules-ferry": {
           name: "Primary School Division — Jules Ferry",
-          description: "Rennes' second SIC primary school, established in 2016."
+          description: "Primary group B, with CM2 pupils continuing to Collège Émile Zola. 2026-2027: CE2 numbers unknown, CM1 11 pupils, CM2 21 pupils; Chinese 3 h/week."
         },
         "ecole-la-poterie": {
           name: "Primary School Division — La Poterie",
-          description: "Rennes' first SIC primary school, established in 2009."
+          description: "Primary group A, with CM2 pupils continuing to Collège Landry. 2026-2027: CE2 closes next year, CM1 5 pupils, CM2 16 pupils; Chinese 3 h/week."
         },
         "college-emile-zola": {
           name: "Middle School Division — Émile Zola",
-          description: "The first stage of the SIC programme: enhanced Chinese, culture, literature and interdisciplinary projects."
+          description: "Middle school for primary group B, receiving pupils from Jules Ferry and L'Ille. 2026-2027: 6e 11-12, 5e 13, 4e 6-7, 3e 10 pupils."
         },
         "emile-zola": {
           name: "High School Division — Émile Zola",
-          description: "The second stage of the SIC programme: language proficiency, cultural knowledge and preparation for international higher education."
+          description: "High school pathway for both SIC middle schools. 2026-2027: 2nde 9 pupils, 1ère 6-7 pupils, Terminale 5 pupils."
         }
       },
       teachers: {
@@ -405,12 +444,35 @@
           description: "A continuous pathway from CE2 to the final year of high school, combining language, literature, subjects taught in Chinese and intercultural learning.",
           target: "Students at the Rennes SIC sites from primary to high school, with progression adapted to each age group.",
           advantages: ["Continuity from CE2 to the final year", "Chinese, literature and mathematics in Chinese", "Active and intercultural teaching"],
+          cohort_map_2026: [
+            "Primary group A → Collège Landry | École Carle Bahon | CE2 | numbers unknown | French-side teacher Audrey HELEU | Chinese 3 h/week |",
+            "Primary group A → Collège Landry | École Carle Bahon | CM1 | 19 pupils | French-side teacher Anne-Sophie GUINET | Chinese 3 h/week |",
+            "Primary group A → Collège Landry | École Carle Bahon | CM2 | 14 pupils | French-side teacher to be confirmed | Chinese 3 h/week |",
+            "Primary group A → Collège Landry | École La Poterie | CE2 | closes next year | — | Chinese 3 h/week |",
+            "Primary group A → Collège Landry | École La Poterie | CM1 | 5 pupils | French-side teacher Corentin CAVE, school head | Chinese 3 h/week |",
+            "Primary group A → Collège Landry | École La Poterie | CM2 | 16 pupils | French-side teacher Emilie LIU | Chinese 3 h/week |",
+            "Primary group A → Collège Landry | Collège Landry | 6e | 17-18 pupils | Chinese teacher unknown; mathematics Wang Lu; literature unknown | language 3 h + literature 3 h + mathematics 1 h/week |",
+            "Primary group A → Collège Landry | Collège Landry | 5e | numbers unknown | Chinese teacher unknown; mathematics Wang Lu; literature unknown | language 3 h + literature 3 h + mathematics 1.5 h/week |",
+            "Primary group A → Collège Landry | Collège Landry | 4e | numbers unknown | Chinese teacher unknown; mathematics Wang Lu; literature unknown | language 3 h + literature 3 h + mathematics 1.5 h/week |",
+            "Primary group A → Collège Landry | Collège Landry | 3e | numbers unknown | Chinese teacher unknown; mathematics Wang Lu; literature unknown | language 3 h + literature 3 h + mathematics 2 h/week |",
+            "Primary group B → Collège Émile Zola | École Jules Ferry | CE2 | numbers unknown | French-side teacher Lauria Moisson | Chinese 3 h/week |",
+            "Primary group B → Collège Émile Zola | École Jules Ferry | CM1 | 11 pupils | French-side teacher Marika ISNARD | Chinese 3 h/week |",
+            "Primary group B → Collège Émile Zola | École Jules Ferry | CM2 | 21 pupils | French-side teacher Marika ISNARD | Chinese 3 h/week |",
+            "Primary group B → Collège Émile Zola | École L'Ille | CE2 | numbers unknown | French-side teacher Genevive XU | Chinese 3 h/week | retiring in October; new teacher to be confirmed",
+            "Primary group B → Collège Émile Zola | École L'Ille | CM1 | 13 pupils | French-side teacher to be confirmed | Chinese 3 h/week |",
+            "Primary group B → Collège Émile Zola | École L'Ille | CM2 | 9 pupils | French-side teacher Cécile CHANDERIS | Chinese 3 h/week |",
+            "Primary group B → Collège Émile Zola | Collège Émile Zola | 6e | 11-12 pupils | Chinese Wu Lirou; mathematics Wu Lirou; literature Shi Chengyu | language 3 h + literature 3 h + mathematics 1 h/week |",
+            "Primary group B → Collège Émile Zola | Collège Émile Zola | 5e | 13 pupils | Chinese Wu Lirou; mathematics Wu Lirou; literature Shi Chengyu | language 3 h + literature 3 h + mathematics 1 h/week |",
+            "Primary group B → Collège Émile Zola | Collège Émile Zola | 4e | 6-7 pupils | Chinese Cédric Quennesson; mathematics Wu Lirou; literature unknown | language 3 h + literature 3 h + mathematics 1.5 h/week |",
+            "Primary group B → Collège Émile Zola | Collège Émile Zola | 3e | 10 pupils | Chinese Wu Lirou; mathematics Wu Lirou; literature unknown | language 3 h + literature 3 h + mathematics 2 h/week |",
+            "Two SIC middle schools → Lycée Émile Zola | Lycée Émile Zola | 2nde | 9 pupils | Chinese Wu Lirou; mathematics Wang Lu; literature unknown | according to current organisation |",
+            "Two SIC middle schools → Lycée Émile Zola | Lycée Émile Zola | 1ère | 6-7 pupils | Chinese Cédric Quennesson; mathematics Wang Lu; literature unknown; connaissance du monde Cédric Quennesson | according to current organisation |",
+            "Two SIC middle schools → Lycée Émile Zola | Lycée Émile Zola | Terminale | 5 pupils | Chinese Cédric Quennesson; mathematics Wang Lu; literature unknown; connaissance du monde Cédric Quennesson | according to current organisation |"
+          ],
           stage_details: [
-            "Primary school (CE2-CM2) | About 3 hours per week | Pronunciation, vocabulary, simple structures and first characters through everyday themes, songs, games and creative activities.",
-            "Middle school (6e-3e) | 7.5 hours per week | 3 hours of Chinese, 3 hours of Chinese literature and 1.5 hours of mathematics in Chinese (CLIL).",
-            "Seconde | 8.5 hours per week | 3 hours of language, 4 hours of literature and 1.5 hours of mathematics in Chinese.",
-            "Première | 8 hours per week | 2.5 hours of language, 2 hours of literature, 1.5 hours of CLIL and 2 hours on contemporary China.",
-            "Terminale | 7.5 hours per week | 2 hours of language, 2 hours of literature, 1.5 hours of CLIL and 2 hours on contemporary China, with BFI preparation."
+            "Primary school (CE2-CM2) | 3 hours per week | All primary classes have 3 hours of Chinese each week.",
+            "Middle school (6e-3e) | 3 h language + 3 h literature + mathematics depending on the year group | Mathematics in Chinese is organised by year group and school: 1 h, 1.5 h or 2 h per week.",
+            "High school (2nde-Terminale) | According to current organisation | Chinese, mathematics, literature and connaissance du monde follow the annual high-school timetable."
           ],
           teaching_methods: [
             "Develop tones and pronunciation through rhythm, gesture, songs, imitation and guided repetition.",
@@ -425,7 +487,7 @@
             "Compare Chinese and French cultural references to develop understanding, respect and intercultural awareness."
           ],
           higher_education: "In high school, students develop reasoned expression, text analysis and knowledge of contemporary China. The final year also prepares students for the French International Baccalaureate (BFI).",
-          source_note: "Summary based on the 2025 university paper «雷恩中文国际班项目中的汉语教学», drawing on classroom experience and the teaching documents it cites. Timetables are indicative and must be confirmed with each school."
+          source_note: "The 2026-2027 organisation is based on the tree supplied by the SIC team. The teaching section also uses the 2025 university paper «雷恩中文国际班项目中的汉语教学». Pupil numbers, teachers and timetables must be confirmed with each school."
         },
         "sic-college": {
           name: "Middle school",

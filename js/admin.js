@@ -48,6 +48,7 @@
         ["title", "Titre", "text", ""],
         ["target", "Public concerné", "textarea", ""],
         ["advantages", "Avantages", "array", "Séparés par des virgules"],
+        ["cohort_map_2026", "Organisation 2026-2027", "multiline", "Une ligne par classe. Format : Parcours | Établissement | Niveau | Effectif | Enseignants | Horaire | Note"],
         ["stage_details", "Progression par niveau", "multiline", "Une étape par ligne. Format conseillé : Niveau | Horaire | Description"],
         ["teaching_methods", "Méthodes d’enseignement", "multiline", "Une méthode par ligne"],
         ["cultural_projects", "Culture et projets", "multiline", "Un projet ou axe par ligne"],

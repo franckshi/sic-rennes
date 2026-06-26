@@ -104,6 +104,54 @@
     return items.map((item, index) => `<article class="teaching-feature"><span>${String(index + 1).padStart(2, "0")}</span><p>${escapeHTML(item)}</p></article>`).join("");
   }
 
+  function cohortMap2026(items) {
+    const pathways = [];
+    const pathwayIndex = new Map();
+    items.forEach((item) => {
+      const [pathway, site, level, students, teachers, schedule, ...noteParts] = item.split("|").map((part) => part.trim());
+      if (!pathway || !site || !level) return;
+      if (!pathwayIndex.has(pathway)) {
+        const record = { pathway, sites: [], siteIndex: new Map() };
+        pathwayIndex.set(pathway, record);
+        pathways.push(record);
+      }
+      const pathwayRecord = pathwayIndex.get(pathway);
+      if (!pathwayRecord.siteIndex.has(site)) {
+        const siteRecord = { site, rows: [] };
+        pathwayRecord.siteIndex.set(site, siteRecord);
+        pathwayRecord.sites.push(siteRecord);
+      }
+      pathwayRecord.siteIndex.get(site).rows.push({
+        level,
+        students,
+        teachers,
+        schedule,
+        note: noteParts.join(" | ")
+      });
+    });
+    return `<div class="cohort-map">${pathways.map((pathway) => `
+      <section class="cohort-pathway">
+        <h3>${escapeHTML(pathway.pathway)}</h3>
+        <div class="cohort-sites">
+          ${pathway.sites.map((site) => `
+            <article class="cohort-site">
+              <h4>${escapeHTML(site.site)}</h4>
+              <div class="cohort-classes">
+                ${site.rows.map((row) => `
+                  <div class="cohort-class">
+                    <span class="cohort-level">${escapeHTML(row.level)}</span>
+                    <div>
+                      <strong>${escapeHTML(row.students)}</strong>
+                      <p>${escapeHTML(row.teachers)}</p>
+                      <small>${escapeHTML([row.schedule, row.note].filter(Boolean).join(" · "))}</small>
+                    </div>
+                  </div>`).join("")}
+              </div>
+            </article>`).join("")}
+        </div>
+      </section>`).join("")}</div>`;
+  }
+
   function eventRows(events, limit) {
     return events.slice(0, limit || events.length).map((event) => {
       const date = new Date(`${event.date}T12:00:00`);
@@ -132,19 +180,17 @@
   }
 
   function renderHome() {
-    const featured = ["college-emile-zola", "emile-zola"]
-      .map((id) => data.schools.find((school) => school.id === id))
-      .filter(Boolean);
+    const featured = data.schools;
     main.innerHTML = `
       <section class="hero">
         <div class="hanzi-rain" aria-hidden="true"></div>
         <div class="container hero-copy">
           <h1>SIC à Rennes</h1>
           <div class="hero-cn">雷恩中文国际班</div>
-          <p class="hero-lead">Un parcours bilingue du collège au baccalauréat,<br>pour apprendre, comprendre et grandir entre deux cultures.</p>
+          <p class="hero-lead">Un parcours bilingue du CE2 au baccalauréat,<br>pour apprendre, comprendre et grandir entre deux cultures.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="${root}/programmes/">Découvrir la SIC</a>
-            <a class="button button-secondary" href="${root}/etablissements/">Voir les deux pôles</a>
+            <a class="button button-secondary" href="${root}/etablissements/">Voir les sept pôles</a>
             <a class="button button-gold" href="${root}/activites/">Explorer les projets</a>
           </div>
         </div>
@@ -153,7 +199,7 @@
       <section class="stats-band" aria-label="Chiffres clés">
         <div class="container stats-grid">
           <div class="stat"><strong>${data.schools.length}</strong><span>établissements SIC à Rennes</span></div>
-          <div class="stat"><strong>7</strong><span>années de parcours continu</span></div>
+          <div class="stat"><strong>10</strong><span>années de parcours continu</span></div>
           <div class="stat"><strong>2</strong><span>langues au quotidien</span></div>
           <div class="stat"><strong>${data.programs.length}</strong><span>volets du parcours expliqués</span></div>
           <div class="stat"><strong>${data.activities.length}</strong><span>projets à découvrir</span></div>
@@ -164,11 +210,11 @@
           <div class="section-heading reveal"><div><h2>Grandir dans un parcours international</h2></div><p>Une progression continue qui articule langue, culture, disciplines et projets collectifs.</p></div>
           <div class="pathway">
             ${[
-              ["启", "6e", "Entrer dans le parcours et construire ses repères."],
-              ["读", "5e", "Lire, écouter et s’exprimer avec plus d’aisance."],
-              ["思", "4e", "Développer l’analyse et les projets bilingues."],
-              ["进", "3e", "Consolider les acquis et préparer la suite."],
-              ["深", "Lycée", "Approfondir la langue, la culture et les disciplines."],
+              ["启", "CE2", "Entrer dans le parcours et construire ses repères."],
+              ["读", "CM1-CM2", "Lire, écouter et s’exprimer avec plus d’aisance."],
+              ["思", "6e-3e", "Développer l’analyse, la littérature et les mathématiques en chinois."],
+              ["进", "2nde", "Consolider les acquis et préparer le cycle terminal."],
+              ["深", "1ère-Terminale", "Approfondir la langue, la culture et les disciplines."],
               ["远", "Après-bac", "Valoriser un profil bilingue et international."]
             ].map(([icon, title, text]) => `<div class="path-step reveal"><div class="path-icon">${icon}</div><h3>${title}</h3><p>${text}</p></div>`).join("")}
           </div>
@@ -176,7 +222,7 @@
       </section>
       <section class="section section-white">
         <div class="container">
-          <div class="section-heading reveal"><h2>Les deux pôles de la SIC</h2><a class="section-link" href="${root}/etablissements/">Découvrir le parcours →</a></div>
+          <div class="section-heading reveal"><h2>Les sept pôles de la SIC</h2><a class="section-link" href="${root}/etablissements/">Découvrir le parcours →</a></div>
           <div class="school-list">${schoolRows(featured)}</div>
         </div>
       </section>
@@ -267,7 +313,7 @@
       return;
     }
     main.innerHTML = `
-      <section class="page-hero" data-watermark="学"><div class="container"><h1>Le parcours SIC</h1><p>Comprendre la progression du collège au lycée, les apprentissages renforcés et la préparation de son entrée dans la section.</p></div></section>
+      <section class="page-hero" data-watermark="学"><div class="container"><h1>Le parcours SIC</h1><p>Comprendre la progression du primaire au lycée, les apprentissages renforcés et la préparation de son entrée dans la section.</p></div></section>
       <section class="section"><div class="container"><div class="cards">
         ${data.programs.map((program) => `<a class="info-card reveal" href="${root}/programmes/?program=${program.id}"><span class="program-code">${escapeHTML(program.name)}</span><h2>${escapeHTML(program.title)}</h2><p>${escapeHTML(program.description)}</p><div class="card-meta"><span class="tag">Voir le parcours →</span></div></a>`).join("")}
       </div></div></section>`;
@@ -283,6 +329,7 @@
         <div>
           <section class="detail-section reveal"><h2>À qui s’adresse ce parcours ?</h2><p>${escapeHTML(program.target)}</p></section>
           <section class="detail-section reveal"><h2>Principaux avantages</h2><div class="cards">${program.advantages.map((advantage, index) => `<article class="info-card"><span class="program-code">0${index + 1}</span><h3>${escapeHTML(advantage)}</h3></article>`).join("")}</div></section>
+          ${program.cohort_map_2026?.length ? `<section class="detail-section reveal"><h2>Organisation 2026-2027</h2><p class="section-intro">D’après l’arbre fourni : deux groupes d’écoles primaires alimentent deux collèges SIC, puis les deux collèges poursuivent vers le lycée Émile Zola.</p>${cohortMap2026(program.cohort_map_2026)}</section>` : ""}
           ${program.stage_details?.length ? `<section class="detail-section reveal"><h2>Une progression du primaire au BFI</h2><div class="teaching-timeline">${teachingStages(program.stage_details)}</div></section>` : ""}
           ${program.teaching_methods?.length ? `<section class="detail-section reveal"><h2>Méthodes d’enseignement</h2><div class="teaching-features">${teachingFeatures(program.teaching_methods)}</div></section>` : ""}
           ${program.cultural_projects?.length ? `<section class="detail-section reveal"><h2>Culture et projets</h2><div class="teaching-features">${teachingFeatures(program.cultural_projects)}</div></section>` : ""}

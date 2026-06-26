@@ -746,6 +746,11 @@ main {
   color: var(--muted);
 }
 
+.section-intro {
+  max-width: 760px;
+  margin: -5px 0 24px;
+}
+
 .teaching-timeline {
   border-top: 1px solid var(--line);
 }
@@ -794,6 +799,89 @@ main {
 .teaching-feature > span {
   color: var(--brick);
   font: 600 20px var(--serif);
+}
+
+.cohort-map {
+  display: grid;
+  gap: 24px;
+}
+
+.cohort-pathway {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.72);
+}
+
+.cohort-pathway h3 {
+  margin: 0 0 18px;
+  color: var(--jade-dark);
+  font: 650 22px/1.25 var(--serif);
+}
+
+.cohort-sites {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.cohort-site {
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid rgba(47, 52, 55, 0.1);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.cohort-site h4 {
+  margin: 0 0 13px;
+  color: var(--brick);
+  font: 650 18px/1.25 var(--serif);
+}
+
+.cohort-classes {
+  display: grid;
+  gap: 10px;
+}
+
+.cohort-class {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(233, 239, 235, 0.62);
+}
+
+.cohort-level {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  color: var(--jade-dark);
+  border-radius: 50%;
+  background: white;
+  font: 650 15px var(--serif);
+}
+
+.cohort-class strong {
+  display: block;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.cohort-class p {
+  margin: 3px 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.cohort-class small {
+  display: block;
+  color: var(--jade-dark);
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .source-note {
@@ -1100,6 +1188,10 @@ main {
   }
 
   .teaching-features {
+    grid-template-columns: 1fr;
+  }
+
+  .cohort-sites {
     grid-template-columns: 1fr;
   }
 
