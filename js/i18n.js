@@ -386,7 +386,7 @@
         "responsable-sic": {
           name: "SIC 总负责人",
           level: "总协调",
-          coordo: "Sylvaine Le Bronze Gautier",
+          coordo: "Sylvaine Gautier-Le bronze",
           biography: "负责雷恩中文国际班的总体协调，连接小学、初中和高中团队，以及学校、家庭与合作伙伴。"
         },
         "equipe-primaire": {
@@ -399,11 +399,11 @@
             "老师待确认 — CM2 中文 — École Carle Bahon",
             "Corentin CAVE — CM1 中文兼小学校长 — École La Poterie",
             "Emilie LIU — CM2 中文 — École La Poterie",
-            "Lauria Moisson — CE2 中文 — École Jules Ferry",
+            "Lauria MASSON — CE2 中文 — École Jules Ferry",
             "Marika ISNARD — CM1 与 CM2 中文 — École Jules Ferry",
             "Genevive XU — CE2 中文，10 月退休 — École L'Ille",
             "老师待确认 — CM1 中文 — École L'Ille",
-            "Cécile CHANDERIS — CM2 中文 — École L'Ille"
+            "Cecile CHANDESRIS — CM2 中文 — École L'Ille"
           ],
           biography: "小学团队通过口语、游戏、歌曲、动作、故事、图片和最初的汉字，让学生在活动中发现中文、敢于开口，并为初中阶段建立稳定基础。"
         },
@@ -484,12 +484,12 @@
             "小学组 A → Collège Landry | Collège Landry | 5e | 学生未知 | 中文老师未知；数学 王璐；文学未知 | 语言课 3h + 文学课 3h + 数学课 1.5h/周 |",
             "小学组 A → Collège Landry | Collège Landry | 4e | 学生未知 | 中文老师未知；数学 王璐；文学未知 | 语言课 3h + 文学课 3h + 数学课 1.5h/周 |",
             "小学组 A → Collège Landry | Collège Landry | 3e | 学生未知 | 中文老师未知；数学 王璐；文学未知 | 语言课 3h + 文学课 3h + 数学课 2h/周 |",
-            "小学组 B → Collège Émile Zola | École Jules Ferry | CE2 | 学生未知 | 法方老师 Lauria Moisson | 每周中文课 3h |",
+            "小学组 B → Collège Émile Zola | École Jules Ferry | CE2 | 学生未知 | 法方老师 Lauria MASSON | 每周中文课 3h |",
             "小学组 B → Collège Émile Zola | École Jules Ferry | CM1 | 11 人 | 法方老师 Marika ISNARD | 每周中文课 3h |",
             "小学组 B → Collège Émile Zola | École Jules Ferry | CM2 | 21 人 | 法方老师 Marika ISNARD | 每周中文课 3h |",
             "小学组 B → Collège Émile Zola | École L'Ille | CE2 | 学生未知 | 法方老师 Genevive XU | 每周中文课 3h | 10 月退休，新法方老师待定",
             "小学组 B → Collège Émile Zola | École L'Ille | CM1 | 13 人 | 暂无法方老师 | 每周中文课 3h |",
-            "小学组 B → Collège Émile Zola | École L'Ille | CM2 | 9 人 | 法方老师 Cécile CHANDERIS | 每周中文课 3h |",
+            "小学组 B → Collège Émile Zola | École L'Ille | CM2 | 9 人 | 法方老师 Cecile CHANDESRIS | 每周中文课 3h |",
             "小学组 B → Collège Émile Zola | Collège Émile Zola | 6e | 11-12 人 | 中文 吴立柔；数学 吴立柔；文学 时成玉 | 语言课 3h + 文学课 3h + 数学课 1h/周 |",
             "小学组 B → Collège Émile Zola | Collège Émile Zola | 5e | 13 人 | 中文 吴立柔；数学 吴立柔；文学 时成玉 | 语言课 3h + 文学课 3h + 数学课 1h/周 |",
             "小学组 B → Collège Émile Zola | Collège Émile Zola | 4e | 6-7 人 | 中文 Cédric Quennesson；数学 吴立柔；文学未知 | 语言课 3h + 文学课 3h + 数学课 1.5h/周 |",
@@ -765,7 +765,7 @@
         "responsable-sic": {
           name: "Head of the SIC programme",
           level: "Overall coordination",
-          coordo: "Sylvaine Le Bronze Gautier",
+          coordo: "Sylvaine Gautier-Le bronze",
           biography: "Leads overall coordination of the Chinese International Section, connecting the primary, middle and high school teams with schools, families and partners."
         },
         "equipe-primaire": {
@@ -778,11 +778,11 @@
             "Teacher to be confirmed — Chinese in CM2 — École Carle Bahon",
             "Corentin CAVE — Chinese in CM1 and school head — École La Poterie",
             "Emilie LIU — Chinese in CM2 — École La Poterie",
-            "Lauria Moisson — Chinese in CE2 — École Jules Ferry",
+            "Lauria MASSON — Chinese in CE2 — École Jules Ferry",
             "Marika ISNARD — Chinese in CM1 and CM2 — École Jules Ferry",
             "Genevive XU — Chinese in CE2, retiring in October — École L'Ille",
             "Teacher to be confirmed — Chinese in CM1 — École L'Ille",
-            "Cécile CHANDERIS — Chinese in CM2 — École L'Ille"
+            "Cecile CHANDESRIS — Chinese in CM2 — École L'Ille"
           ],
           biography: "The primary team introduces Chinese through speaking, games, songs, gestures, stories, images and first characters, helping pupils discover the language, gain confidence and build foundations for middle school."
         },
@@ -863,12 +863,12 @@
             "Primary group A → Collège Landry | Collège Landry | 5e | numbers unknown | Chinese teacher unknown; mathematics Wang Lu; literature unknown | language 3 h + literature 3 h + mathematics 1.5 h/week |",
             "Primary group A → Collège Landry | Collège Landry | 4e | numbers unknown | Chinese teacher unknown; mathematics Wang Lu; literature unknown | language 3 h + literature 3 h + mathematics 1.5 h/week |",
             "Primary group A → Collège Landry | Collège Landry | 3e | numbers unknown | Chinese teacher unknown; mathematics Wang Lu; literature unknown | language 3 h + literature 3 h + mathematics 2 h/week |",
-            "Primary group B → Collège Émile Zola | École Jules Ferry | CE2 | numbers unknown | French-side teacher Lauria Moisson | Chinese 3 h/week |",
+            "Primary group B → Collège Émile Zola | École Jules Ferry | CE2 | numbers unknown | French-side teacher Lauria MASSON | Chinese 3 h/week |",
             "Primary group B → Collège Émile Zola | École Jules Ferry | CM1 | 11 pupils | French-side teacher Marika ISNARD | Chinese 3 h/week |",
             "Primary group B → Collège Émile Zola | École Jules Ferry | CM2 | 21 pupils | French-side teacher Marika ISNARD | Chinese 3 h/week |",
             "Primary group B → Collège Émile Zola | École L'Ille | CE2 | numbers unknown | French-side teacher Genevive XU | Chinese 3 h/week | retiring in October; new teacher to be confirmed",
             "Primary group B → Collège Émile Zola | École L'Ille | CM1 | 13 pupils | French-side teacher to be confirmed | Chinese 3 h/week |",
-            "Primary group B → Collège Émile Zola | École L'Ille | CM2 | 9 pupils | French-side teacher Cécile CHANDERIS | Chinese 3 h/week |",
+            "Primary group B → Collège Émile Zola | École L'Ille | CM2 | 9 pupils | French-side teacher Cecile CHANDESRIS | Chinese 3 h/week |",
             "Primary group B → Collège Émile Zola | Collège Émile Zola | 6e | 11-12 pupils | Chinese Wu Li-Jo; mathematics Wu Li-Jo; literature Shi Chengyu | language 3 h + literature 3 h + mathematics 1 h/week |",
             "Primary group B → Collège Émile Zola | Collège Émile Zola | 5e | 13 pupils | Chinese Wu Li-Jo; mathematics Wu Li-Jo; literature Shi Chengyu | language 3 h + literature 3 h + mathematics 1 h/week |",
             "Primary group B → Collège Émile Zola | Collège Émile Zola | 4e | 6-7 pupils | Chinese Cédric Quennesson; mathematics Wu Li-Jo; literature unknown | language 3 h + literature 3 h + mathematics 1.5 h/week |",
