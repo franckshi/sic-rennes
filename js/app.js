@@ -426,18 +426,33 @@
   function renderSchoolDetail(id) {
     const school = data.schools.find((item) => item.id === id);
     if (!school) return renderNotFound("Établissement introuvable");
-    const programs = school.programs.map((programId) => data.programs.find((program) => program.id === programId)).filter(Boolean);
+    const moduleIds = school.course_modules?.length ? school.course_modules : school.programs;
+    const programs = moduleIds.map((programId) => data.programs.find((program) => program.id === programId)).filter(Boolean);
     const teachers = school.teachers.map((teacherId) => data.teachers.find((teacher) => teacher.id === teacherId)).filter(Boolean);
+    const coordo = teachers[0]?.coordo || "Coordination à confirmer";
+    const assignments = (school.teaching_assignments || []).map((entry) => {
+      const [level = "", subject = "", teacher = "", ...notes] = String(entry).split("|").map((part) => part.trim());
+      return { level, subject, teacher, note: notes.join(" | ") };
+    }).filter((entry) => entry.level && entry.subject);
+    const assignmentGroups = [...assignments.reduce((groups, assignment) => {
+      if (!groups.has(assignment.level)) groups.set(assignment.level, []);
+      groups.get(assignment.level).push(assignment);
+      return groups;
+    }, new Map()).entries()];
     main.innerHTML = `
       <section class="page-hero" data-watermark="校"><div class="container"><h1>${escapeHTML(school.name)}</h1><p>${escapeHTML(school.description)}</p></div></section>
       <section class="section"><div class="container detail-layout">
         <div>
           <section class="detail-section reveal"><h2>Présentation</h2><p>${escapeHTML(school.description)}</p></section>
-          <section class="detail-section reveal"><h2>Volets du parcours</h2>
-            ${programs.length ? `<div class="cards">${programs.map((program) => `<a class="info-card" href="${root}/programmes/?program=${program.id}"><span class="program-code">${program.name}</span><h3>${program.title}</h3><p>${program.description}</p></a>`).join("")}</div>` : `<div class="empty-state">Les informations détaillées seront ajoutées prochainement.</div>`}
+          <section class="detail-section reveal"><h2>Modules d’enseignement</h2>
+            ${programs.length ? `<div class="course-module-grid">${programs.map((program) => `<a class="info-card" href="${root}/programmes/?program=${program.id}"><span class="program-code">${escapeHTML(program.name)}</span><h3>${escapeHTML(program.title)}</h3><p>${escapeHTML(program.description)}</p></a>`).join("")}</div>` : `<div class="empty-state">Les informations détaillées seront ajoutées prochainement.</div>`}
           </section>
           <section class="detail-section reveal"><h2>Équipe enseignante</h2>
-            ${teachers.length ? `<div class="cards">${teachers.map((teacher) => `<article class="info-card"><div class="teacher-avatar">${teacher.name.split(" ").map((part) => part[0]).join("")}</div><h3>${escapeHTML(teacher.name)}</h3><p>${escapeHTML(teacher.biography)}</p></article>`).join("")}</div>` : `<div class="empty-state">La présentation de l’équipe sera publiée après validation.</div>`}
+            <div class="school-lead-grid">
+              <article class="school-lead-card"><span>Direction de l’établissement</span><strong>${escapeHTML(school.principal || "Direction à confirmer")}</strong></article>
+              <article class="school-lead-card"><span>Coordination SIC du niveau</span><strong>${escapeHTML(coordo)}</strong></article>
+            </div>
+            ${assignmentGroups.length ? `<div class="class-roster">${assignmentGroups.map(([level, rows]) => `<article class="class-roster-card"><h3>${escapeHTML(level)}</h3><div>${rows.map((row) => `<div class="subject-assignment"><strong>${escapeHTML(row.subject)}</strong><span>${escapeHTML(row.teacher || "À confirmer")}</span>${row.note ? `<small>${escapeHTML(row.note)}</small>` : ""}</div>`).join("")}</div></article>`).join("")}</div>` : teachers.length ? `<div class="cards">${teachers.map((teacher) => `<article class="info-card"><h3>${escapeHTML(teacher.name)}</h3><p>${escapeHTML(teacher.biography)}</p></article>`).join("")}</div>` : `<div class="empty-state">La présentation de l’équipe sera publiée après validation.</div>`}
           </section>
           <section class="detail-section reveal"><h2>Localisation</h2><div class="map-placeholder"><div><div class="map-pin"></div><strong>${escapeHTML(school.address)}</strong>${Number.isFinite(school.latitude) && Number.isFinite(school.longitude) ? `<br><small>${school.latitude}, ${school.longitude}</small>` : ""}</div></div></section>
         </div>
@@ -445,8 +460,9 @@
           <dl>
             <dt>Type</dt><dd>${escapeHTML(school.type)} · ${escapeHTML(school.public_private)}</dd>
             <dt>Adresse</dt><dd>${escapeHTML(school.address)}</dd>
+            <dt>Direction</dt><dd>${escapeHTML(school.principal || "Direction à confirmer")}</dd>
             <dt>Parcours</dt><dd>Section internationale chinoise</dd>
-            <dt>Volets</dt><dd>${programs.map((program) => escapeHTML(program.name)).join(", ") || "À confirmer"}</dd>
+            <dt>Modules</dt><dd>${programs.map((program) => escapeHTML(program.name)).join(", ") || "À confirmer"}</dd>
           </dl>
           ${school.website ? `<a class="button button-primary" style="width:100%;margin-top:24px" href="${escapeHTML(school.website)}" target="_blank" rel="noopener">Visiter le site officiel</a>` : ""}
         </aside>
@@ -535,20 +551,24 @@
   }
 
   function renderTeachers() {
+    const overall = data.teachers.find((teacher) => teacher.is_overall || teacher.id === "responsable-sic");
+    const teams = data.teachers.filter((teacher) => teacher !== overall);
+    const teamCard = (teacher) => {
+      const schools = (teacher.schools || []).map((id) => data.schools.find((school) => school.id === id)).filter(Boolean);
+      return `<article class="team-card reveal">
+        <div class="teacher-avatar">${escapeHTML(teacher.level?.[0] || teacher.name.split(" ").map((part) => part[0]).join(""))}</div>
+        <div class="team-meta"><span>${escapeHTML(teacher.level || "SIC")}</span><h2>${escapeHTML(teacher.name)}</h2><strong>${escapeHTML(teacher.coordo || "Coordination à confirmer")}</strong></div>
+        <p>${escapeHTML(teacher.biography)}</p>
+        ${teacher.members?.length ? `<div class="teacher-members"><h3>Classes, matières et enseignants</h3>${teacher.members.map((member) => `<p>${escapeHTML(member)}</p>`).join("")}</div>` : ""}
+        <div class="card-meta">${schools.map((school) => `<a class="tag" href="${schoolURL(school)}">${escapeHTML(school.name)}</a>`).join("")}</div>
+      </article>`;
+    };
     main.innerHTML = `
       <section class="page-hero" data-watermark="师"><div class="container"><h1>L’équipe SIC</h1><p>Les fonctions pédagogiques qui accompagnent les élèves et relient langue, disciplines, projets et familles.</p></div></section>
-      <section class="section"><div class="container"><div class="team-grid">
-        ${data.teachers.map((teacher) => {
-          const schools = teacher.schools.map((id) => data.schools.find((school) => school.id === id)).filter(Boolean);
-          return `<article class="team-card reveal">
-            <div class="teacher-avatar">${escapeHTML(teacher.level?.[0] || teacher.name.split(" ").map((part) => part[0]).join(""))}</div>
-            <div class="team-meta"><span>${escapeHTML(teacher.level || "SIC")}</span><h2>${escapeHTML(teacher.name)}</h2><strong>${escapeHTML(teacher.coordo || "Coordination à confirmer")}</strong></div>
-            <p>${escapeHTML(teacher.biography)}</p>
-            ${teacher.members?.length ? `<div class="teacher-members"><h3>Enseignants et référents</h3>${teacher.members.map((member) => `<p>${escapeHTML(member)}</p>`).join("")}</div>` : ""}
-            <div class="card-meta">${schools.map((school) => `<a class="tag" href="${schoolURL(school)}">${escapeHTML(school.name)}</a>`).join("")}</div>
-          </article>`;
-        }).join("")}
-      </div></div></section>`;
+      <section class="section"><div class="container">
+        ${overall ? `<article class="overall-coordinator reveal"><div class="teacher-avatar">SIC</div><div><span>${escapeHTML(overall.level)}</span><h2>${escapeHTML(overall.name)}</h2><strong>${escapeHTML(overall.coordo)}</strong><p>${escapeHTML(overall.biography)}</p></div></article>` : ""}
+        <div class="team-grid">${teams.map(teamCard).join("")}</div>
+      </div></section>`;
   }
 
   function renderNotFound(title) {

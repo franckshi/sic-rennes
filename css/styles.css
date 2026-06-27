@@ -1206,6 +1206,46 @@ main {
   gap: 24px;
 }
 
+.overall-coordinator {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 28px;
+  padding: 28px 32px;
+  border: 1px solid rgba(107, 144, 128, 0.3);
+  border-radius: 16px;
+  background: linear-gradient(120deg, rgba(233, 239, 235, 0.9), rgba(255, 253, 249, 0.78));
+}
+
+.overall-coordinator .teacher-avatar {
+  width: 82px;
+  height: 82px;
+}
+
+.overall-coordinator span {
+  color: var(--jade-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.overall-coordinator h2 {
+  margin: 4px 0 2px;
+  font: 650 30px/1.15 var(--serif);
+}
+
+.overall-coordinator strong {
+  color: var(--brick);
+}
+
+.overall-coordinator p {
+  max-width: 900px;
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
 .team-card {
   min-width: 0;
   padding: 30px;
@@ -1281,6 +1321,99 @@ main {
 
 .detail-section p {
   color: var(--muted);
+}
+
+.course-module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 18px;
+}
+
+.school-lead-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.school-lead-card {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(233, 239, 235, 0.5);
+}
+
+.school-lead-card span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.school-lead-card strong {
+  color: var(--jade-dark);
+  font-size: 16px;
+}
+
+.class-roster {
+  display: grid;
+  gap: 14px;
+}
+
+.class-roster-card {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 253, 249, 0.72);
+}
+
+.class-roster-card > h3 {
+  width: 64px;
+  height: 64px;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  color: var(--brick);
+  border: 1px solid rgba(185, 99, 70, 0.3);
+  border-radius: 50%;
+  font: 650 19px var(--serif);
+}
+
+.subject-assignment {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.75fr) minmax(150px, 1fr);
+  gap: 8px 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.subject-assignment:first-child {
+  padding-top: 2px;
+}
+
+.subject-assignment:last-child {
+  padding-bottom: 2px;
+  border-bottom: 0;
+}
+
+.subject-assignment strong {
+  color: var(--jade-dark);
+}
+
+.subject-assignment span {
+  color: var(--ink);
+}
+
+.subject-assignment small {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .section-intro {
@@ -1864,6 +1997,32 @@ main {
   .school-pathways,
   .team-grid {
     grid-template-columns: 1fr;
+  }
+
+  .overall-coordinator {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .school-lead-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .class-roster-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .class-roster-card > h3 {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .subject-assignment {
+    grid-template-columns: 1fr;
+    gap: 3px;
   }
 
   .map-canvas {

@@ -14,9 +14,12 @@
         ["public_private", "Statut", "text", "Public, privé, association…"],
         ["address", "Adresse", "text", ""],
         ["website", "Site officiel", "url", ""],
+        ["principal", "Direction / chef d’établissement", "text", "Nom ou « Direction à confirmer »"],
         ["students", "Nombre d’élèves", "number", ""],
         ["teachers", "Identifiants enseignants", "array", "Séparés par des virgules"],
         ["programs", "Identifiants programmes", "array", "Ex. lvb, lvc, sic"],
+        ["course_modules", "Modules affichés sur la page", "array", "Primaire : chinois · Collège : chinois, langue-litterature, mathematiques-chinois · Lycée : ajouter connaissance-monde"],
+        ["teaching_assignments", "Classes, matières et enseignants", "multiline", "Une ligne par matière. Format : Classe | Matière | Enseignant | Note"],
         ["latitude", "Latitude", "number", ""],
         ["longitude", "Longitude", "number", ""],
         ["description", "Description", "textarea", ""]
@@ -33,6 +36,7 @@
         ["name", "Nom", "text", ""],
         ["level", "Niveau", "text", "Primaire, Collège, Lycée…"],
         ["coordo", "Coordo", "text", "Coordination ou référent principal"],
+        ["is_overall", "Responsable général SIC", "boolean", "Affiche cette fiche au-dessus des équipes par niveau"],
         ["schools", "Pôles SIC", "array", "Identifiants séparés par des virgules"],
         ["programs", "Programmes", "array", "Identifiants séparés par des virgules"],
         ["members", "Membres de l’équipe", "multiline", "Une personne ou mission par ligne"],
@@ -189,7 +193,7 @@
     } else if (type === "textarea" || type === "multiline") {
       control = `<textarea id="field-${name}" name="${name}">${escapeHTML(value)}</textarea>`;
     } else if (type === "boolean") {
-      const checked = raw !== false ? "checked" : "";
+      const checked = name === "is_overall" ? raw === true : raw !== false;
       control = `<label class="checkbox-field"><input id="field-${name}" name="${name}" type="checkbox" ${checked}> <span>Afficher</span></label>`;
     } else if (type === "select") {
       control = `<select id="field-${name}" name="${name}">${helper.map((option) => `<option ${value === option ? "selected" : ""}>${escapeHTML(option)}</option>`).join("")}</select>`;

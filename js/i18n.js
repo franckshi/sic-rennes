@@ -99,16 +99,36 @@
       "Établissement introuvable": "未找到该校区",
       "Présentation": "简介",
       "Volets du parcours": "课程模块",
+      "Modules d’enseignement": "课程模块",
       "Les informations détaillées seront ajoutées prochainement.": "详细信息即将发布。",
       "Équipe enseignante": "教学团队",
+      "Direction de l’établissement": "学校校长",
+      "Coordination SIC du niveau": "本学段 SIC coordo",
+      "Classes, matières et enseignants": "班级、科目与教师",
       "La présentation de l’équipe sera publiée après validation.": "团队介绍将在确认后发布。",
       "Localisation": "地址",
       "Type": "类型",
       "Adresse": "地址",
+      "Direction": "校长",
       "Parcours": "课程",
       "Section internationale chinoise": "中文国际班",
       "Volets": "模块",
+      "Modules": "课程模块",
       "À confirmer": "待确认",
+      "Direction à confirmer": "校长待确认",
+      "Chinois": "中文",
+      "Littérature chinoise": "中国文学",
+      "Mathématiques en chinois": "中文数学",
+      "Connaissance du monde": "认识世界",
+      "Enseignante référente francophone": "法方老师",
+      "Enseignante référente francophone à confirmer": "法方老师待确认",
+      "Enseignant référent francophone et directeur de l’école": "法方老师兼小学校长",
+      "Fermeture prévue en 2026-2027": "2026-2027 学年关闭",
+      "Départ à la retraite en octobre ; remplacement à confirmer": "10 月退休，新法方老师待确认",
+      "Selon l’organisation en vigueur": "按现行安排",
+      "Wu Li-Jo": "吴立柔",
+      "Wang Lu": "王璐",
+      "Shi Chengyu": "时成玉",
       "Visiter le site officiel": "访问官方网站",
       "Le parcours SIC": "中文国际班课程体系",
       "Comprendre la progression du collège au lycée, les apprentissages renforcés et la préparation de son entrée dans la section.": "了解从初中到高中的学习进阶、强化课程和入班准备。",
@@ -254,16 +274,32 @@
       "Établissement introuvable": "Campus not found",
       "Présentation": "Overview",
       "Volets du parcours": "Programme areas",
+      "Modules d’enseignement": "Course modules",
       "Les informations détaillées seront ajoutées prochainement.": "Detailed information will be added shortly.",
       "Équipe enseignante": "Teaching team",
+      "Direction de l’établissement": "School leadership",
+      "Coordination SIC du niveau": "SIC level coordinator",
+      "Classes, matières et enseignants": "Classes, subjects and teachers",
       "La présentation de l’équipe sera publiée après validation.": "The team overview will be published after approval.",
       "Localisation": "Location",
       "Type": "Type",
       "Adresse": "Address",
+      "Direction": "School leadership",
       "Parcours": "Programme",
       "Section internationale chinoise": "Chinese International Section",
       "Volets": "Areas",
+      "Modules": "Course modules",
       "À confirmer": "To be confirmed",
+      "Direction à confirmer": "School leadership to be confirmed",
+      "Chinois": "Chinese",
+      "Littérature chinoise": "Chinese literature",
+      "Mathématiques en chinois": "Mathematics in Chinese",
+      "Enseignante référente francophone": "French-side teacher",
+      "Enseignante référente francophone à confirmer": "French-side teacher to be confirmed",
+      "Enseignant référent francophone et directeur de l’école": "French-side teacher and school head",
+      "Fermeture prévue en 2026-2027": "Closing in 2026-2027",
+      "Départ à la retraite en octobre ; remplacement à confirmer": "Retiring in October; replacement to be confirmed",
+      "Selon l’organisation en vigueur": "Subject to the current timetable",
       "Visiter le site officiel": "Visit the official website",
       "Le parcours SIC": "The SIC programme",
       "Comprendre la progression du collège au lycée, les apprentissages renforcés et la préparation de son entrée dans la section.": "Understand the progression from middle to high school, enhanced learning and preparation for joining the section.",
@@ -347,51 +383,72 @@
         }
       },
       teachers: {
+        "responsable-sic": {
+          name: "SIC 总负责人",
+          level: "总协调",
+          coordo: "Sylvaine Le Bronze Gautier",
+          biography: "负责雷恩中文国际班的总体协调，连接小学、初中和高中团队，以及学校、家庭与合作伙伴。"
+        },
         "equipe-primaire": {
           name: "小学团队",
           level: "小学",
           coordo: "小学 coordo 待确认",
           members: [
-            "Audrey HELEU — CE2，École Carle Bahon",
-            "Anne-Sophie GUINET — CM1，École Carle Bahon",
-            "Corentin CAVE — CM1，École La Poterie，小学校长",
-            "Emilie LIU — CM2，École La Poterie",
-            "Lauria Moisson — CE2，École Jules Ferry",
-            "Marika ISNARD — CM1-CM2，École Jules Ferry",
-            "Genevive XU — CE2，École L'Ille，10 月退休",
-            "Cécile CHANDERIS — CM2，École L'Ille",
-            "待确认负责人 — Carle Bahon CM2 与 L'Ille CM1"
+            "Audrey HELEU — CE2 中文 — École Carle Bahon",
+            "Anne-Sophie GUINET — CM1 中文 — École Carle Bahon",
+            "老师待确认 — CM2 中文 — École Carle Bahon",
+            "Corentin CAVE — CM1 中文兼小学校长 — École La Poterie",
+            "Emilie LIU — CM2 中文 — École La Poterie",
+            "Lauria Moisson — CE2 中文 — École Jules Ferry",
+            "Marika ISNARD — CM1 与 CM2 中文 — École Jules Ferry",
+            "Genevive XU — CE2 中文，10 月退休 — École L'Ille",
+            "老师待确认 — CM1 中文 — École L'Ille",
+            "Cécile CHANDERIS — CM2 中文 — École L'Ille"
           ],
           biography: "小学团队通过口语、游戏、歌曲、动作、故事、图片和最初的汉字，让学生在活动中发现中文、敢于开口，并为初中阶段建立稳定基础。"
         },
         "equipe-college": {
           name: "初中团队",
           level: "初中",
-          coordo: "初中 coordo 待确认",
+          coordo: "吴立柔 — 初中 coordo",
           members: [
-            "吴立柔 — 中文与数学，Collège Émile Zola",
-            "Cédric Quennesson — 中文，Collège Émile Zola",
-            "时成玉 — 文学，Collège Émile Zola",
-            "王璐 — 数学，Collège Landry",
-            "中文老师待确认 — Collège Landry",
-            "文学老师待确认 — Collège Landry 及 Collège Émile Zola 部分年级"
+            "吴立柔 — 6e、5e、3e 中文；6e、5e、4e、3e 数学 — Collège Émile Zola",
+            "Cédric Quennesson — 4e 中文 — Collège Émile Zola",
+            "时成玉 — 6e 与 5e 中国文学 — Collège Émile Zola",
+            "王璐 — 6e、5e、4e、3e 数学 — Collège Landry",
+            "中文老师待确认 — 6e、5e、4e、3e — Collège Landry",
+            "文学老师待确认 — Collège Landry 的 6e、5e、4e、3e；Collège Émile Zola 的 4e、3e"
           ],
           biography: "初中团队带领学生进入更系统的中文学习：语言课不断加深，同时开始接触中国文学，并把中文作为数学推理和表达的工具。"
         },
         "equipe-lycee": {
           name: "高中团队",
           level: "高中",
-          coordo: "高中 coordo 待确认",
+          coordo: "Cédric Quennesson — 高中 coordo",
           members: [
-            "吴立柔 — 中文，2nde",
-            "Cédric Quennesson — 中文与 Connaissance du monde，1ère 与 Terminale",
-            "王璐 — 数学，高中部",
-            "文学老师待确认 — 高中部"
+            "吴立柔 — 2nde 中文",
+            "Cédric Quennesson — 1ère 与 Terminale 中文和 Connaissance du monde",
+            "王璐 — 2nde、1ère、Terminale 数学",
+            "文学老师待确认 — 2nde、1ère、Terminale"
           ],
           biography: "高中团队加强语言深度、文学广度、数学表达和 Connaissance du monde。学生用中文分析、比较、论证，并从不同视角理解世界。"
         }
       },
       programs: {
+        "chinois": {
+          name: "中文",
+          title: "中文语言课",
+          description: "根据不同学段循序推进中文学习，从小学的口语发现走向初高中的阅读、表达、分析与论证。",
+          target: "雷恩 SIC 从 CE2 到 Terminale 的学生。",
+          advantages: ["连续进阶", "口语与书面表达", "文化与真实交流"],
+          stage_details: [
+            "小学 | 发现 | 通过口语、游戏、歌曲、图片、动作和最初的汉字进入中文。",
+            "初中 | 深入 | 加强词汇、阅读、写作、理解与表达。",
+            "高中 | 分析与论证 | 更准确、更自主、更深入地使用中文。"
+          ],
+          teaching_methods: ["持续口语练习", "循序阅读与写作", "文化项目与真实情境"],
+          higher_education: "中文能力能够突出学生的双语、跨文化和国际化背景。"
+        },
         "cycle-primaire": {
           name: "小学",
           title: "发现中文，建立基础",
@@ -498,7 +555,7 @@
           higher_education: "高中 SIC 有助于学生在 Parcoursup 和未来申请中展示语言、方法、文化与国际化背景。"
         },
         "langue-litterature": {
-          name: "文学",
+          name: "中国文学",
           title: "语言、文化与中国文学",
           description: "从口语和初级文本逐步走向文学分析，学生学习用中文阅读、解释和论证。",
           target: "初中与高中学生，内容根据年级逐步提高。",
@@ -512,7 +569,7 @@
           higher_education: "文学学习强化表达、文化素养和多语言学习能力。"
         },
         "mathematiques-chinois": {
-          name: "数学",
+          name: "中文数学",
           title: "用中文学习数学",
           description: "中文数学让学生把中文作为推理语言，而不只是交流语言。",
           target: "初中与高中学生，具体课时按年级安排。",
@@ -526,7 +583,7 @@
           higher_education: "这种学习方式强化学生在科学和国际环境中工作的能力。"
         },
         "connaissance-monde": {
-          name: "世界",
+          name: "认识世界",
           title: "Connaissance du monde",
           description: "高中阶段通过 Connaissance du monde 用中文发现世界，看到不同参照和不同视角。",
           target: "Lycée Émile Zola 的 1ère 与 Terminale 学生。",
@@ -705,51 +762,72 @@
         }
       },
       teachers: {
+        "responsable-sic": {
+          name: "Head of the SIC programme",
+          level: "Overall coordination",
+          coordo: "Sylvaine Le Bronze Gautier",
+          biography: "Leads overall coordination of the Chinese International Section, connecting the primary, middle and high school teams with schools, families and partners."
+        },
         "equipe-primaire": {
           name: "Primary team",
           level: "Primary",
           coordo: "Primary coordinator to be confirmed",
           members: [
-            "Audrey HELEU — CE2, École Carle Bahon",
-            "Anne-Sophie GUINET — CM1, École Carle Bahon",
-            "Corentin CAVE — CM1, École La Poterie, school head",
-            "Emilie LIU — CM2, École La Poterie",
-            "Lauria Moisson — CE2, École Jules Ferry",
-            "Marika ISNARD — CM1-CM2, École Jules Ferry",
-            "Genevive XU — CE2, École L'Ille, retiring in October",
-            "Cécile CHANDERIS — CM2, École L'Ille",
-            "Referents to be confirmed — Carle Bahon CM2 and L'Ille CM1"
+            "Audrey HELEU — Chinese in CE2 — École Carle Bahon",
+            "Anne-Sophie GUINET — Chinese in CM1 — École Carle Bahon",
+            "Teacher to be confirmed — Chinese in CM2 — École Carle Bahon",
+            "Corentin CAVE — Chinese in CM1 and school head — École La Poterie",
+            "Emilie LIU — Chinese in CM2 — École La Poterie",
+            "Lauria Moisson — Chinese in CE2 — École Jules Ferry",
+            "Marika ISNARD — Chinese in CM1 and CM2 — École Jules Ferry",
+            "Genevive XU — Chinese in CE2, retiring in October — École L'Ille",
+            "Teacher to be confirmed — Chinese in CM1 — École L'Ille",
+            "Cécile CHANDERIS — Chinese in CM2 — École L'Ille"
           ],
           biography: "The primary team introduces Chinese through speaking, games, songs, gestures, stories, images and first characters, helping pupils discover the language, gain confidence and build foundations for middle school."
         },
         "equipe-college": {
           name: "Middle school team",
           level: "Middle school",
-          coordo: "Middle school coordinator to be confirmed",
+          coordo: "Wu Li-Jo — middle school coordinator",
           members: [
-            "Wu Li-Jo — Chinese and mathematics, Collège Émile Zola",
-            "Cédric Quennesson — Chinese, Collège Émile Zola",
-            "Shi Chengyu — literature, Collège Émile Zola",
-            "Wang Lu — mathematics, Collège Landry",
-            "Chinese teachers to be confirmed — Collège Landry",
-            "Literature teachers to be confirmed — Collège Landry and some Collège Émile Zola levels"
+            "Wu Li-Jo — Chinese in 6e, 5e and 3e; mathematics in 6e, 5e, 4e and 3e — Collège Émile Zola",
+            "Cédric Quennesson — Chinese in 4e — Collège Émile Zola",
+            "Shi Chengyu — Chinese literature in 6e and 5e — Collège Émile Zola",
+            "Wang Lu — mathematics in 6e, 5e, 4e and 3e — Collège Landry",
+            "Chinese teachers to be confirmed — 6e, 5e, 4e and 3e — Collège Landry",
+            "Literature teachers to be confirmed — 6e, 5e, 4e and 3e at Collège Landry; 4e and 3e at Collège Émile Zola"
           ],
           biography: "The middle school team moves pupils into more structured Chinese: language becomes deeper, Chinese literature begins, and Chinese is used as a tool for mathematical reasoning and expression."
         },
         "equipe-lycee": {
           name: "High school team",
           level: "High school",
-          coordo: "High school coordinator to be confirmed",
+          coordo: "Cédric Quennesson — high school coordinator",
           members: [
-            "Wu Li-Jo — Chinese, 2nde",
-            "Cédric Quennesson — Chinese and Connaissance du monde, 1ère and Terminale",
-            "Wang Lu — mathematics, high school",
-            "Literature teachers to be confirmed — high school"
+            "Wu Li-Jo — Chinese in 2nde",
+            "Cédric Quennesson — Chinese and Connaissance du monde in 1ère and Terminale",
+            "Wang Lu — mathematics in 2nde, 1ère and Terminale",
+            "Literature teachers to be confirmed — 2nde, 1ère and Terminale"
           ],
           biography: "The high school team deepens language, broadens literary culture, strengthens mathematics and develops Connaissance du monde. Students use Chinese to analyse, compare, argue and understand the world from different perspectives."
         }
       },
       programs: {
+        "chinois": {
+          name: "Chinese",
+          title: "Chinese language",
+          description: "Progressive Chinese teaching adapted to each level, from oral discovery in primary school to reading, expression, analysis and argumentation in secondary school.",
+          target: "Rennes SIC students from CE2 to Terminale.",
+          advantages: ["Continuous progression", "Speaking and writing", "Culture and real communication"],
+          stage_details: [
+            "Primary | Discover | Speaking, games, songs, images, gestures and first characters.",
+            "Middle school | Deepen | Develop vocabulary, reading, writing, comprehension and expression.",
+            "High school | Analyse and argue | Use Chinese with greater accuracy, autonomy and depth."
+          ],
+          teaching_methods: ["Regular speaking practice", "Progressive reading and writing", "Cultural projects and real situations"],
+          higher_education: "Chinese proficiency strengthens a bilingual, intercultural and international profile."
+        },
         "cycle-primaire": {
           name: "Primary",
           title: "Discover Chinese and build foundations",
@@ -856,7 +934,7 @@
           higher_education: "High school SIC helps students show language, method, culture and international background in future applications."
         },
         "langue-litterature": {
-          name: "Literature",
+          name: "Chinese literature",
           title: "Chinese language, culture and literature",
           description: "From spoken language and early texts towards literary analysis, students learn to read, interpret and argue in Chinese.",
           target: "Middle and high school students, with content adapted to each level.",
@@ -870,7 +948,7 @@
           higher_education: "Literature strengthens expression, cultural knowledge and the ability to work in several languages."
         },
         "mathematiques-chinois": {
-          name: "Maths",
+          name: "Mathematics in Chinese",
           title: "Mathematics in Chinese",
           description: "Mathematics turns Chinese into a language of reasoning, not only a language of communication.",
           target: "Middle and high school students according to the timetable for each year group.",
@@ -884,7 +962,7 @@
           higher_education: "This approach strengthens profiles able to work in scientific and international contexts."
         },
         "connaissance-monde": {
-          name: "World",
+          name: "Connaissance du monde",
           title: "Connaissance du monde",
           description: "In high school, Connaissance du monde invites students to discover the world in Chinese, with different references and perspectives.",
           target: "1ère and Terminale students at Lycée Émile Zola.",
