@@ -84,7 +84,7 @@
       "Carte des pôles": "校区分布图",
       "Une lecture rapide de la répartition des sept sites dans Rennes.": "快速查看七个教学点在雷恩的分布。",
       "Carte des 7 pôles SIC à Rennes": "雷恩 7 个 SIC 教学点地图",
-      "Survolez un repère pour lire le résumé de l’établissement. Cliquez sur le repère pour ouvrir sa page.": "鼠标移到图钉上可查看学校简介，点击图钉进入学校页面。",
+      "Explorez les rues et les repères de Rennes. Survolez un marqueur pour lire le résumé de l’établissement et cliquez pour ouvrir sa page.": "浏览雷恩真实街道和地标；鼠标移到图钉上可查看学校简介，点击图钉进入学校页面。",
       "Carte interactive des pôles SIC": "SIC 教学点互动地图",
       "● Primaire": "● 小学",
       "● Lycée": "● 高中",
@@ -136,6 +136,10 @@
       "Toutes les années": "全部年份",
       "Toutes les catégories": "全部类别",
       "Aucune activité ne correspond à ces filtres.": "没有符合筛选条件的项目。",
+      "Découvrir le projet →": "查看项目 →",
+      "Projet introuvable": "未找到该项目",
+      "← Tous les projets": "← 返回全部项目",
+      "Photos du projet": "项目图片",
       "L’équipe SIC": "国际班教学团队",
       "Les fonctions pédagogiques qui accompagnent les élèves et relient langue, disciplines, projets et familles.": "教学团队陪伴学生成长，并连接语言、学科、项目与家庭。",
       "Enseignants et référents": "教师与负责人",
@@ -235,7 +239,7 @@
       "Carte des pôles": "Campus map",
       "Une lecture rapide de la répartition des sept sites dans Rennes.": "A quick view of the seven sites across Rennes.",
       "Carte des 7 pôles SIC à Rennes": "Map of the 7 SIC sites in Rennes",
-      "Survolez un repère pour lire le résumé de l’établissement. Cliquez sur le repère pour ouvrir sa page.": "Hover over a marker to read the school summary. Click the marker to open the school page.",
+      "Explorez les rues et les repères de Rennes. Survolez un marqueur pour lire le résumé de l’établissement et cliquez pour ouvrir sa page.": "Explore Rennes streets and landmarks. Hover over a marker for a school summary and click to open its page.",
       "Carte interactive des pôles SIC": "Interactive SIC campus map",
       "● Primaire": "● Primary",
       "● Lycée": "● High school",
@@ -287,6 +291,10 @@
       "Toutes les années": "All years",
       "Toutes les catégories": "All categories",
       "Aucune activité ne correspond à ces filtres.": "No project matches these filters.",
+      "Découvrir le projet →": "Discover the project →",
+      "Projet introuvable": "Project not found",
+      "← Tous les projets": "← All projects",
+      "Photos du projet": "Project photos",
       "L’équipe SIC": "The SIC team",
       "Les fonctions pédagogiques qui accompagnent les élèves et relient langue, disciplines, projets et familles.": "The teaching team supporting students and connecting language, subjects, projects and families.",
       "Enseignants et référents": "Teachers and coordinators",
@@ -563,51 +571,105 @@
         }
       },
       events: {
-        "rentree-sic-2026": { title: "中文国际班开学——日期待确认", location: "雷恩", description: "欢迎学生并介绍国际班的学习安排。" },
-        "reunion-familles-2026": { title: "家庭见面会——暂定日程", location: "雷恩", description: "与教学团队交流并了解本年度项目。" },
-        "atelier-culture-2026": { title: "学生文化工作坊", location: "雷恩", description: "围绕中文、艺术和中国文化开展实践活动。" },
-        "portes-ouvertes-2027": { title: "中文国际班介绍会——日期待确认", location: "雷恩", description: "了解课程体系、教学内容和国际班项目。" }
+        "reunion-rentree-sic-2026": { title: "2026年SIC开学会议", period: "2026年9月 · 日期待确认", category: "会议", location: "雷恩", description: "介绍新学年的SIC组织安排、课程、项目和主要活动。" },
+        "reunion-ecoles-primaires": { title: "SIC小学会议", period: "2026年秋季 · 日期待确认", category: "会议", location: "SIC小学", description: "向家长介绍小学中文学习及SIC课程的连续培养路径，并进行交流答疑。" },
+        "liaison-primaire-college": { title: "小升初衔接活动", period: "2026-2027学年 · 日期待确认", category: "衔接", location: "雷恩", description: "组织CM2与6e学生交流，了解初中SIC课程并解答升学问题。" },
+        "liaison-college-lycee": { title: "初升高衔接活动", period: "2026-2027学年 · 日期待确认", category: "衔接", location: "雷恩", description: "组织3e与2nde学生交流，介绍高中SIC课程、学科与学习要求。" },
+        "rencontre-anciens-eleves": { title: "往届学生交流与答疑", period: "2026-2027学年 · 日期待确认", category: "交流", location: "埃米尔·左拉高中", description: "邀请往届SIC学生分享学习和升学经历，并回答学生与家长的问题。" },
+        "inscription-examen-hsk": { title: "HSK报名与考试", period: "2026-2027学年 · 日程待确认", category: "中文认证", location: "雷恩", description: "介绍HSK级别、报名流程、备考安排并组织正式考试。" },
+        "festival-sinocine": { title: "中国电影节 — SINO-CINÉ", period: "2026-2027学年 · 日期待确认", category: "文化", location: "雷恩", description: "通过中国电影放映、作品分析和讨论开展文化交流。" },
+        "voyage-paris-13e-agenda": { title: "两个初中3e年级巴黎13区之旅", period: "2026-2027学年 · 日期待确认", category: "旅行", location: "巴黎13区", description: "Collège Landry与Collège Émile Zola的3e学生前往巴黎13区开展文化研学。" },
+        "voyage-chine-agenda": { title: "高中生中国研学之旅", period: "2026-2027学年 · 日期待确认", category: "旅行", location: "北京、上海和南通", description: "高中生前往中国开展语言文化研学，并与合作伙伴交流。" },
+        "nouvel-an-chinois-2027": { title: "2027年中国年庆祝活动", period: "2027年初 · 日期待确认", category: "文化", location: "雷恩", description: "通过活动、表演和学生创作共同庆祝2027年中国春节。" }
       },
       activities: {
         "voyage-paris-13e": {
           title: "两个初中3e年级巴黎13区之旅",
           category: "研学旅行",
-          description: "Collège Landry 与 Collège Émile Zola 的3e学生前往巴黎13区，了解当地华人社区、文化场所及中国文化在巴黎的发展。"
+          description: "Collège Landry 与 Collège Émile Zola 的3e学生前往巴黎13区，了解当地华人社区、文化场所及中国文化在巴黎的发展。",
+          detail_intro: "两个SIC初中的3e学生共同前往巴黎13区，在真实环境中开展语言文化研学。",
+          content_blocks: [
+            "text | 发现法国的华人社区 | 学生观察街区、商店、文化场所，以及中国文化在巴黎呈现的不同方式。",
+            "gallery | 1,2,3,4 | 旅行图片",
+            "text | 连接语言与真实体验 | 学生在具体情境中使用中文、记录观察，并在回校后分享自己的发现。"
+          ]
         },
         "examens-hsk": {
           title: "组织HSK中文水平考试",
           category: "中文认证",
-          description: "组织学生备考并参加HSK考试，让学生的中文水平获得正式认证。"
+          description: "组织学生备考并参加HSK考试，让学生的中文水平获得正式认证。",
+          detail_intro: "SIC为学生提供HSK备考、报名和考试组织支持，帮助学生获得国际中文水平认证。",
+          content_blocks: [
+            "text | 用认证记录中文进步 | HSK帮助学生了解自己的中文水平、设定学习目标，并正式展示语言能力。",
+            "gallery | 1,2,3,4 | 备考与考试",
+            "text | 有步骤地准备考试 | 学生熟悉题型、训练不同语言技能，并获得报名和考试安排所需的信息。"
+          ]
         },
         "voyage-chine-lyceens": {
           title: "高中生中国研学之旅",
           category: "国际研学",
-          description: "前往北京、上海和南通，在真实环境中使用中文、与合作伙伴交流并了解当代中国。"
+          description: "前往北京、上海和南通，在真实环境中使用中文、与合作伙伴交流并了解当代中国。",
+          detail_intro: "高中生通过北京、上海和南通三座城市，把中文实践、学校交流和当代中国观察结合起来。",
+          content_blocks: [
+            "text | 三座城市，多种中国面貌 | 北京、上海和南通为学生理解历史、城市生活、教育和当代发展提供互补视角。",
+            "gallery | 1,2,3,4 | 中国研学记录",
+            "text | 在真实环境中使用中文 | 学生在日常生活和交流活动中使用中文，把旅行转化为语言学习和独立成长的体验。"
+          ]
         },
         "sino-cine": {
           title: "中国电影节 — SINO-CINÉ",
           category: "电影与文化",
-          description: "通过电影放映、作品分析和讨论交流，发现中国电影与中国社会文化。"
+          description: "通过电影放映、作品分析和讨论交流，发现中国电影与中国社会文化。",
+          detail_intro: "SINO-CINÉ通过电影、讨论和分析，为学生打开了解中国社会与文化想象的新窗口。",
+          content_blocks: [
+            "text | 观看、理解与讨论 | 每部电影都是了解作品、积累词汇并比较观点的学习材料。",
+            "gallery | 1,2,3,4 | SINO-CINÉ活动图片",
+            "text | 把电影作为文化作品 | 学生学习连接故事、影像表达、历史背景和当代议题。"
+          ]
         },
         "institut-confucius-bretagne": {
           title: "布列塔尼孔子学院活动与交流",
           category: "文化交流",
-          description: "前往布列塔尼孔子学院参加语言文化活动，并开展学习与交流。"
+          description: "前往布列塔尼孔子学院参加语言文化活动，并开展学习与交流。",
+          detail_intro: "与布列塔尼孔子学院的交流通过语言文化活动和不同中文学习者之间的互动，丰富课堂学习。",
+          content_blocks: [
+            "text | 走出课堂学习 | 工作坊、参观和交流让学生接触更多中文学习资源与文化实践。",
+            "gallery | 1,2,3,4 | 活动与交流",
+            "text | 建立本地文化联系 | 这一合作把SIC与布列塔尼地区推广中文和中国文化的机构连接起来。"
+          ]
         },
         "echange-beihang": {
           title: "与北京航空航天大学交流",
           category: "高校合作",
-          description: "与中国顶尖高校之一的北京航空航天大学开展交流，帮助学生接触中国高等教育与科学创新。"
+          description: "与中国顶尖高校之一的北京航空航天大学开展交流，帮助学生接触中国高等教育与科学创新。",
+          detail_intro: "与北京航空航天大学的交流让学生初步了解中国高等教育、科学研究和创新环境。",
+          content_blocks: [
+            "text | 了解中国顶尖高校 | 交流内容可以涵盖专业、校园、大学生活及北航重点发展的科学领域。",
+            "gallery | 1,2,3,4 | 与北航的交流",
+            "text | 拓展未来升学视野 | 这一合作帮助学生想象国际学习、交换和科学合作的多种可能。"
+          ]
         },
         "nouvel-an-chinois": {
           title: "中国年庆祝活动",
           category: "国际班生活",
-          description: "通过文化活动、表演和学生创作，共同庆祝中国春节及其传统文化。"
+          description: "通过文化活动、表演和学生创作，共同庆祝中国春节及其传统文化。",
+          detail_intro: "中国年活动把SIC不同年级的学生聚在一起，共同准备表演、创作和文化体验。",
+          content_blocks: [
+            "text | 由学生共同准备的节日 | 中文、音乐、艺术、故事和传统活动共同组成面向校园的文化分享。",
+            "gallery | 1,2,3,4 | 中国年活动图片",
+            "text | 连接学校与家庭 | 活动展示学生作品，并加强小学、初中、高中与家庭之间的联系。"
+          ]
         },
         "accueil-eleves-chinois": {
           title: "接待中国学生访问雷恩",
           category: "国际交流",
-          description: "接待来自中国的学生，组织校园参观与共同活动，促进他们与雷恩中文国际班学生之间的交流。"
+          description: "接待来自中国的学生，组织校园参观与共同活动，促进他们与雷恩中文国际班学生之间的交流。",
+          detail_intro: "接待中国学生来雷恩，为两国学生、学校和不同校园文化创造真实的相遇机会。",
+          content_blocks: [
+            "text | 介绍学校与雷恩 | SIC学生参与校园参观、共同活动，并向来访学生介绍自己的学校和城市。",
+            "gallery | 1,2,3,4 | 雷恩访问与交流",
+            "text | 在双语环境中沟通 | 真实交流让中文学习更有意义，也帮助学生建立自信并比较不同的学校生活。"
+          ]
         }
       }
     },
@@ -665,7 +727,7 @@
           level: "Middle school",
           coordo: "Middle school coordinator to be confirmed",
           members: [
-            "Wu Lirou — Chinese and mathematics, Collège Émile Zola",
+            "Wu Li-Jo — Chinese and mathematics, Collège Émile Zola",
             "Cédric Quennesson — Chinese, Collège Émile Zola",
             "Shi Chengyu — literature, Collège Émile Zola",
             "Wang Lu — mathematics, Collège Landry",
@@ -679,7 +741,7 @@
           level: "High school",
           coordo: "High school coordinator to be confirmed",
           members: [
-            "Wu Lirou — Chinese, 2nde",
+            "Wu Li-Jo — Chinese, 2nde",
             "Cédric Quennesson — Chinese and Connaissance du monde, 1ère and Terminale",
             "Wang Lu — mathematics, high school",
             "Literature teachers to be confirmed — high school"
@@ -729,11 +791,11 @@
             "Primary group B → Collège Émile Zola | École L'Ille | CE2 | numbers unknown | French-side teacher Genevive XU | Chinese 3 h/week | retiring in October; new teacher to be confirmed",
             "Primary group B → Collège Émile Zola | École L'Ille | CM1 | 13 pupils | French-side teacher to be confirmed | Chinese 3 h/week |",
             "Primary group B → Collège Émile Zola | École L'Ille | CM2 | 9 pupils | French-side teacher Cécile CHANDERIS | Chinese 3 h/week |",
-            "Primary group B → Collège Émile Zola | Collège Émile Zola | 6e | 11-12 pupils | Chinese Wu Lirou; mathematics Wu Lirou; literature Shi Chengyu | language 3 h + literature 3 h + mathematics 1 h/week |",
-            "Primary group B → Collège Émile Zola | Collège Émile Zola | 5e | 13 pupils | Chinese Wu Lirou; mathematics Wu Lirou; literature Shi Chengyu | language 3 h + literature 3 h + mathematics 1 h/week |",
-            "Primary group B → Collège Émile Zola | Collège Émile Zola | 4e | 6-7 pupils | Chinese Cédric Quennesson; mathematics Wu Lirou; literature unknown | language 3 h + literature 3 h + mathematics 1.5 h/week |",
-            "Primary group B → Collège Émile Zola | Collège Émile Zola | 3e | 10 pupils | Chinese Wu Lirou; mathematics Wu Lirou; literature unknown | language 3 h + literature 3 h + mathematics 2 h/week |",
-            "Two SIC middle schools → Lycée Émile Zola | Lycée Émile Zola | 2nde | 9 pupils | Chinese Wu Lirou; mathematics Wang Lu; literature unknown | according to current organisation |",
+            "Primary group B → Collège Émile Zola | Collège Émile Zola | 6e | 11-12 pupils | Chinese Wu Li-Jo; mathematics Wu Li-Jo; literature Shi Chengyu | language 3 h + literature 3 h + mathematics 1 h/week |",
+            "Primary group B → Collège Émile Zola | Collège Émile Zola | 5e | 13 pupils | Chinese Wu Li-Jo; mathematics Wu Li-Jo; literature Shi Chengyu | language 3 h + literature 3 h + mathematics 1 h/week |",
+            "Primary group B → Collège Émile Zola | Collège Émile Zola | 4e | 6-7 pupils | Chinese Cédric Quennesson; mathematics Wu Li-Jo; literature unknown | language 3 h + literature 3 h + mathematics 1.5 h/week |",
+            "Primary group B → Collège Émile Zola | Collège Émile Zola | 3e | 10 pupils | Chinese Wu Li-Jo; mathematics Wu Li-Jo; literature unknown | language 3 h + literature 3 h + mathematics 2 h/week |",
+            "Two SIC middle schools → Lycée Émile Zola | Lycée Émile Zola | 2nde | 9 pupils | Chinese Wu Li-Jo; mathematics Wang Lu; literature unknown | according to current organisation |",
             "Two SIC middle schools → Lycée Émile Zola | Lycée Émile Zola | 1ère | 6-7 pupils | Chinese Cédric Quennesson; mathematics Wang Lu; literature unknown; connaissance du monde Cédric Quennesson | according to current organisation |",
             "Two SIC middle schools → Lycée Émile Zola | Lycée Émile Zola | Terminale | 5 pupils | Chinese Cédric Quennesson; mathematics Wang Lu; literature unknown; connaissance du monde Cédric Quennesson | according to current organisation |"
           ],
@@ -867,51 +929,105 @@
         }
       },
       events: {
-        "rentree-sic-2026": { title: "SIC school year begins — date to be confirmed", description: "Welcome session and introduction to how the section operates." },
-        "reunion-familles-2026": { title: "Family meeting — provisional calendar", description: "Meet the teaching team and discover the section's projects." },
-        "atelier-culture-2026": { title: "Student cultural workshop", description: "A practical workshop exploring language, arts and Chinese cultures." },
-        "portes-ouvertes-2027": { title: "SIC presentation — date to be confirmed", description: "Discover the programme, teaching and section projects." }
+        "reunion-rentree-sic-2026": { title: "2026 SIC start-of-year meeting", period: "September 2026 · date to be confirmed", category: "Meeting", description: "Presentation of the year’s SIC organisation, teaching, projects and key events." },
+        "reunion-ecoles-primaires": { title: "SIC primary school meeting", period: "Autumn 2026 · date to be confirmed", category: "Meeting", location: "SIC primary schools", description: "Information and discussion with families about primary Chinese learning and progression through the SIC programme." },
+        "liaison-primaire-college": { title: "Primary-to-middle-school transition", period: "2026-2027 · date to be confirmed", category: "Transition", description: "A meeting between CM2 and 6e pupils to prepare for middle school, introduce SIC subjects and answer questions." },
+        "liaison-college-lycee": { title: "Middle-to-high-school transition", period: "2026-2027 · date to be confirmed", category: "Transition", description: "A meeting between 3e and 2nde students presenting the high school SIC pathway, subjects and expectations." },
+        "rencontre-anciens-eleves": { title: "Former student exchange and Q&A", period: "2026-2027 · date to be confirmed", category: "Exchange", location: "Lycée Émile Zola", description: "Former SIC students return to share their experience and answer questions from students and families." },
+        "inscription-examen-hsk": { title: "HSK registration and exams", period: "2026-2027 · schedule to be confirmed", category: "Certification", description: "Information about HSK levels, registration, preparation and organisation of the official exams." },
+        "festival-sinocine": { title: "Chinese Film Festival — SINO-CINÉ", period: "2026-2027 · date to be confirmed", category: "Culture", description: "Chinese film screenings, analysis and cultural discussions around the selected films." },
+        "voyage-paris-13e-agenda": { title: "Year 9 trip to Paris’s 13th arrondissement", period: "2026-2027 · date to be confirmed", category: "Trip", location: "Paris 13th arrondissement", description: "A cultural trip for Year 9 students from Collège Landry and Collège Émile Zola." },
+        "voyage-chine-agenda": { title: "High school study trip to China", period: "2026-2027 · date to be confirmed", category: "Trip", location: "Beijing, Shanghai and Nantong", description: "A language and cultural study trip for high school students, including exchanges with partners in China." },
+        "nouvel-an-chinois-2027": { title: "2027 Chinese New Year celebration", period: "Early 2027 · date to be confirmed", category: "Culture", description: "Activities, performances and student work celebrating Chinese New Year 2027." }
       },
       activities: {
         "voyage-paris-13e": {
           title: "Year 9 trip to Paris’s 13th arrondissement",
           category: "School trips",
-          description: "Year 9 students from Collège Landry and Collège Émile Zola explore the Chinese quarter, its cultural sites and the Chinese presence in Paris."
+          description: "Year 9 students from Collège Landry and Collège Émile Zola explore the Chinese quarter, its cultural sites and the Chinese presence in Paris.",
+          detail_intro: "The Year 9 classes from both SIC middle schools come together for a language and culture trip in Paris’s 13th arrondissement.",
+          content_blocks: [
+            "text | Discovering a Chinese community in France | Students observe the neighbourhood, its shops and cultural sites, and the many forms of Chinese presence in Paris.",
+            "gallery | 1,2,3,4 | Trip photos",
+            "text | Connecting language with experience | The trip gives students a concrete setting in which to use Chinese, record observations and share discoveries back at school."
+          ]
         },
         "examens-hsk": {
           title: "HSK exam organisation",
           category: "Certification",
-          description: "Preparation and organisation of HSK exams so students can receive official recognition of their Chinese level."
+          description: "Preparation and organisation of HSK exams so students can receive official recognition of their Chinese level.",
+          detail_intro: "SIC supports students with HSK preparation, registration and exam organisation for an internationally recognised Chinese qualification.",
+          content_blocks: [
+            "text | A qualification that records progress | HSK helps students understand their level, set a learning goal and formally demonstrate their Chinese skills.",
+            "gallery | 1,2,3,4 | Preparation and examination",
+            "text | Preparing with confidence | Students learn the exam format, practise the different skills and receive the practical information needed to register."
+          ]
         },
         "voyage-chine-lyceens": {
           title: "High school study trip to China",
           category: "International mobility",
-          description: "A trip to Beijing, Shanghai and Nantong to practise Chinese, meet partners and discover contemporary China."
+          description: "A trip to Beijing, Shanghai and Nantong to practise Chinese, meet partners and discover contemporary China.",
+          detail_intro: "High school students combine language practice, school exchanges and discovery of contemporary China across Beijing, Shanghai and Nantong.",
+          content_blocks: [
+            "text | Three cities, several perspectives on China | Beijing, Shanghai and Nantong provide complementary contexts for exploring history, urban life, education and contemporary change.",
+            "gallery | 1,2,3,4 | Study trip journal",
+            "text | Using Chinese in real situations | Students use the language in everyday settings, meet partners and turn the trip into an experience of learning and independence."
+          ]
         },
         "sino-cine": {
           title: "Chinese Film Festival — SINO-CINÉ",
           category: "Cinema and culture",
-          description: "Discover Chinese cinema through screenings, analysis and discussion around selected films."
+          description: "Discover Chinese cinema through screenings, analysis and discussion around selected films.",
+          detail_intro: "SINO-CINÉ opens a window onto Chinese societies and imaginations through films, discussion and student analysis.",
+          content_blocks: [
+            "text | Watching, understanding and discussing | Each screening becomes a way to discover a work, broaden vocabulary and compare viewpoints.",
+            "gallery | 1,2,3,4 | SINO-CINÉ highlights",
+            "text | Film as a cultural work | Students connect narrative, visual language, historical context and contemporary questions."
+          ]
         },
         "institut-confucius-bretagne": {
           title: "Activities at the Confucius Institute of Brittany",
           category: "Culture and exchange",
-          description: "Take part in cultural and language activities and exchange with the Confucius Institute of Brittany."
+          description: "Take part in cultural and language activities and exchange with the Confucius Institute of Brittany.",
+          detail_intro: "Meetings with the Confucius Institute of Brittany extend classroom learning through language, culture and exchange activities.",
+          content_blocks: [
+            "text | Learning beyond the classroom | Workshops, visits and exchanges introduce students to further Chinese language resources and cultural practices.",
+            "gallery | 1,2,3,4 | Activities and exchanges",
+            "text | Building a local cultural network | The partnership connects SIC with organisations supporting Chinese language and culture in Brittany."
+          ]
         },
         "echange-beihang": {
           title: "Exchange with Beihang University",
           category: "University partnership",
-          description: "Build links with Beihang University, one of China’s leading universities, and discover Chinese higher education and scientific innovation."
+          description: "Build links with Beihang University, one of China’s leading universities, and discover Chinese higher education and scientific innovation.",
+          detail_intro: "Exchanges with Beihang University give students an initial view of Chinese higher education, research and scientific innovation.",
+          content_blocks: [
+            "text | Discovering a leading Chinese university | Exchanges can introduce courses, campuses, student life and Beihang’s main scientific fields.",
+            "gallery | 1,2,3,4 | Meetings with Beihang",
+            "text | Broadening future study options | The partnership helps students imagine international study, mobility and scientific cooperation."
+          ]
         },
         "nouvel-an-chinois": {
           title: "Chinese New Year celebrations",
           category: "Life in the section",
-          description: "Bring students together through cultural activities, performances and creative work celebrating Chinese New Year traditions."
+          description: "Bring students together through cultural activities, performances and creative work celebrating Chinese New Year traditions.",
+          detail_intro: "Chinese New Year brings together SIC year groups through collaborative performances, creative work and cultural activities.",
+          content_blocks: [
+            "text | A celebration created by students | Language, music, art, stories and traditions are combined in a shared event for the school community.",
+            "gallery | 1,2,3,4 | Chinese New Year celebrations",
+            "text | Connecting schools and families | The celebration showcases student work and strengthens links between primary schools, middle schools, high school and families."
+          ]
         },
         "accueil-eleves-chinois": {
           title: "Welcoming Chinese students to Rennes",
           category: "International exchange",
-          description: "Welcome visiting students from China, organise school visits and encourage exchanges with SIC students in Rennes."
+          description: "Welcome visiting students from China, organise school visits and encourage exchanges with SIC students in Rennes.",
+          detail_intro: "Welcoming Chinese students to Rennes creates a direct encounter between young people, schools and educational cultures.",
+          content_blocks: [
+            "text | Introducing the school and Rennes | SIC students take part in visits and shared activities and introduce their school and city to visiting students.",
+            "gallery | 1,2,3,4 | Visits and exchanges in Rennes",
+            "text | Communicating across two languages | Real exchanges give purpose to Chinese learning, build confidence and help students compare school experiences."
+          ]
         }
       }
     }

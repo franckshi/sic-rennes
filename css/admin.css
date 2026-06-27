@@ -413,6 +413,81 @@
   resize: vertical;
 }
 
+.content-block-editor {
+  display: grid;
+  gap: 10px;
+}
+
+.content-block-editor [data-block-list] {
+  display: grid;
+  gap: 9px;
+}
+
+.content-block-row {
+  display: grid;
+  grid-template-columns: 26px 108px minmax(130px, 0.7fr) minmax(180px, 1.3fr) auto;
+  gap: 8px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f7f8f7;
+}
+
+.content-block-row.dragging {
+  opacity: 0.45;
+}
+
+.content-block-row.drag-over {
+  box-shadow: inset 0 2px 0 var(--brick);
+}
+
+.content-block-handle {
+  min-height: 42px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  cursor: grab;
+  font-weight: 800;
+}
+
+.content-block-row textarea {
+  min-height: 64px;
+}
+
+.content-block-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.content-block-actions button,
+.content-block-add button {
+  min-width: 30px;
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--jade-dark);
+  background: white;
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.content-block-actions button:hover,
+.content-block-add button:hover {
+  border-color: var(--jade-dark);
+  background: var(--jade-pale);
+}
+
+.content-block-add {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.content-block-add button {
+  padding: 0 10px;
+}
+
 .media-field {
   padding: 0 0 24px;
 }
@@ -425,13 +500,26 @@
 }
 
 .media-chip {
-  max-width: 180px;
-  padding: 5px 9px;
+  width: 132px;
+  margin: 0;
   overflow: hidden;
-  border-radius: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
   color: var(--jade-dark);
-  background: var(--jade-pale);
+  background: white;
   font-size: 11px;
+}
+
+.media-chip img {
+  width: 100%;
+  height: 88px;
+  display: block;
+  object-fit: cover;
+}
+
+.media-chip figcaption {
+  padding: 6px 8px;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -518,6 +606,14 @@
     overflow: auto;
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .content-block-row {
+    grid-template-columns: 24px 96px 1fr;
+  }
+
+  .content-block-row [data-block-body] {
+    grid-column: 2 / -1;
   }
 }
 

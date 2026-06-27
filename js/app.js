@@ -16,6 +16,8 @@
 
   const visiblePrograms = () => data.programs.filter((program) => program.visible !== false);
 
+  const activityURL = (activity) => `${root}/activites/?activity=${encodeURIComponent(activity.id)}`;
+
   const formatDate = (dateValue) =>
     new Intl.DateTimeFormat(window.SICI18n.locale, { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${dateValue}T12:00:00`));
 
@@ -129,38 +131,51 @@
 
   function campusMap(schools) {
     const points = schools.filter((school) => Number.isFinite(school.latitude) && Number.isFinite(school.longitude));
-    const lats = points.map((school) => school.latitude);
-    const lngs = points.map((school) => school.longitude);
-    const minLat = Math.min(...lats);
-    const maxLat = Math.max(...lats);
-    const minLng = Math.min(...lngs);
-    const maxLng = Math.max(...lngs);
-    const width = Math.max(maxLng - minLng, 0.01);
-    const height = Math.max(maxLat - minLat, 0.01);
-    const markers = points.map((school) => {
-      const x = 8 + ((school.longitude - minLng) / width) * 84 + (school.id === "emile-zola" ? 2.6 : 0);
-      const y = 10 + ((maxLat - school.latitude) / height) * 78 + (school.id === "emile-zola" ? 4 : 0);
-      return `<a class="campus-pin campus-pin-${escapeHTML(school.type.toLowerCase().replaceAll(" ", "-"))}" href="${schoolURL(school)}" style="--x:${x.toFixed(2)}%;--y:${y.toFixed(2)}%" aria-label="${escapeHTML(school.name)}">
-        <span class="pin-dot"><span>${escapeHTML(school.monogram || "•")}</span></span>
-        <span class="pin-tooltip"><strong>${escapeHTML(school.name)}</strong><small>${escapeHTML(school.address)}</small><em>${escapeHTML(school.description)}</em></span>
-      </a>`;
-    }).join("");
     return `<div class="campus-map reveal">
       <div class="map-copy">
         <h3>Carte des 7 pôles SIC à Rennes</h3>
-        <p>Survolez un repère pour lire le résumé de l’établissement. Cliquez sur le repère pour ouvrir sa page.</p>
+        <p>Explorez les rues et les repères de Rennes. Survolez un marqueur pour lire le résumé de l’établissement et cliquez pour ouvrir sa page.</p>
         <div class="map-legend"><span>● Primaire</span><span>● Collège</span><span>● Lycée</span></div>
       </div>
-      <div class="map-canvas" aria-label="Carte interactive des pôles SIC">
-        <span class="map-river"></span>
-        <span class="map-road map-road-a"></span>
-        <span class="map-road map-road-b"></span>
-        <span class="map-label map-label-north">Nord</span>
-        <span class="map-label map-label-centre">Centre</span>
-        <span class="map-label map-label-south">Sud-Est</span>
-        ${markers}
-      </div>
+      <div class="map-canvas" id="campus-real-map" data-point-count="${points.length}" aria-label="Carte interactive des pôles SIC"></div>
     </div>`;
+  }
+
+  function initCampusMap() {
+    const host = document.querySelector("#campus-real-map");
+    if (!host || !window.L) return;
+    const points = data.schools.filter((school) => Number.isFinite(school.latitude) && Number.isFinite(school.longitude));
+    if (!points.length) return;
+    const map = window.L.map(host, { scrollWheelZoom: false, zoomControl: true });
+    window.L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    const bounds = [];
+    points.forEach((school) => {
+      const level = school.type.includes("primaire") ? "primary" : school.type === "Collège" ? "middle" : "high";
+      const icon = window.L.divIcon({
+        className: "campus-leaflet-marker",
+        html: `<span class="campus-marker-${level}"><b>${escapeHTML(school.monogram || "•")}</b></span>`,
+        iconSize: [42, 50],
+        iconAnchor: [21, 48],
+        tooltipAnchor: [0, -42]
+      });
+      const marker = window.L.marker([school.latitude, school.longitude], {
+        icon,
+        keyboard: true,
+        title: school.name,
+        alt: school.name
+      }).addTo(map);
+      marker.bindTooltip(`<strong>${escapeHTML(school.name)}</strong><small>${escapeHTML(school.address)}</small><em>${escapeHTML(school.description)}</em>`, {
+        className: "campus-leaflet-tooltip",
+        direction: "top",
+        opacity: 1
+      });
+      marker.on("click", () => { location.href = schoolURL(school); });
+      bounds.push([school.latitude, school.longitude]);
+    });
+    map.fitBounds(bounds, { padding: [34, 34], maxZoom: 13 });
   }
 
   function teachingStages(items) {
@@ -227,13 +242,17 @@
 
   function eventRows(events, limit) {
     return events.slice(0, limit || events.length).map((event) => {
-      const date = new Date(`${event.date}T12:00:00`);
-      const day = String(date.getDate()).padStart(2, "0");
-      const month = new Intl.DateTimeFormat(window.SICI18n.locale, { month: "short" }).format(date).replace(".", "").toUpperCase();
+      const hasDate = /^\d{4}-\d{2}-\d{2}$/.test(event.date || "");
+      const date = hasDate ? new Date(`${event.date}T12:00:00`) : null;
+      const day = hasDate ? String(date.getDate()).padStart(2, "0") : ({ zh: "待", fr: "À", en: "TBC" }[window.SICI18n.language] || "—");
+      const month = hasDate
+        ? new Intl.DateTimeFormat(window.SICI18n.locale, { month: "short" }).format(date).replace(".", "").toUpperCase()
+        : ({ zh: "确认", fr: "CONF.", en: "DATE" }[window.SICI18n.language] || "TBC");
+      const timing = hasDate ? formatDate(event.date) : (event.period || "Date à confirmer");
       return `
         <article class="event-row reveal">
-          <time class="date-block" datetime="${event.date}"><strong>${day}</strong><span>${month}</span></time>
-          <div><h3>${escapeHTML(event.title)}</h3><p>${escapeHTML(event.location)} · ${formatDate(event.date)}</p></div>
+          ${hasDate ? `<time class="date-block" datetime="${event.date}"><strong>${day}</strong><span>${month}</span></time>` : `<div class="date-block" aria-label="Date à confirmer"><strong>${day}</strong><span>${month}</span></div>`}
+          <div><h3>${escapeHTML(event.title)}</h3><p>${escapeHTML(event.location)} · ${escapeHTML(timing)}</p></div>
           <span class="tag">${escapeHTML(event.category)}</span>
           <span aria-hidden="true">→</span>
         </article>`;
@@ -244,12 +263,61 @@
     const chars = ["旅", "考", "华", "影", "院", "航", "春", "迎"];
     const colors = ["#dbe6df", "#eed7ca", "#e6ddc8", "#dae1d1", "#e8d6b8", "#d9e1e5"];
     return activities.slice(0, limit || activities.length).map((activity, index) => `
-      <article class="activity-card reveal">
-        <div class="activity-art" style="--activity-color:${colors[index % colors.length]}">${escapeHTML(activity.symbol || chars[index % chars.length])}</div>
+      <a class="activity-card reveal" href="${activityURL(activity)}">
+        <div class="activity-art ${activity.photos?.[0] ? "has-photo" : ""}" style="--activity-color:${colors[index % colors.length]}">${activity.photos?.[0] ? `<img src="${escapeHTML(activity.photos[0])}" alt="${escapeHTML(activity.title)}" loading="lazy">` : escapeHTML(activity.symbol || chars[index % chars.length])}</div>
         <small>${escapeHTML(activity.category)} · ${escapeHTML(activity.year)}</small>
         <h3>${escapeHTML(activity.title)}</h3>
         <p>${escapeHTML(activity.description)}</p>
-      </article>`).join("");
+        <span class="activity-card-link">Découvrir le projet →</span>
+      </a>`).join("");
+  }
+
+  function activityContentBlocks(activity) {
+    const photos = (activity.photos || []).slice(0, 4);
+    const blocks = activity.content_blocks?.length
+      ? activity.content_blocks
+      : ["text | Présentation | " + (activity.detail_intro || activity.description), "gallery | 1,2,3,4 | Photos du projet"];
+    return blocks.map((block) => {
+      const [rawType, first = "", ...rest] = String(block).split("|").map((part) => part.trim());
+      const type = rawType.toLowerCase();
+      if (["text", "texte"].includes(type)) {
+        return `<section class="activity-content-text reveal"><h2>${escapeHTML(first)}</h2><p>${escapeHTML(rest.join(" | "))}</p></section>`;
+      }
+      if (type === "image") {
+        const source = photos[Math.max(0, Number(first || 1) - 1)];
+        if (!source) return "";
+        const caption = rest.join(" | ");
+        return `<figure class="activity-content-image reveal"><img src="${escapeHTML(source)}" alt="${escapeHTML(caption || activity.title)}" loading="lazy">${caption ? `<figcaption>${escapeHTML(caption)}</figcaption>` : ""}</figure>`;
+      }
+      if (["gallery", "galerie"].includes(type)) {
+        const indexes = first.split(",").map((value) => Number(value.trim()) - 1).filter((value) => value >= 0);
+        const selected = (indexes.length ? indexes.map((index) => photos[index]) : photos).filter(Boolean);
+        if (!selected.length) return "";
+        const title = rest.join(" | ");
+        return `<section class="activity-content-gallery reveal">${title ? `<h2>${escapeHTML(title)}</h2>` : ""}<div>${selected.map((source, index) => `<img src="${escapeHTML(source)}" alt="${escapeHTML(`${activity.title} — ${index + 1}`)}" loading="lazy">`).join("")}</div></section>`;
+      }
+      return "";
+    }).join("");
+  }
+
+  function renderActivityDetail(id) {
+    const activity = data.activities.find((item) => item.id === id);
+    if (!activity) return renderNotFound("Projet introuvable");
+    document.title = `${activity.title} — SIC à Rennes`;
+    const cover = activity.photos?.[0];
+    main.innerHTML = `
+      <section class="activity-detail-hero">
+        <div class="container activity-detail-layout">
+          <div class="activity-detail-copy reveal">
+            <a class="back-link" href="${root}/activites/">← Tous les projets</a>
+            <small>${escapeHTML(activity.category)} · ${escapeHTML(activity.year)}</small>
+            <h1>${escapeHTML(activity.title)}</h1>
+            <p>${escapeHTML(activity.detail_intro || activity.description)}</p>
+          </div>
+          <div class="activity-detail-cover reveal ${cover ? "has-photo" : ""}">${cover ? `<img src="${escapeHTML(cover)}" alt="${escapeHTML(activity.title)}">` : `<span>${escapeHTML(activity.symbol || "项")}</span>`}</div>
+        </div>
+      </section>
+      <section class="section"><div class="container activity-content">${activityContentBlocks(activity)}</div></section>`;
   }
 
   function renderHome() {
@@ -439,6 +507,11 @@
   }
 
   function renderActivities() {
+    const requested = new URLSearchParams(location.search).get("activity");
+    if (requested) {
+      renderActivityDetail(requested);
+      return;
+    }
     const years = [...new Set(data.activities.map((activity) => activity.year))].sort((a, b) => String(b).localeCompare(String(a), undefined, { numeric: true }));
     const categories = [...new Set(data.activities.map((activity) => activity.category))];
     main.innerHTML = `
@@ -542,6 +615,7 @@
     schoolDetail: () => renderSchoolDetail(body.dataset.school)
   }[view] || (() => renderNotFound("Page introuvable")))();
   window.SICI18n.translatePage();
+  initCampusMap();
   initInteractions();
   initReveal();
 })();

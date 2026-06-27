@@ -68,7 +68,8 @@
       subtitle: (item) => `${item.date || "Date inconnue"} · ${item.location || "Lieu inconnu"}`,
       fields: [
         ["id", "Identifiant", "text", ""],
-        ["date", "Date", "date", ""],
+        ["date", "Date exacte", "date", "Laisser vide si la date n’est pas confirmée"],
+        ["period", "Période affichée", "text", "Ex. Septembre 2026 ou 2026-2027 · date à confirmer"],
         ["title", "Titre", "text", ""],
         ["location", "Lieu", "text", ""],
         ["school", "Établissement", "text", "Identifiant de l’établissement"],
@@ -81,14 +82,16 @@
       singular: "activité",
       title: (item) => item.title,
       subtitle: (item) => `${item.year || "Année inconnue"} · ${item.category || "Catégorie inconnue"}`,
-      media: { field: "photos", secondField: "videos", accept: "image/*,video/*", label: "Photos et vidéos" },
+      media: { field: "photos", accept: "image/*", label: "Photos du projet (3 à 4 recommandées, 4 maximum)" },
       fields: [
         ["id", "Identifiant", "text", ""],
         ["symbol", "Caractère illustratif", "text", "Un caractère chinois affiché sur la carte"],
         ["title", "Titre", "text", ""],
         ["year", "Année scolaire", "text", "Ex. 2026-2027"],
         ["category", "Catégorie", "text", ""],
-        ["description", "Description", "textarea", ""]
+        ["description", "Résumé de la carte", "textarea", "Texte court visible sur la liste des projets"],
+        ["detail_intro", "Introduction de la page", "textarea", "Texte d’ouverture de la page détaillée"],
+        ["content_blocks", "Blocs image et texte", "blocks", "Réorganisez les blocs avec les flèches ou par glisser-déposer. Les numéros d’image correspondent aux photos ci-dessous."]
       ]
     }
   };
@@ -96,6 +99,7 @@
   let collection = "schools";
   let selectedId = null;
   let draggedId = null;
+  let draggedBlock = null;
   let pendingMedia = [];
   const tabs = document.querySelector("#admin-tabs");
   const list = document.querySelector("#record-list");
@@ -141,12 +145,48 @@
       : `<div class="admin-empty">Aucun résultat.</div>`;
   }
 
+  function blockRowMarkup(value = "text |  | ") {
+    const [type = "text", first = "", ...rest] = String(value).split("|").map((part) => part.trim());
+    const body = rest.join(" | ");
+    return `<div class="content-block-row" data-content-block>
+      <span class="content-block-handle" draggable="true" data-block-handle title="Déplacer">↕</span>
+      <select data-block-type aria-label="Type de bloc">
+        ${[["text", "Texte"], ["image", "Image"], ["gallery", "Galerie"]].map(([key, label]) => `<option value="${key}" ${type === key || (type === "texte" && key === "text") || (type === "galerie" && key === "gallery") ? "selected" : ""}>${label}</option>`).join("")}
+      </select>
+      <input type="text" data-block-first value="${escapeHTML(first)}" placeholder="Titre ou n° de photo(s)">
+      <textarea data-block-body placeholder="Texte, titre de galerie ou légende">${escapeHTML(body)}</textarea>
+      <span class="content-block-actions"><button type="button" data-block-move="-1" title="Monter">↑</button><button type="button" data-block-move="1" title="Descendre">↓</button><button type="button" data-block-remove title="Supprimer">×</button></span>
+    </div>`;
+  }
+
+  function blockEditorMarkup(name, values) {
+    const items = Array.isArray(values) && values.length ? values : ["text | Présentation | ", "gallery | 1,2,3,4 | Photos du projet"];
+    return `<div class="content-block-editor" data-block-editor>
+      <div data-block-list>${items.map((value) => blockRowMarkup(value)).join("")}</div>
+      <div class="content-block-add"><button type="button" data-add-block="text">+ Texte</button><button type="button" data-add-block="image">+ Image</button><button type="button" data-add-block="gallery">+ Galerie</button></div>
+      <textarea name="${name}" data-block-value hidden>${escapeHTML(items.join("\n"))}</textarea>
+    </div>`;
+  }
+
+  function syncBlockEditor(editor) {
+    if (!editor) return;
+    const lines = [...editor.querySelectorAll("[data-content-block]")].map((row) => {
+      const type = row.querySelector("[data-block-type]").value;
+      const first = row.querySelector("[data-block-first]").value.trim();
+      const body = row.querySelector("[data-block-body]").value.trim();
+      return `${type} | ${first} | ${body}`;
+    });
+    editor.querySelector("[data-block-value]").value = lines.join("\n");
+  }
+
   function fieldMarkup([name, label, type, helper], item) {
     const raw = item[name] ?? "";
-    const value = Array.isArray(raw) ? raw.join(type === "multiline" ? "\n" : ", ") : raw;
-    const wide = type === "textarea" || type === "multiline" || name === "name" || name === "title" ? "wide" : "";
+    const value = Array.isArray(raw) ? raw.join(type === "multiline" || type === "blocks" ? "\n" : ", ") : raw;
+    const wide = type === "textarea" || type === "multiline" || type === "blocks" || name === "name" || name === "title" ? "wide" : "";
     let control = "";
-    if (type === "textarea" || type === "multiline") {
+    if (type === "blocks") {
+      control = blockEditorMarkup(name, Array.isArray(raw) ? raw : []);
+    } else if (type === "textarea" || type === "multiline") {
       control = `<textarea id="field-${name}" name="${name}">${escapeHTML(value)}</textarea>`;
     } else if (type === "boolean") {
       const checked = raw !== false ? "checked" : "";
@@ -193,10 +233,13 @@
     mediaInput.accept = media.accept;
     mediaInput.multiple = collection !== "teachers";
     document.querySelector("#media-label").textContent = media.label;
+    document.querySelector("#media-help").textContent = collection === "activities"
+      ? "La première photo devient la miniature de la carte. Une nouvelle sélection remplace les photos actuelles."
+      : "Les fichiers sont enregistrés sur le serveur avec les contenus. Privilégiez des fichiers légers.";
     const current = media.secondField
       ? [...(item[media.field] || []), ...(item[media.secondField] || [])]
       : Array.isArray(item[media.field]) ? item[media.field] : item[media.field] ? [item[media.field]] : [];
-    mediaPreview.innerHTML = current.map((source, index) => `<span class="media-chip">${source.startsWith("data:") ? `Média local ${index + 1}` : escapeHTML(source)}</span>`).join("");
+    mediaPreview.innerHTML = current.map((source, index) => `<figure class="media-chip"><img src="${escapeHTML(source)}" alt="Média ${index + 1}"><figcaption>${collection === "activities" && index === 0 ? "Photo 1 · miniature" : `Photo ${index + 1}`}</figcaption></figure>`).join("");
     mediaInput.value = "";
   }
 
@@ -214,6 +257,7 @@
     const value = formData.get(name);
     if (type === "array") return value.split(",").map((part) => part.trim()).filter(Boolean);
     if (type === "multiline") return value.split("\n").map((part) => part.trim()).filter(Boolean);
+    if (type === "blocks") return value.split("\n").map((part) => part.trim()).filter(Boolean);
     if (type === "number") return value === "" ? 0 : Number(value);
     if (type === "boolean") return formData.has(name);
     return value.trim();
@@ -275,8 +319,7 @@
       if (collection === "teachers") {
         result.photo = pendingMedia[0].data;
       } else if (collection === "activities") {
-        result.photos = [...(result.photos || []), ...pendingMedia.filter((file) => file.type.startsWith("image/")).map((file) => file.data)];
-        result.videos = [...(result.videos || []), ...pendingMedia.filter((file) => file.type.startsWith("video/")).map((file) => file.data)];
+        result.photos = pendingMedia.filter((file) => file.type.startsWith("image/")).slice(0, 4).map((file) => file.data);
       } else {
         result.photos = [...(result.photos || []), ...pendingMedia.map((file) => file.data)];
       }
@@ -395,9 +438,63 @@
   document.querySelector("#close-editor").addEventListener("click", closeEditor);
   document.querySelector("#delete-button").addEventListener("click", removeSelected);
   form.addEventListener("submit", save);
+  fieldsHost.addEventListener("click", (event) => {
+    const editor = event.target.closest("[data-block-editor]");
+    if (!editor) return;
+    const add = event.target.closest("[data-add-block]");
+    if (add) {
+      const defaults = { text: "text | Nouveau titre | Nouveau texte", image: "image | 1 | Légende", gallery: "gallery | 1,2,3,4 | Photos du projet" };
+      editor.querySelector("[data-block-list]").insertAdjacentHTML("beforeend", blockRowMarkup(defaults[add.dataset.addBlock]));
+      syncBlockEditor(editor);
+      return;
+    }
+    const row = event.target.closest("[data-content-block]");
+    if (!row) return;
+    if (event.target.closest("[data-block-remove]")) row.remove();
+    const move = event.target.closest("[data-block-move]");
+    if (move) {
+      const offset = Number(move.dataset.blockMove);
+      const sibling = offset < 0 ? row.previousElementSibling : row.nextElementSibling;
+      if (sibling) row.parentElement.insertBefore(row, offset < 0 ? sibling : sibling.nextElementSibling);
+    }
+    syncBlockEditor(editor);
+  });
+  fieldsHost.addEventListener("input", (event) => syncBlockEditor(event.target.closest("[data-block-editor]")));
+  fieldsHost.addEventListener("change", (event) => syncBlockEditor(event.target.closest("[data-block-editor]")));
+  fieldsHost.addEventListener("dragstart", (event) => {
+    const handle = event.target.closest("[data-block-handle]");
+    if (!handle) return;
+    draggedBlock = handle.closest("[data-content-block]");
+    draggedBlock.classList.add("dragging");
+    event.dataTransfer.effectAllowed = "move";
+  });
+  fieldsHost.addEventListener("dragover", (event) => {
+    const row = event.target.closest("[data-content-block]");
+    if (!row || !draggedBlock || row === draggedBlock) return;
+    event.preventDefault();
+    row.classList.add("drag-over");
+  });
+  fieldsHost.addEventListener("dragleave", (event) => event.target.closest("[data-content-block]")?.classList.remove("drag-over"));
+  fieldsHost.addEventListener("drop", (event) => {
+    const row = event.target.closest("[data-content-block]");
+    if (!row || !draggedBlock || row === draggedBlock) return;
+    event.preventDefault();
+    row.parentElement.insertBefore(draggedBlock, row);
+    document.querySelectorAll(".content-block-row.drag-over").forEach((item) => item.classList.remove("drag-over"));
+    syncBlockEditor(row.closest("[data-block-editor]"));
+  });
+  fieldsHost.addEventListener("dragend", () => {
+    draggedBlock?.classList.remove("dragging");
+    document.querySelectorAll(".content-block-row.drag-over").forEach((item) => item.classList.remove("drag-over"));
+    draggedBlock = null;
+  });
   mediaInput.addEventListener("change", async () => {
     pendingMedia = await readFiles(mediaInput.files);
-    mediaPreview.innerHTML = pendingMedia.map((file) => `<span class="media-chip">${escapeHTML(file.name)}</span>`).join("");
+    if (collection === "activities" && pendingMedia.length > 4) {
+      pendingMedia = pendingMedia.slice(0, 4);
+      toast("Quatre photos maximum : seules les quatre premières seront enregistrées.");
+    }
+    mediaPreview.innerHTML = pendingMedia.map((file, index) => `<figure class="media-chip"><img src="${file.data}" alt="${escapeHTML(file.name)}"><figcaption>${index === 0 && collection === "activities" ? "Photo 1 · miniature" : escapeHTML(file.name)}</figcaption></figure>`).join("");
   });
   document.querySelector("#export-button").addEventListener("click", exportJSON);
   document.querySelector("#import-button").addEventListener("click", () => document.querySelector("#import-file").click());
