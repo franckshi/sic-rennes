@@ -132,7 +132,7 @@
       "Voir les pôles SIC": "查看国际班校区",
       "Réunions, ateliers, présentations et temps forts de la Section internationale chinoise. Les dates indiquées doivent être confirmées.": "中文国际班的会议、工作坊、介绍会和重要活动。所列日期需进一步确认。",
       "Toutes": "全部",
-      "Productions bilingues, ateliers, échanges et projets culturels qui donnent vie au parcours SIC.": "双语作品、工作坊、交流与文化项目，共同构成丰富的国际班学习生活。",
+      "Voyages, certifications, cinéma, fêtes et partenariats internationaux prolongent les apprentissages au-delà de la classe.": "研学旅行、中文考试、电影、节庆与国际合作，让中文学习延伸到课堂之外。",
       "Toutes les années": "全部年份",
       "Toutes les catégories": "全部类别",
       "Aucune activité ne correspond à ces filtres.": "没有符合筛选条件的项目。",
@@ -283,7 +283,7 @@
       "Voir les pôles SIC": "View SIC campuses",
       "Réunions, ateliers, présentations et temps forts de la Section internationale chinoise. Les dates indiquées doivent être confirmées.": "Meetings, workshops, presentations and highlights from the Chinese International Section. Listed dates must be confirmed.",
       "Toutes": "All",
-      "Productions bilingues, ateliers, échanges et projets culturels qui donnent vie au parcours SIC.": "Bilingual work, workshops, exchanges and cultural projects that bring the SIC programme to life.",
+      "Voyages, certifications, cinéma, fêtes et partenariats internationaux prolongent les apprentissages au-delà de la classe.": "Trips, certifications, cinema, celebrations and international partnerships extend learning beyond the classroom.",
       "Toutes les années": "All years",
       "Toutes les catégories": "All categories",
       "Aucune activité ne correspond à ces filtres.": "No project matches these filters.",
@@ -569,12 +569,46 @@
         "portes-ouvertes-2027": { title: "中文国际班介绍会——日期待确认", location: "雷恩", description: "了解课程体系、教学内容和国际班项目。" }
       },
       activities: {
-        "journal-bilingue": { title: "学生双语校刊", description: "以中法双语发布文章、采访和创意作品。" },
-        "lecture-partagee": { title: "跨文化共读", description: "阅读、介绍并讨论不同文化传统中的作品。" },
-        "calligraphie": { title: "中国书法工作坊", description: "了解书写动作、汉字以及书写与艺术创作的关系。" },
-        "nouvel-an": { title: "春节主题项目", description: "结合资料研究、口头表达和创意制作的集体项目。" },
-        "correspondance": { title: "国际通信交流", description: "通过通信和合作作品在真实情境中练习语言。" },
-        "portfolio": { title: "国际班学习档案", description: "保存代表性作品，记录学生多年来的成长。" }
+        "voyage-paris-13e": {
+          title: "两个初中3e年级巴黎13区之旅",
+          category: "研学旅行",
+          description: "Collège Landry 与 Collège Émile Zola 的3e学生前往巴黎13区，了解当地华人社区、文化场所及中国文化在巴黎的发展。"
+        },
+        "examens-hsk": {
+          title: "组织HSK中文水平考试",
+          category: "中文认证",
+          description: "组织学生备考并参加HSK考试，让学生的中文水平获得正式认证。"
+        },
+        "voyage-chine-lyceens": {
+          title: "高中生中国研学之旅",
+          category: "国际研学",
+          description: "前往北京、上海和南通，在真实环境中使用中文、与合作伙伴交流并了解当代中国。"
+        },
+        "sino-cine": {
+          title: "中国电影节 — SINO-CINÉ",
+          category: "电影与文化",
+          description: "通过电影放映、作品分析和讨论交流，发现中国电影与中国社会文化。"
+        },
+        "institut-confucius-bretagne": {
+          title: "布列塔尼孔子学院活动与交流",
+          category: "文化交流",
+          description: "前往布列塔尼孔子学院参加语言文化活动，并开展学习与交流。"
+        },
+        "echange-beihang": {
+          title: "与北京航空航天大学交流",
+          category: "高校合作",
+          description: "与中国顶尖高校之一的北京航空航天大学开展交流，帮助学生接触中国高等教育与科学创新。"
+        },
+        "nouvel-an-chinois": {
+          title: "中国年庆祝活动",
+          category: "国际班生活",
+          description: "通过文化活动、表演和学生创作，共同庆祝中国春节及其传统文化。"
+        },
+        "accueil-eleves-chinois": {
+          title: "接待中国学生访问雷恩",
+          category: "国际交流",
+          description: "接待来自中国的学生，组织校园参观与共同活动，促进他们与雷恩中文国际班学生之间的交流。"
+        }
       }
     },
     en: {
@@ -839,12 +873,46 @@
         "portes-ouvertes-2027": { title: "SIC presentation — date to be confirmed", description: "Discover the programme, teaching and section projects." }
       },
       activities: {
-        "journal-bilingue": { title: "Student bilingual journal", description: "Articles, interviews and creative work published in French and Chinese." },
-        "lecture-partagee": { title: "Shared readings", description: "Read, present and discuss texts from different traditions." },
-        "calligraphie": { title: "Chinese calligraphy workshop", description: "Explore gesture, characters and the relationship between writing and creativity." },
-        "nouvel-an": { title: "Chinese New Year project", description: "A collaborative project combining research, public speaking and creativity." },
-        "correspondance": { title: "International correspondence", description: "Practise language through exchanges and collaborative work." },
-        "portfolio": { title: "SIC learning portfolio", description: "Preserve key work and track progress over the years." }
+        "voyage-paris-13e": {
+          title: "Year 9 trip to Paris’s 13th arrondissement",
+          category: "School trips",
+          description: "Year 9 students from Collège Landry and Collège Émile Zola explore the Chinese quarter, its cultural sites and the Chinese presence in Paris."
+        },
+        "examens-hsk": {
+          title: "HSK exam organisation",
+          category: "Certification",
+          description: "Preparation and organisation of HSK exams so students can receive official recognition of their Chinese level."
+        },
+        "voyage-chine-lyceens": {
+          title: "High school study trip to China",
+          category: "International mobility",
+          description: "A trip to Beijing, Shanghai and Nantong to practise Chinese, meet partners and discover contemporary China."
+        },
+        "sino-cine": {
+          title: "Chinese Film Festival — SINO-CINÉ",
+          category: "Cinema and culture",
+          description: "Discover Chinese cinema through screenings, analysis and discussion around selected films."
+        },
+        "institut-confucius-bretagne": {
+          title: "Activities at the Confucius Institute of Brittany",
+          category: "Culture and exchange",
+          description: "Take part in cultural and language activities and exchange with the Confucius Institute of Brittany."
+        },
+        "echange-beihang": {
+          title: "Exchange with Beihang University",
+          category: "University partnership",
+          description: "Build links with Beihang University, one of China’s leading universities, and discover Chinese higher education and scientific innovation."
+        },
+        "nouvel-an-chinois": {
+          title: "Chinese New Year celebrations",
+          category: "Life in the section",
+          description: "Bring students together through cultural activities, performances and creative work celebrating Chinese New Year traditions."
+        },
+        "accueil-eleves-chinois": {
+          title: "Welcoming Chinese students to Rennes",
+          category: "International exchange",
+          description: "Welcome visiting students from China, organise school visits and encourage exchanges with SIC students in Rennes."
+        }
       }
     }
   };

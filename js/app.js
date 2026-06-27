@@ -241,11 +241,11 @@
   }
 
   function activityCards(activities, limit) {
-    const chars = ["旅", "春", "书", "茶", "乐", "画"];
+    const chars = ["旅", "考", "华", "影", "院", "航", "春", "迎"];
     const colors = ["#dbe6df", "#eed7ca", "#e6ddc8", "#dae1d1", "#e8d6b8", "#d9e1e5"];
     return activities.slice(0, limit || activities.length).map((activity, index) => `
       <article class="activity-card reveal">
-        <div class="activity-art" style="--activity-color:${colors[index % colors.length]}">${chars[index % chars.length]}</div>
+        <div class="activity-art" style="--activity-color:${colors[index % colors.length]}">${escapeHTML(activity.symbol || chars[index % chars.length])}</div>
         <small>${escapeHTML(activity.category)} · ${escapeHTML(activity.year)}</small>
         <h3>${escapeHTML(activity.title)}</h3>
         <p>${escapeHTML(activity.description)}</p>
@@ -439,10 +439,10 @@
   }
 
   function renderActivities() {
-    const years = [...new Set(data.activities.map((activity) => activity.year))].sort((a, b) => b - a);
+    const years = [...new Set(data.activities.map((activity) => activity.year))].sort((a, b) => String(b).localeCompare(String(a), undefined, { numeric: true }));
     const categories = [...new Set(data.activities.map((activity) => activity.category))];
     main.innerHTML = `
-      <section class="page-hero" data-watermark="艺"><div class="container"><h1>Projets des élèves</h1><p>Productions bilingues, ateliers, échanges et projets culturels qui donnent vie au parcours SIC.</p></div></section>
+      <section class="page-hero" data-watermark="艺"><div class="container"><h1>Projets des élèves</h1><p>Voyages, certifications, cinéma, fêtes et partenariats internationaux prolongent les apprentissages au-delà de la classe.</p></div></section>
       <section class="section"><div class="container">
         <div class="toolbar">
           <select class="select-input" id="activity-year"><option value="">Toutes les années</option>${years.map((year) => `<option>${year}</option>`).join("")}</select>

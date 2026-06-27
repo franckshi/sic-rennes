@@ -84,8 +84,9 @@
       media: { field: "photos", secondField: "videos", accept: "image/*,video/*", label: "Photos et vidéos" },
       fields: [
         ["id", "Identifiant", "text", ""],
+        ["symbol", "Caractère illustratif", "text", "Un caractère chinois affiché sur la carte"],
         ["title", "Titre", "text", ""],
-        ["year", "Année", "number", ""],
+        ["year", "Année scolaire", "text", "Ex. 2026-2027"],
         ["category", "Catégorie", "text", ""],
         ["description", "Description", "textarea", ""]
       ]
