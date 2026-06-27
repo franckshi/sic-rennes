@@ -200,7 +200,7 @@
         "mathematiques-chinois"
       ],
       "members": [
-        "Wu Lirou — chinois et mathématiques, Collège Émile Zola",
+        "Wu Li-Jo — chinois et mathématiques, Collège Émile Zola",
         "Cédric Quennesson — chinois, Collège Émile Zola",
         "Shi Chengyu — littérature, Collège Émile Zola",
         "Wang Lu — mathématiques, Collège Landry",
@@ -227,7 +227,7 @@
         "avenir"
       ],
       "members": [
-        "Wu Lirou — chinois, niveau 2nde",
+        "Wu Li-Jo — chinois, niveau 2nde",
         "Cédric Quennesson — chinois et connaissance du monde, niveaux 1ère et terminale",
         "Wang Lu — mathématiques, lycée",
         "Enseignants de littérature à confirmer — lycée"
@@ -289,11 +289,11 @@
         "Groupe B primaire → Collège Émile Zola | École L'Ille | CE2 | effectif inconnu | enseignante référente Genevive XU | chinois 3 h/semaine | retraite en octobre, nouvelle enseignante à confirmer",
         "Groupe B primaire → Collège Émile Zola | École L'Ille | CM1 | 13 élèves | enseignante référente à confirmer | chinois 3 h/semaine |",
         "Groupe B primaire → Collège Émile Zola | École L'Ille | CM2 | 9 élèves | enseignante référente Cécile CHANDERIS | chinois 3 h/semaine |",
-        "Groupe B primaire → Collège Émile Zola | Collège Émile Zola | 6e | 11-12 élèves | chinois Wu Lirou ; mathématiques Wu Lirou ; littérature Shi Chengyu | langue 3 h + littérature 3 h + mathématiques 1 h/semaine |",
-        "Groupe B primaire → Collège Émile Zola | Collège Émile Zola | 5e | 13 élèves | chinois Wu Lirou ; mathématiques Wu Lirou ; littérature Shi Chengyu | langue 3 h + littérature 3 h + mathématiques 1 h/semaine |",
-        "Groupe B primaire → Collège Émile Zola | Collège Émile Zola | 4e | 6-7 élèves | chinois Cédric Quennesson ; mathématiques Wu Lirou ; littérature à confirmer | langue 3 h + littérature 3 h + mathématiques 1 h 30/semaine |",
-        "Groupe B primaire → Collège Émile Zola | Collège Émile Zola | 3e | 10 élèves | chinois Wu Lirou ; mathématiques Wu Lirou ; littérature à confirmer | langue 3 h + littérature 3 h + mathématiques 2 h/semaine |",
-        "Deux collèges SIC → Lycée Émile Zola | Lycée Émile Zola | 2nde | 9 élèves | chinois Wu Lirou ; mathématiques Wang Lu ; littérature à confirmer | selon l’organisation en vigueur |",
+        "Groupe B primaire → Collège Émile Zola | Collège Émile Zola | 6e | 11-12 élèves | chinois Wu Li-Jo ; mathématiques Wu Li-Jo ; littérature Shi Chengyu | langue 3 h + littérature 3 h + mathématiques 1 h/semaine |",
+        "Groupe B primaire → Collège Émile Zola | Collège Émile Zola | 5e | 13 élèves | chinois Wu Li-Jo ; mathématiques Wu Li-Jo ; littérature Shi Chengyu | langue 3 h + littérature 3 h + mathématiques 1 h/semaine |",
+        "Groupe B primaire → Collège Émile Zola | Collège Émile Zola | 4e | 6-7 élèves | chinois Cédric Quennesson ; mathématiques Wu Li-Jo ; littérature à confirmer | langue 3 h + littérature 3 h + mathématiques 1 h 30/semaine |",
+        "Groupe B primaire → Collège Émile Zola | Collège Émile Zola | 3e | 10 élèves | chinois Wu Li-Jo ; mathématiques Wu Li-Jo ; littérature à confirmer | langue 3 h + littérature 3 h + mathématiques 2 h/semaine |",
+        "Deux collèges SIC → Lycée Émile Zola | Lycée Émile Zola | 2nde | 9 élèves | chinois Wu Li-Jo ; mathématiques Wang Lu ; littérature à confirmer | selon l’organisation en vigueur |",
         "Deux collèges SIC → Lycée Émile Zola | Lycée Émile Zola | 1ère | 6-7 élèves | chinois Cédric Quennesson ; mathématiques Wang Lu ; littérature à confirmer ; connaissance du monde Cédric Quennesson | selon l’organisation en vigueur |",
         "Deux collèges SIC → Lycée Émile Zola | Lycée Émile Zola | Terminale | 5 élèves | chinois Cédric Quennesson ; mathématiques Wang Lu ; littérature à confirmer ; connaissance du monde Cédric Quennesson | selon l’organisation en vigueur |"
       ],
@@ -486,40 +486,104 @@
   ],
   "events": [
     {
-      "id": "rentree-sic-2026",
-      "date": "2026-09-01",
-      "title": "Rentrée SIC — date à confirmer",
+      "id": "reunion-rentree-sic-2026",
+      "date": "",
+      "period": "Septembre 2026 · date à confirmer",
+      "title": "Réunion de rentrée SIC 2026",
       "location": "Rennes",
-      "description": "Accueil des élèves et présentation du fonctionnement de la section.",
+      "description": "Réunion de début d’année pour présenter l’organisation, les enseignements, les projets et les principaux rendez-vous de la SIC.",
       "school": "emile-zola",
-      "category": "Information"
+      "category": "Réunion"
     },
     {
-      "id": "reunion-familles-2026",
-      "date": "2026-10-10",
-      "title": "Rencontre des familles — calendrier indicatif",
+      "id": "reunion-ecoles-primaires",
+      "date": "",
+      "period": "Automne 2026 · date à confirmer",
+      "title": "Réunion des écoles primaires SIC",
+      "location": "Écoles primaires SIC",
+      "description": "Temps d’information et d’échange avec les familles sur l’apprentissage du chinois au primaire et la continuité du parcours.",
+      "school": "ecole-carle-bahon",
+      "category": "Réunion"
+    },
+    {
+      "id": "liaison-primaire-college",
+      "date": "",
+      "period": "2026-2027 · date à confirmer",
+      "title": "Liaison primaire-collège",
       "location": "Rennes",
-      "description": "Temps d’échange avec l’équipe pédagogique et présentation des projets.",
+      "description": "Rencontre entre CM2 et 6e pour préparer le passage au collège, découvrir les enseignements SIC et répondre aux questions des élèves.",
+      "school": "college-le-landry",
+      "category": "Liaison"
+    },
+    {
+      "id": "liaison-college-lycee",
+      "date": "",
+      "period": "2026-2027 · date à confirmer",
+      "title": "Liaison collège-lycée",
+      "location": "Rennes",
+      "description": "Rencontre entre 3e et 2nde pour présenter la poursuite de la SIC au lycée, ses disciplines et les attentes du cycle lycée.",
+      "school": "emile-zola",
+      "category": "Liaison"
+    },
+    {
+      "id": "rencontre-anciens-eleves",
+      "date": "",
+      "period": "2026-2027 · date à confirmer",
+      "title": "Rencontre avec d’anciens élèves de la SIC",
+      "location": "Lycée Émile Zola",
+      "description": "Des anciens élèves reviennent présenter leur parcours, partager leur expérience et répondre aux questions des élèves et des familles.",
       "school": "emile-zola",
       "category": "Rencontre"
     },
     {
-      "id": "atelier-culture-2026",
-      "date": "2026-11-21",
-      "title": "Atelier culturel des élèves",
+      "id": "inscription-examen-hsk",
+      "date": "",
+      "period": "2026-2027 · calendrier à confirmer",
+      "title": "Inscriptions et examens HSK",
       "location": "Rennes",
-      "description": "Un atelier pratique autour de la langue, des arts et des cultures chinoises.",
-      "school": "college-emile-zola",
-      "category": "Atelier"
+      "description": "Information sur les niveaux, inscription, préparation et organisation des examens officiels HSK.",
+      "school": "emile-zola",
+      "category": "Certification"
     },
     {
-      "id": "portes-ouvertes-2027",
-      "date": "2027-02-06",
-      "title": "Présentation de la SIC — date à confirmer",
+      "id": "festival-sinocine",
+      "date": "",
+      "period": "2026-2027 · date à confirmer",
+      "title": "Festival du cinéma chinois — SINO-CINÉ",
       "location": "Rennes",
-      "description": "Découverte du parcours, des enseignements et des projets de la section.",
+      "description": "Séances de cinéma chinois, analyses et échanges culturels autour des films programmés.",
       "school": "emile-zola",
-      "category": "Information"
+      "category": "Culture"
+    },
+    {
+      "id": "voyage-paris-13e-agenda",
+      "date": "",
+      "period": "2026-2027 · date à confirmer",
+      "title": "Voyage des classes de 3e à Paris 13e",
+      "location": "Paris 13e",
+      "description": "Voyage des élèves de 3e des collèges Landry et Émile Zola autour du quartier chinois et de ses lieux culturels.",
+      "school": "college-emile-zola",
+      "category": "Voyage"
+    },
+    {
+      "id": "voyage-chine-agenda",
+      "date": "",
+      "period": "2026-2027 · date à confirmer",
+      "title": "Voyage des lycéens en Chine",
+      "location": "Pékin, Shanghai et Nantong",
+      "description": "Voyage linguistique et culturel des lycéens pour pratiquer le chinois et rencontrer des partenaires en Chine.",
+      "school": "emile-zola",
+      "category": "Voyage"
+    },
+    {
+      "id": "nouvel-an-chinois-2027",
+      "date": "",
+      "period": "Début 2027 · date à confirmer",
+      "title": "Célébration du Nouvel An chinois 2027",
+      "location": "Rennes",
+      "description": "Activités, spectacles et créations des élèves pour célébrer ensemble le Nouvel An chinois 2027.",
+      "school": "emile-zola",
+      "category": "Culture"
     }
   ],
   "activities": [
@@ -531,7 +595,13 @@
       "category": "Voyages scolaires",
       "description": "Les élèves de 3e des collèges Landry et Émile Zola découvrent le quartier chinois, ses lieux culturels et la présence chinoise à Paris.",
       "photos": [],
-      "videos": []
+      "videos": [],
+      "detail_intro": "Ce voyage réunit les classes de 3e des deux collèges SIC autour d’une découverte linguistique et culturelle du 13e arrondissement de Paris.",
+      "content_blocks": [
+        "text | Découvrir un territoire chinois en France | Les élèves observent le quartier, ses commerces, ses lieux culturels et les différentes formes de présence chinoise à Paris.",
+        "gallery | 1,2,3,4 | Images du voyage",
+        "text | Relier langue et expérience | Le déplacement permet de mobiliser le chinois dans une situation concrète, de préparer des observations et de partager les découvertes au retour."
+      ]
     },
     {
       "id": "examens-hsk",
@@ -541,7 +611,13 @@
       "category": "Certification",
       "description": "Préparation et organisation des examens HSK pour permettre aux élèves de faire reconnaître officiellement leur niveau de chinois.",
       "photos": [],
-      "videos": []
+      "videos": [],
+      "detail_intro": "La SIC accompagne les élèves dans la préparation, l’inscription et le passage du HSK, certification internationale de chinois.",
+      "content_blocks": [
+        "text | Une certification pour valoriser les progrès | Le HSK permet aux élèves de situer leur niveau, de se fixer un objectif et de faire reconnaître officiellement leurs compétences en chinois.",
+        "gallery | 1,2,3,4 | Préparation et session d’examen",
+        "text | Préparer sereinement l’examen | Les élèves découvrent le format des épreuves, s’entraînent aux différentes compétences et reçoivent les informations pratiques nécessaires à l’inscription."
+      ]
     },
     {
       "id": "voyage-chine-lyceens",
@@ -551,7 +627,13 @@
       "category": "Mobilité internationale",
       "description": "Un voyage à Pékin, Shanghai et Nantong pour pratiquer le chinois, rencontrer des partenaires et découvrir la Chine contemporaine.",
       "photos": [],
-      "videos": []
+      "videos": [],
+      "detail_intro": "Les lycéens découvrent Pékin, Shanghai et Nantong dans un parcours associant pratique linguistique, rencontres scolaires et découverte de la Chine contemporaine.",
+      "content_blocks": [
+        "text | Trois villes, plusieurs visages de la Chine | Pékin, Shanghai et Nantong offrent des contextes complémentaires pour comprendre l’histoire, la vie urbaine, l’éducation et les transformations contemporaines.",
+        "gallery | 1,2,3,4 | Carnet de voyage",
+        "text | Pratiquer le chinois en situation réelle | Les élèves utilisent la langue au quotidien, échangent avec leurs partenaires et transforment le voyage en expérience d’apprentissage et d’autonomie."
+      ]
     },
     {
       "id": "sino-cine",
@@ -561,7 +643,13 @@
       "category": "Cinéma et culture",
       "description": "Découvrir le cinéma chinois à travers des projections, des analyses et des échanges autour des films.",
       "photos": [],
-      "videos": []
+      "videos": [],
+      "detail_intro": "SINO-CINÉ ouvre une fenêtre sur les sociétés et les imaginaires chinois grâce aux films, aux échanges et au travail d’analyse mené avec les élèves.",
+      "content_blocks": [
+        "text | Voir, comprendre et discuter | Chaque projection devient un support pour découvrir une œuvre, enrichir le vocabulaire et confronter les points de vue.",
+        "gallery | 1,2,3,4 | Temps forts de SINO-CINÉ",
+        "text | Le cinéma comme objet culturel | Les élèves apprennent à relier récit, mise en scène, contexte historique et questions contemporaines."
+      ]
     },
     {
       "id": "institut-confucius-bretagne",
@@ -571,7 +659,13 @@
       "category": "Culture et échanges",
       "description": "Participer à des activités culturelles et linguistiques et échanger avec l’Institut Confucius de Bretagne.",
       "photos": [],
-      "videos": []
+      "videos": [],
+      "detail_intro": "Les rencontres avec l’Institut Confucius de Bretagne complètent les cours par des activités linguistiques, culturelles et des échanges avec d’autres publics sinophones.",
+      "content_blocks": [
+        "text | Apprendre hors de la classe | Ateliers, rencontres et activités permettent de découvrir d’autres pratiques et ressources autour de la langue chinoise.",
+        "gallery | 1,2,3,4 | Activités et rencontres",
+        "text | Construire un réseau culturel local | Le partenariat relie la SIC aux acteurs qui font vivre la langue et les cultures chinoises en Bretagne."
+      ]
     },
     {
       "id": "echange-beihang",
@@ -581,7 +675,13 @@
       "category": "Partenariat universitaire",
       "description": "Créer des échanges avec l’Université d’aéronautique et d’astronautique de Pékin (Beihang), l’une des grandes universités chinoises.",
       "photos": [],
-      "videos": []
+      "videos": [],
+      "detail_intro": "Les échanges avec l’Université Beihang donnent aux élèves un premier aperçu de l’enseignement supérieur chinois, de la recherche et de l’innovation scientifique.",
+      "content_blocks": [
+        "text | Découvrir une grande université chinoise | Les échanges présentent les formations, les campus, les parcours étudiants et les domaines scientifiques développés à Beihang.",
+        "gallery | 1,2,3,4 | Rencontres avec Beihang",
+        "text | Ouvrir les perspectives d’orientation | Ce partenariat aide les élèves à imaginer des études, des mobilités et des coopérations dans un environnement international."
+      ]
     },
     {
       "id": "nouvel-an-chinois",
@@ -591,7 +691,13 @@
       "category": "Vie de la section",
       "description": "Réunir les élèves autour d’activités, de spectacles et de créations pour célébrer la culture et les traditions du Nouvel An chinois.",
       "photos": [],
-      "videos": []
+      "videos": [],
+      "detail_intro": "Le Nouvel An chinois rassemble les différents niveaux de la SIC autour de créations, de spectacles et d’activités préparés collectivement.",
+      "content_blocks": [
+        "text | Une fête construite par les élèves | Langue, musique, arts, récits et traditions sont mobilisés pour préparer un temps de partage ouvert à la communauté scolaire.",
+        "gallery | 1,2,3,4 | Célébration du Nouvel An chinois",
+        "text | Relier les niveaux et les familles | La célébration valorise les productions des élèves et crée des liens entre écoles, collèges, lycée et familles."
+      ]
     },
     {
       "id": "accueil-eleves-chinois",
@@ -601,7 +707,13 @@
       "category": "Échanges internationaux",
       "description": "Accueillir des élèves venus de Chine, organiser des visites et favoriser les rencontres avec les élèves de la SIC à Rennes.",
       "photos": [],
-      "videos": []
+      "videos": [],
+      "detail_intro": "L’accueil d’élèves chinois à Rennes crée un temps de rencontre concret entre jeunes, établissements et cultures scolaires.",
+      "content_blocks": [
+        "text | Accueillir et faire découvrir Rennes | Les élèves de la SIC participent aux visites, aux activités communes et à la présentation de leur établissement et de leur ville.",
+        "gallery | 1,2,3,4 | Visites et échanges à Rennes",
+        "text | Communiquer dans les deux langues | Les rencontres donnent du sens à l’apprentissage du chinois, développent la confiance et permettent de comparer les expériences scolaires."
+      ]
     }
   ]
 }
