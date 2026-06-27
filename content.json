@@ -19,7 +19,16 @@
       "description": "Groupe A vers Collège Landry. 2026-2027 : CE2 effectif inconnu, CM1 19 élèves, CM2 14 élèves ; chinois 3 h/semaine.",
       "latitude": 48.0972194,
       "longitude": -1.6547958,
-      "photos": []
+      "photos": [],
+      "principal": "Direction à confirmer",
+      "course_modules": [
+        "chinois"
+      ],
+      "teaching_assignments": [
+        "CE2 | Chinois | Audrey HELEU | Enseignante référente francophone",
+        "CM1 | Chinois | Anne-Sophie GUINET | Enseignante référente francophone",
+        "CM2 | Chinois | À confirmer | Enseignante référente francophone à confirmer"
+      ]
     },
     {
       "id": "ecole-la-poterie",
@@ -40,7 +49,16 @@
       "description": "Groupe A vers Collège Landry. 2026-2027 : CE2 fermé, CM1 5 élèves, CM2 16 élèves ; chinois 3 h/semaine.",
       "latitude": 48.0925182,
       "longitude": -1.6458375,
-      "photos": []
+      "photos": [],
+      "principal": "Corentin CAVE",
+      "course_modules": [
+        "chinois"
+      ],
+      "teaching_assignments": [
+        "CE2 | Chinois | — | Fermeture prévue en 2026-2027",
+        "CM1 | Chinois | Corentin CAVE | Enseignant référent francophone et directeur de l’école",
+        "CM2 | Chinois | Emilie LIU | Enseignante référente francophone"
+      ]
     },
     {
       "id": "college-le-landry",
@@ -62,7 +80,27 @@
       "description": "Collège SIC du groupe A, alimenté par Carle Bahon et La Poterie. 2026-2027 : 6e 17-18 élèves ; autres effectifs à confirmer.",
       "latitude": 48.0988406,
       "longitude": -1.6491991,
-      "photos": []
+      "photos": [],
+      "principal": "Direction à confirmer",
+      "course_modules": [
+        "chinois",
+        "langue-litterature",
+        "mathematiques-chinois"
+      ],
+      "teaching_assignments": [
+        "6e | Chinois | À confirmer |",
+        "6e | Littérature chinoise | À confirmer |",
+        "6e | Mathématiques en chinois | Wang Lu |",
+        "5e | Chinois | À confirmer |",
+        "5e | Littérature chinoise | À confirmer |",
+        "5e | Mathématiques en chinois | Wang Lu |",
+        "4e | Chinois | À confirmer |",
+        "4e | Littérature chinoise | À confirmer |",
+        "4e | Mathématiques en chinois | Wang Lu |",
+        "3e | Chinois | À confirmer |",
+        "3e | Littérature chinoise | À confirmer |",
+        "3e | Mathématiques en chinois | Wang Lu |"
+      ]
     },
     {
       "id": "ecole-jules-ferry",
@@ -83,7 +121,16 @@
       "description": "Groupe B vers Collège Émile Zola. 2026-2027 : CE2 effectif inconnu, CM1 11 élèves, CM2 21 élèves ; chinois 3 h/semaine.",
       "latitude": 48.1388686,
       "longitude": -1.6678226,
-      "photos": []
+      "photos": [],
+      "principal": "Direction à confirmer",
+      "course_modules": [
+        "chinois"
+      ],
+      "teaching_assignments": [
+        "CE2 | Chinois | Lauria Moisson | Enseignante référente francophone",
+        "CM1 | Chinois | Marika ISNARD | Enseignante référente francophone",
+        "CM2 | Chinois | Marika ISNARD | Enseignante référente francophone"
+      ]
     },
     {
       "id": "ecole-lille",
@@ -104,7 +151,16 @@
       "description": "Groupe B vers Collège Émile Zola. 2026-2027 : CE2 effectif inconnu, CM1 13 élèves, CM2 9 élèves ; chinois 3 h/semaine.",
       "latitude": 48.1139231,
       "longitude": -1.6921516,
-      "photos": []
+      "photos": [],
+      "principal": "Direction à confirmer",
+      "course_modules": [
+        "chinois"
+      ],
+      "teaching_assignments": [
+        "CE2 | Chinois | Genevive XU | Départ à la retraite en octobre ; remplacement à confirmer",
+        "CM1 | Chinois | À confirmer | Enseignante référente francophone à confirmer",
+        "CM2 | Chinois | Cécile CHANDERIS | Enseignante référente francophone"
+      ]
     },
     {
       "id": "college-emile-zola",
@@ -126,7 +182,27 @@
       "description": "Collège SIC du groupe B, alimenté par Jules Ferry et L'Ille. 2026-2027 : 6e 11-12, 5e 13, 4e 6-7, 3e 10 élèves.",
       "latitude": 48.1087464,
       "longitude": -1.6753032,
-      "photos": []
+      "photos": [],
+      "principal": "Direction à confirmer",
+      "course_modules": [
+        "chinois",
+        "langue-litterature",
+        "mathematiques-chinois"
+      ],
+      "teaching_assignments": [
+        "6e | Chinois | Wu Li-Jo |",
+        "6e | Littérature chinoise | Shi Chengyu |",
+        "6e | Mathématiques en chinois | Wu Li-Jo |",
+        "5e | Chinois | Wu Li-Jo |",
+        "5e | Littérature chinoise | Shi Chengyu |",
+        "5e | Mathématiques en chinois | Wu Li-Jo |",
+        "4e | Chinois | Cédric Quennesson |",
+        "4e | Littérature chinoise | À confirmer |",
+        "4e | Mathématiques en chinois | Wu Li-Jo |",
+        "3e | Chinois | Wu Li-Jo |",
+        "3e | Littérature chinoise | À confirmer |",
+        "3e | Mathématiques en chinois | Wu Li-Jo |"
+      ]
     },
     {
       "id": "emile-zola",
@@ -150,10 +226,52 @@
       "description": "Lycée de poursuite pour les deux collèges SIC. 2026-2027 : 2nde 9 élèves, 1ère 6-7 élèves, terminale 5 élèves.",
       "latitude": 48.1086802,
       "longitude": -1.6750253,
-      "photos": []
+      "photos": [],
+      "principal": "Direction à confirmer",
+      "course_modules": [
+        "chinois",
+        "langue-litterature",
+        "mathematiques-chinois",
+        "connaissance-monde"
+      ],
+      "teaching_assignments": [
+        "2nde | Chinois | Wu Li-Jo |",
+        "2nde | Littérature chinoise | À confirmer |",
+        "2nde | Mathématiques en chinois | Wang Lu |",
+        "2nde | Connaissance du monde | À confirmer | Selon l’organisation en vigueur",
+        "1ère | Chinois | Cédric Quennesson |",
+        "1ère | Littérature chinoise | À confirmer |",
+        "1ère | Mathématiques en chinois | Wang Lu |",
+        "1ère | Connaissance du monde | Cédric Quennesson |",
+        "Terminale | Chinois | Cédric Quennesson |",
+        "Terminale | Littérature chinoise | À confirmer |",
+        "Terminale | Mathématiques en chinois | Wang Lu |",
+        "Terminale | Connaissance du monde | Cédric Quennesson |"
+      ]
     }
   ],
   "teachers": [
+    {
+      "id": "responsable-sic",
+      "name": "Responsable de la SIC",
+      "level": "Coordination générale",
+      "coordo": "Sylvaine Le Bronze Gautier",
+      "is_overall": true,
+      "photo": "",
+      "schools": [
+        "ecole-carle-bahon",
+        "ecole-la-poterie",
+        "ecole-jules-ferry",
+        "ecole-lille",
+        "college-le-landry",
+        "college-emile-zola",
+        "emile-zola"
+      ],
+      "programs": [],
+      "members": [],
+      "biography": "Responsable de la coordination générale de la Section internationale chinoise, elle relie les équipes du primaire, des collèges et du lycée ainsi que les établissements, les familles et les partenaires.",
+      "email": ""
+    },
     {
       "id": "equipe-primaire",
       "name": "Équipe primaire",
@@ -171,15 +289,16 @@
         "langue-litterature"
       ],
       "members": [
-        "Audrey HELEU — CE2, École Carle Bahon",
-        "Anne-Sophie GUINET — CM1, École Carle Bahon",
-        "Corentin CAVE — CM1, École La Poterie, directeur de l’école",
-        "Emilie LIU — CM2, École La Poterie",
-        "Lauria Moisson — CE2, École Jules Ferry",
-        "Marika ISNARD — CM1-CM2, École Jules Ferry",
-        "Genevive XU — CE2, École L'Ille, départ à la retraite en octobre",
-        "Cécile CHANDERIS — CM2, École L'Ille",
-        "Référents à confirmer — CM2 Carle Bahon et CM1 L'Ille"
+        "Audrey HELEU — chinois en CE2 — École Carle Bahon",
+        "Anne-Sophie GUINET — chinois en CM1 — École Carle Bahon",
+        "Référente à confirmer — chinois en CM2 — École Carle Bahon",
+        "Corentin CAVE — chinois en CM1 et directeur de l’école — École La Poterie",
+        "Emilie LIU — chinois en CM2 — École La Poterie",
+        "Lauria Moisson — chinois en CE2 — École Jules Ferry",
+        "Marika ISNARD — chinois en CM1 et CM2 — École Jules Ferry",
+        "Genevive XU — chinois en CE2, départ à la retraite en octobre — École L'Ille",
+        "Référente à confirmer — chinois en CM1 — École L'Ille",
+        "Cécile CHANDERIS — chinois en CM2 — École L'Ille"
       ],
       "biography": "L’équipe primaire fait entrer les élèves dans le chinois par l’oral, les jeux, les chants, les gestes, les histoires, les images et les premiers caractères. L’objectif est d’installer le plaisir d’apprendre et des bases solides avant le collège.",
       "email": ""
@@ -188,7 +307,7 @@
       "id": "equipe-college",
       "name": "Équipe collège",
       "level": "Collège",
-      "coordo": "Coordination collège à confirmer",
+      "coordo": "Wu Li-Jo — coordo collège",
       "photo": "",
       "schools": [
         "college-le-landry",
@@ -200,12 +319,12 @@
         "mathematiques-chinois"
       ],
       "members": [
-        "Wu Li-Jo — chinois et mathématiques, Collège Émile Zola",
-        "Cédric Quennesson — chinois, Collège Émile Zola",
-        "Shi Chengyu — littérature, Collège Émile Zola",
-        "Wang Lu — mathématiques, Collège Landry",
-        "Enseignants de chinois à confirmer — Collège Landry",
-        "Enseignants de littérature à confirmer — Collège Landry et certains niveaux de Collège Émile Zola"
+        "Wu Li-Jo — chinois en 6e, 5e et 3e ; mathématiques en 6e, 5e, 4e et 3e — Collège Émile Zola",
+        "Cédric Quennesson — chinois en 4e — Collège Émile Zola",
+        "Shi Chengyu — littérature chinoise en 6e et 5e — Collège Émile Zola",
+        "Wang Lu — mathématiques en 6e, 5e, 4e et 3e — Collège Landry",
+        "Enseignants de chinois à confirmer — 6e, 5e, 4e et 3e — Collège Landry",
+        "Enseignants de littérature à confirmer — 6e, 5e, 4e et 3e au Collège Landry ; 4e et 3e au Collège Émile Zola"
       ],
       "biography": "Au collège, l’équipe accompagne l’entrée dans une pratique plus structurée : langue chinoise plus approfondie, premières approches de la littérature chinoise et utilisation du chinois comme langue de raisonnement en mathématiques.",
       "email": ""
@@ -214,7 +333,7 @@
       "id": "equipe-lycee",
       "name": "Équipe lycée",
       "level": "Lycée",
-      "coordo": "Coordination lycée à confirmer",
+      "coordo": "Cédric Quennesson — coordo lycée",
       "photo": "",
       "schools": [
         "emile-zola"
@@ -227,16 +346,40 @@
         "avenir"
       ],
       "members": [
-        "Wu Li-Jo — chinois, niveau 2nde",
-        "Cédric Quennesson — chinois et connaissance du monde, niveaux 1ère et terminale",
-        "Wang Lu — mathématiques, lycée",
-        "Enseignants de littérature à confirmer — lycée"
+        "Wu Li-Jo — chinois en 2nde",
+        "Cédric Quennesson — chinois et Connaissance du monde en 1ère et terminale",
+        "Wang Lu — mathématiques en 2nde, 1ère et terminale",
+        "Enseignants de littérature à confirmer — 2nde, 1ère et terminale"
       ],
       "biography": "Au lycée, l’équipe développe la profondeur linguistique, la culture littéraire, les mathématiques en chinois et Connaissance du monde. Les élèves apprennent à argumenter, comparer les points de vue et utiliser le chinois pour comprendre le monde autrement.",
       "email": ""
     }
   ],
   "programs": [
+    {
+      "id": "chinois",
+      "name": "Chinois",
+      "title": "Langue chinoise",
+      "visible": false,
+      "description": "Un enseignement progressif de la langue chinoise, adapté à chaque niveau, de la découverte orale à l’analyse et à l’argumentation.",
+      "target": "Élèves de la SIC du CE2 à la terminale.",
+      "advantages": [
+        "Progression continue",
+        "Expression orale et écrite",
+        "Culture et communication"
+      ],
+      "stage_details": [
+        "Primaire | Découvrir | Oral, jeux, chants, images, gestes et premiers caractères.",
+        "Collège | Approfondir | Développer vocabulaire, lecture, écriture, compréhension et expression.",
+        "Lycée | Analyser et argumenter | Utiliser le chinois avec davantage de précision, d’autonomie et de profondeur."
+      ],
+      "teaching_methods": [
+        "Pratique régulière de l’oral",
+        "Lecture et écriture progressives",
+        "Projets culturels et situations réelles"
+      ],
+      "higher_education": "La maîtrise du chinois valorise un profil bilingue, interculturel et international."
+    },
     {
       "id": "cycle-primaire",
       "name": "Primaire",
@@ -365,7 +508,7 @@
     },
     {
       "id": "langue-litterature",
-      "name": "Littérature",
+      "name": "Littérature chinoise",
       "title": "Langue, culture et littérature chinoises",
       "description": "De l’oral et des premiers textes vers l’analyse littéraire : les élèves apprennent à lire, interpréter et argumenter en chinois.",
       "target": "Élèves du collège et du lycée, avec une progression adaptée à chaque niveau.",
@@ -388,7 +531,7 @@
     },
     {
       "id": "mathematiques-chinois",
-      "name": "Maths",
+      "name": "Mathématiques en chinois",
       "title": "Mathématiques en chinois",
       "description": "Les mathématiques permettent d’utiliser le chinois comme langue de raisonnement, pas seulement comme langue de communication.",
       "target": "Élèves du collège et du lycée selon les horaires définis par niveau.",
@@ -411,7 +554,7 @@
     },
     {
       "id": "connaissance-monde",
-      "name": "Monde",
+      "name": "Connaissance du monde",
       "title": "Connaissance du monde",
       "description": "Au lycée, Connaissance du monde invite les élèves à découvrir le monde en chinois, avec d’autres références et d’autres angles de vue.",
       "target": "Élèves de 1ère et terminale au Lycée Émile Zola.",
