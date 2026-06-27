@@ -4,27 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>Connexion — SIC à Rennes</title>
+  <title data-admin-i18n>Connexion — SIC à Rennes</title>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/admin.css?v=3">
 </head>
 <body class="login-body">
   <main class="login-card">
+    <div class="login-language-row">
+      <div class="admin-language-switcher" aria-label="Langue de l’interface" data-admin-i18n-aria="Langue de l’interface">
+        <button type="button" data-admin-language="zh" aria-pressed="false">中</button>
+        <button type="button" data-admin-language="fr" aria-pressed="false">FR</button>
+        <button type="button" data-admin-language="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
     <a class="brand" href="./">
       <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 21h32M12 17h24l-4-5H16l-4 5Zm3 4v13m18-13v13M10 35h28M16 26h16M20 26v9m8-9v9M7 39h34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 5c2 3 5 4 8 5H16c3-1 6-2 8-5Z" fill="currentColor"/></svg>
       <span><span class="brand-name">SIC à Rennes</span><span class="brand-cn">后台管理</span></span>
     </a>
-    <h1>Connexion administrateur</h1>
-    <p>Entrez le code d’administration défini dans Render.</p>
+    <h1 data-admin-i18n>Connexion administrateur</h1>
+    <p data-admin-i18n>Entrez le code d’administration défini dans Render.</p>
     <form id="login-form">
-      <label for="admin-code">Code administrateur</label>
+      <label for="admin-code" data-admin-i18n>Code administrateur</label>
       <input id="admin-code" name="code" type="password" autocomplete="current-password" required autofocus>
-      <button class="admin-button primary" type="submit">Se connecter</button>
+      <button class="admin-button primary" type="submit" data-admin-i18n>Se connecter</button>
       <p class="login-error" id="login-error" role="alert"></p>
     </form>
   </main>
+  <script src="js/admin-i18n.js?v=1"></script>
   <script>
+    AdminI18n.apply(document);
     document.querySelector("#login-form").addEventListener("submit", async (event) => {
       event.preventDefault();
       const error = document.querySelector("#login-error");
@@ -37,7 +46,7 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ code: document.querySelector("#admin-code").value })
         });
-        if (!response.ok) throw new Error("Code incorrect");
+        if (!response.ok) throw new Error(AdminI18n.t("Code incorrect"));
         location.replace("/admin.html");
       } catch (loginError) {
         error.textContent = loginError.message;

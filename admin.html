@@ -4,67 +4,73 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>Administration — SIC à Rennes</title>
+  <title data-admin-i18n>Administration — SIC à Rennes</title>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/admin.css?v=3">
 </head>
 <body class="admin-body">
   <header class="admin-header">
     <a class="brand" href="./">
       <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 21h32M12 17h24l-4-5H16l-4 5Zm3 4v13m18-13v13M10 35h28M16 26h16M20 26v9m8-9v9M7 39h34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 5c2 3 5 4 8 5H16c3-1 6-2 8-5Z" fill="currentColor"/></svg>
-      <span><span class="brand-name">Administration SIC</span><span class="brand-cn">雷恩中文国际班</span></span>
+      <span><span class="brand-name" data-admin-i18n>Administration SIC</span><span class="brand-cn">雷恩中文国际班</span></span>
     </a>
     <div class="admin-actions">
-      <button class="admin-button" id="import-button" type="button">Importer JSON</button>
-      <button class="admin-button" id="export-button" type="button">Exporter JSON</button>
-      <button class="admin-button" id="logout-button" type="button">Déconnexion</button>
-      <a class="admin-button primary" href="./">Voir le site</a>
+      <div class="admin-language-switcher" aria-label="Langue de l’interface" data-admin-i18n-aria="Langue de l’interface">
+        <button type="button" data-admin-language="zh" aria-pressed="false">中</button>
+        <button type="button" data-admin-language="fr" aria-pressed="false">FR</button>
+        <button type="button" data-admin-language="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="admin-button" id="import-button" type="button" data-admin-i18n>Importer JSON</button>
+      <button class="admin-button" id="export-button" type="button" data-admin-i18n>Exporter JSON</button>
+      <button class="admin-button" id="logout-button" type="button" data-admin-i18n>Déconnexion</button>
+      <a class="admin-button primary" href="./" data-admin-i18n>Voir le site</a>
       <input id="import-file" type="file" accept=".json,application/json" hidden>
     </div>
   </header>
 
   <main class="admin-main">
     <aside class="admin-sidebar">
-      <h1>Contenus</h1>
+      <h1 data-admin-i18n>Contenus</h1>
       <nav id="admin-tabs" aria-label="Collections"></nav>
-      <button class="admin-button danger" id="reset-button" type="button">Réinitialiser les données</button>
+      <button class="admin-button danger" id="reset-button" type="button" data-admin-i18n>Réinitialiser les données</button>
     </aside>
 
     <section class="admin-content">
       <div class="admin-titlebar">
-        <div><p>Gestion locale</p><h2 id="collection-title">Pôles SIC</h2></div>
-        <button class="admin-button primary" id="new-button" type="button">Nouveau</button>
+        <div><p data-admin-i18n>Gestion locale</p><h2 id="collection-title">Pôles SIC</h2></div>
+        <button class="admin-button primary" id="new-button" type="button" data-admin-i18n>Nouveau</button>
       </div>
       <div class="admin-workspace">
         <section class="record-panel">
-          <div class="record-search"><input id="record-search" type="search" placeholder="Rechercher"></div>
+          <div class="record-search"><input id="record-search" type="search" placeholder="Rechercher" data-admin-i18n-placeholder="Rechercher"></div>
           <div id="record-list"></div>
         </section>
         <section class="editor-panel">
-          <div id="editor-empty" class="admin-empty">Sélectionnez un élément ou créez-en un nouveau.</div>
+          <div id="editor-empty" class="admin-empty" data-admin-i18n>Sélectionnez un élément ou créez-en un nouveau.</div>
           <form id="editor-form" hidden>
-            <div class="editor-heading"><h3 id="editor-title">Nouvel élément</h3><button class="icon-button" id="close-editor" type="button" aria-label="Fermer">×</button></div>
+            <div class="editor-heading"><h3 id="editor-title" data-admin-i18n>Nouvel élément</h3><button class="icon-button" id="close-editor" type="button" aria-label="Fermer" data-admin-i18n-aria="Fermer">×</button></div>
             <div id="editor-fields" class="editor-fields"></div>
             <div class="media-field" id="media-field" hidden>
-              <label id="media-label" for="media-upload">Médias</label>
+              <label id="media-label" for="media-upload" data-admin-i18n>Médias</label>
               <input id="media-upload" type="file" multiple>
-              <small id="media-help">Les fichiers sont enregistrés sur le serveur avec les contenus. Privilégiez des fichiers légers.</small>
+              <small id="media-help" data-admin-i18n>Les fichiers sont enregistrés sur le serveur avec les contenus. Privilégiez des fichiers légers.</small>
               <div id="media-preview" class="media-preview"></div>
             </div>
             <div class="editor-actions">
-              <button class="admin-button danger" id="delete-button" type="button">Supprimer</button>
-              <button class="admin-button primary" type="submit">Enregistrer</button>
+              <button class="admin-button danger" id="delete-button" type="button" data-admin-i18n>Supprimer</button>
+              <button class="admin-button primary" type="submit" data-admin-i18n>Enregistrer</button>
             </div>
           </form>
         </section>
       </div>
-      <p class="storage-note">Les modifications sont enregistrées sur le serveur et deviennent visibles immédiatement sur le site. Utilisez l’export JSON pour conserver une sauvegarde.</p>
+      <p class="storage-note" data-admin-i18n>Les modifications sont enregistrées sur le serveur et deviennent visibles immédiatement sur le site. Utilisez l’export JSON pour conserver une sauvegarde.</p>
     </section>
   </main>
   <div id="admin-toast" class="admin-toast" role="status" aria-live="polite"></div>
+  <script src="js/admin-i18n.js?v=1"></script>
   <script src="js/seed-data.js?v=2"></script>
   <script src="js/data-store.js?v=2"></script>
-  <script src="js/admin.js?v=2"></script>
+  <script src="js/admin.js?v=3"></script>
 </body>
 </html>

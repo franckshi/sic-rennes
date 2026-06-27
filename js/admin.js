@@ -1,10 +1,12 @@
 (function () {
+  const i18n = window.AdminI18n;
+  const t = i18n?.t || ((value) => value);
   const config = {
     schools: {
       label: "Pôles SIC",
       singular: "pôle",
       title: (item) => item.name,
-      subtitle: (item) => `${item.type || "Type non renseigné"} · ${item.address || "Adresse non renseignée"}`,
+      subtitle: (item) => `${item.type || t("Type non renseigné")} · ${item.address || t("Adresse non renseignée")}`,
       media: { field: "photos", accept: "image/*", label: "Photos" },
       fields: [
         ["id", "Identifiant", "text", "Identifiant URL unique"],
@@ -29,7 +31,7 @@
       label: "Enseignants",
       singular: "enseignant",
       title: (item) => item.name,
-      subtitle: (item) => item.biography || "Biographie non renseignée",
+      subtitle: (item) => item.biography || t("Biographie non renseignée"),
       media: { field: "photo", accept: "image/*", label: "Photo" },
       fields: [
         ["id", "Identifiant", "text", ""],
@@ -48,7 +50,7 @@
       label: "Parcours",
       singular: "volet du parcours",
       title: (item) => item.title,
-      subtitle: (item) => `${item.name || "Code non renseigné"} · ${item.description || "Description non renseignée"}`,
+      subtitle: (item) => `${item.name || t("Code non renseigné")} · ${item.description || t("Description non renseignée")}`,
       fields: [
         ["id", "Identifiant", "text", ""],
         ["name", "Nom court", "text", "Ex. Collège, Lycée, DNL"],
@@ -69,7 +71,7 @@
       label: "Agenda",
       singular: "événement",
       title: (item) => item.title,
-      subtitle: (item) => `${item.date || "Date inconnue"} · ${item.location || "Lieu inconnu"}`,
+      subtitle: (item) => `${item.date || t("Date inconnue")} · ${item.location || t("Lieu inconnu")}`,
       fields: [
         ["id", "Identifiant", "text", ""],
         ["date", "Date exacte", "date", "Laisser vide si la date n’est pas confirmée"],
@@ -85,7 +87,7 @@
       label: "Activités",
       singular: "activité",
       title: (item) => item.title,
-      subtitle: (item) => `${item.year || "Année inconnue"} · ${item.category || "Catégorie inconnue"}`,
+      subtitle: (item) => `${item.year || t("Année inconnue")} · ${item.category || t("Catégorie inconnue")}`,
       media: { field: "photos", accept: "image/*", label: "Photos du projet (3 à 4 recommandées, 4 maximum)" },
       fields: [
         ["id", "Identifiant", "text", ""],
@@ -129,7 +131,7 @@
 
   function renderTabs() {
     tabs.innerHTML = Object.entries(config).map(([key, value]) =>
-      `<button class="admin-tab ${key === collection ? "active" : ""}" data-collection="${key}">${value.label}<span>${DataStore.get(key).length}</span></button>`
+      `<button class="admin-tab ${key === collection ? "active" : ""}" data-collection="${key}">${t(value.label)}<span>${DataStore.get(key).length}</span></button>`
     ).join("");
   }
 
@@ -140,26 +142,26 @@
     list.innerHTML = filtered.length
       ? filtered.map((item) => `<div class="record-item ${item.id === selectedId ? "active" : ""}" data-id="${escapeHTML(item.id)}" draggable="true">
           <span class="drag-handle" aria-hidden="true">↕</span>
-          <button class="record-main" type="button" data-open-id="${escapeHTML(item.id)}"><strong>${escapeHTML(cfg.title(item) || "Sans titre")}</strong><small>${escapeHTML(cfg.subtitle(item))}</small></button>
-          <span class="record-actions" aria-label="Changer l’ordre">
-            <button type="button" data-order="-1" title="Monter">↑</button>
-            <button type="button" data-order="1" title="Descendre">↓</button>
+          <button class="record-main" type="button" data-open-id="${escapeHTML(item.id)}"><strong>${escapeHTML(cfg.title(item) || t("Sans titre"))}</strong><small>${escapeHTML(cfg.subtitle(item))}</small></button>
+          <span class="record-actions" aria-label="${escapeHTML(t("Changer l’ordre"))}">
+            <button type="button" data-order="-1" title="${escapeHTML(t("Monter"))}">↑</button>
+            <button type="button" data-order="1" title="${escapeHTML(t("Descendre"))}">↓</button>
           </span>
         </div>`).join("")
-      : `<div class="admin-empty">Aucun résultat.</div>`;
+      : `<div class="admin-empty">${t("Aucun résultat.")}</div>`;
   }
 
   function blockRowMarkup(value = "text |  | ") {
     const [type = "text", first = "", ...rest] = String(value).split("|").map((part) => part.trim());
     const body = rest.join(" | ");
     return `<div class="content-block-row" data-content-block>
-      <span class="content-block-handle" draggable="true" data-block-handle title="Déplacer">↕</span>
-      <select data-block-type aria-label="Type de bloc">
-        ${[["text", "Texte"], ["image", "Image"], ["gallery", "Galerie"]].map(([key, label]) => `<option value="${key}" ${type === key || (type === "texte" && key === "text") || (type === "galerie" && key === "gallery") ? "selected" : ""}>${label}</option>`).join("")}
+      <span class="content-block-handle" draggable="true" data-block-handle title="${escapeHTML(t("Déplacer"))}">↕</span>
+      <select data-block-type aria-label="${escapeHTML(t("Type de bloc"))}">
+        ${[["text", "Texte"], ["image", "Image"], ["gallery", "Galerie"]].map(([key, label]) => `<option value="${key}" ${type === key || (type === "texte" && key === "text") || (type === "galerie" && key === "gallery") ? "selected" : ""}>${t(label)}</option>`).join("")}
       </select>
-      <input type="text" data-block-first value="${escapeHTML(first)}" placeholder="Titre ou n° de photo(s)">
-      <textarea data-block-body placeholder="Texte, titre de galerie ou légende">${escapeHTML(body)}</textarea>
-      <span class="content-block-actions"><button type="button" data-block-move="-1" title="Monter">↑</button><button type="button" data-block-move="1" title="Descendre">↓</button><button type="button" data-block-remove title="Supprimer">×</button></span>
+      <input type="text" data-block-first value="${escapeHTML(first)}" placeholder="${escapeHTML(t("Titre ou n° de photo(s)"))}">
+      <textarea data-block-body placeholder="${escapeHTML(t("Texte, titre de galerie ou légende"))}">${escapeHTML(body)}</textarea>
+      <span class="content-block-actions"><button type="button" data-block-move="-1" title="${escapeHTML(t("Monter"))}">↑</button><button type="button" data-block-move="1" title="${escapeHTML(t("Descendre"))}">↓</button><button type="button" data-block-remove title="${escapeHTML(t("Supprimer"))}">×</button></span>
     </div>`;
   }
 
@@ -167,7 +169,7 @@
     const items = Array.isArray(values) && values.length ? values : ["text | Présentation | ", "gallery | 1,2,3,4 | Photos du projet"];
     return `<div class="content-block-editor" data-block-editor>
       <div data-block-list>${items.map((value) => blockRowMarkup(value)).join("")}</div>
-      <div class="content-block-add"><button type="button" data-add-block="text">+ Texte</button><button type="button" data-add-block="image">+ Image</button><button type="button" data-add-block="gallery">+ Galerie</button></div>
+      <div class="content-block-add"><button type="button" data-add-block="text">${t("+ Texte")}</button><button type="button" data-add-block="image">${t("+ Image")}</button><button type="button" data-add-block="gallery">${t("+ Galerie")}</button></div>
       <textarea name="${name}" data-block-value hidden>${escapeHTML(items.join("\n"))}</textarea>
     </div>`;
   }
@@ -194,15 +196,15 @@
       control = `<textarea id="field-${name}" name="${name}">${escapeHTML(value)}</textarea>`;
     } else if (type === "boolean") {
       const checked = name === "is_overall" ? raw === true : raw !== false;
-      control = `<label class="checkbox-field"><input id="field-${name}" name="${name}" type="checkbox" ${checked}> <span>Afficher</span></label>`;
+      control = `<label class="checkbox-field"><input id="field-${name}" name="${name}" type="checkbox" ${checked}> <span>${t("Afficher")}</span></label>`;
     } else if (type === "select") {
-      control = `<select id="field-${name}" name="${name}">${helper.map((option) => `<option ${value === option ? "selected" : ""}>${escapeHTML(option)}</option>`).join("")}</select>`;
+      control = `<select id="field-${name}" name="${name}">${helper.map((option) => `<option value="${escapeHTML(option)}" ${value === option ? "selected" : ""}>${escapeHTML(t(option))}</option>`).join("")}</select>`;
     } else {
       const step = type === "number" ? `step="any"` : "";
       control = `<input id="field-${name}" name="${name}" type="${type === "array" ? "text" : type}" value="${escapeHTML(value)}" ${step}>`;
     }
     const hint = Array.isArray(helper) ? "" : helper;
-    return `<div class="form-field ${wide}"><label for="field-${name}">${label}</label>${control}${hint ? `<small>${escapeHTML(hint)}</small>` : ""}</div>`;
+    return `<div class="form-field ${wide}"><label for="field-${name}">${escapeHTML(t(label))}</label>${control}${hint ? `<small>${escapeHTML(t(hint))}</small>` : ""}</div>`;
   }
 
   function openEditor(id) {
@@ -212,7 +214,7 @@
     if (selectedId && !item) return;
     pendingMedia = [];
     fieldsHost.innerHTML = cfg.fields.map((field) => fieldMarkup(field, item || {})).join("");
-    document.querySelector("#editor-title").textContent = selectedId ? `Modifier ${cfg.singular}` : `Nouvel ${cfg.singular}`;
+    document.querySelector("#editor-title").textContent = i18n?.editTitle ? i18n.editTitle(cfg.singular, !selectedId) : selectedId ? `Modifier ${cfg.singular}` : `Nouvel ${cfg.singular}`;
     document.querySelector("#delete-button").hidden = !selectedId;
     empty.hidden = true;
     form.hidden = false;
@@ -236,14 +238,14 @@
     mediaField.hidden = false;
     mediaInput.accept = media.accept;
     mediaInput.multiple = collection !== "teachers";
-    document.querySelector("#media-label").textContent = media.label;
+    document.querySelector("#media-label").textContent = t(media.label);
     document.querySelector("#media-help").textContent = collection === "activities"
-      ? "La première photo devient la miniature de la carte. Une nouvelle sélection remplace les photos actuelles."
-      : "Les fichiers sont enregistrés sur le serveur avec les contenus. Privilégiez des fichiers légers.";
+      ? t("La première photo devient la miniature de la carte. Une nouvelle sélection remplace les photos actuelles.")
+      : t("Les fichiers sont enregistrés sur le serveur avec les contenus. Privilégiez des fichiers légers.");
     const current = media.secondField
       ? [...(item[media.field] || []), ...(item[media.secondField] || [])]
       : Array.isArray(item[media.field]) ? item[media.field] : item[media.field] ? [item[media.field]] : [];
-    mediaPreview.innerHTML = current.map((source, index) => `<figure class="media-chip"><img src="${escapeHTML(source)}" alt="Média ${index + 1}"><figcaption>${collection === "activities" && index === 0 ? "Photo 1 · miniature" : `Photo ${index + 1}`}</figcaption></figure>`).join("");
+    mediaPreview.innerHTML = current.map((source, index) => `<figure class="media-chip"><img src="${escapeHTML(source)}" alt="${escapeHTML(t("Médias"))} ${index + 1}"><figcaption>${collection === "activities" && index === 0 ? t("Photo 1 · miniature") : `${t("Photo")} ${index + 1}`}</figcaption></figure>`).join("");
     mediaInput.value = "";
   }
 
@@ -278,10 +280,10 @@
     try {
       await DataStore.set(collection, records);
       renderList();
-      toast("Ordre mis à jour.");
+      toast(t("Ordre mis à jour."));
     } catch (error) {
       console.error(error);
-      toast(error.message);
+      toast(t(error.message));
     }
   }
 
@@ -296,10 +298,10 @@
     try {
       await DataStore.set(collection, records);
       renderList();
-      toast("Ordre mis à jour.");
+      toast(t("Ordre mis à jour."));
     } catch (error) {
       console.error(error);
-      toast(error.message);
+      toast(t(error.message));
     }
   }
 
@@ -316,7 +318,7 @@
     if (!result.id) result.id = slugify(result.name || result.title || `${collection}-${Date.now()}`);
     const duplicate = records.find((record) => record.id === result.id && record.id !== selectedId);
     if (duplicate) {
-      toast("Cet identifiant existe déjà.");
+      toast(t("Cet identifiant existe déjà."));
       return;
     }
     if (cfg.media && pendingMedia.length) {
@@ -336,23 +338,23 @@
       selectedId = result.id;
       renderTabs();
       openEditor(result.id);
-      toast("Modifications enregistrées en ligne.");
+      toast(t("Modifications enregistrées en ligne."));
     } catch (error) {
       console.error(error);
-      toast(error.message);
+      toast(t(error.message));
     }
   }
 
   async function removeSelected() {
-    if (!selectedId || !confirm("Supprimer définitivement cet élément ?")) return;
+    if (!selectedId || !confirm(t("Supprimer définitivement cet élément ?"))) return;
     try {
       await DataStore.set(collection, items().filter((record) => record.id !== selectedId));
       closeEditor();
       renderTabs();
-      toast("Élément supprimé.");
+      toast(t("Élément supprimé."));
     } catch (error) {
       console.error(error);
-      toast(error.message);
+      toast(t(error.message));
     }
   }
 
@@ -363,7 +365,7 @@
     link.download = `sic-a-rennes-${new Date().toISOString().slice(0, 10)}.json`;
     link.click();
     URL.revokeObjectURL(link.href);
-    toast("Export JSON créé.");
+    toast(t("Export JSON créé."));
   }
 
   async function importJSON(file) {
@@ -372,10 +374,10 @@
       closeEditor();
       renderTabs();
       renderList();
-      toast("Données importées.");
+      toast(t("Données importées."));
     } catch (error) {
       console.error(error);
-      toast("Le fichier JSON est invalide.");
+      toast(t("Le fichier JSON est invalide."));
     }
   }
 
@@ -393,7 +395,7 @@
     if (!button) return;
     collection = button.dataset.collection;
     search.value = "";
-    document.querySelector("#collection-title").textContent = config[collection].label;
+    document.querySelector("#collection-title").textContent = t(config[collection].label);
     closeEditor();
     renderTabs();
     renderList();
@@ -496,7 +498,7 @@
     pendingMedia = await readFiles(mediaInput.files);
     if (collection === "activities" && pendingMedia.length > 4) {
       pendingMedia = pendingMedia.slice(0, 4);
-      toast("Quatre photos maximum : seules les quatre premières seront enregistrées.");
+      toast(t("Quatre photos maximum : seules les quatre premières seront enregistrées."));
     }
     mediaPreview.innerHTML = pendingMedia.map((file, index) => `<figure class="media-chip"><img src="${file.data}" alt="${escapeHTML(file.name)}"><figcaption>${index === 0 && collection === "activities" ? "Photo 1 · miniature" : escapeHTML(file.name)}</figcaption></figure>`).join("");
   });
@@ -504,12 +506,12 @@
   document.querySelector("#import-button").addEventListener("click", () => document.querySelector("#import-file").click());
   document.querySelector("#import-file").addEventListener("change", (event) => event.target.files[0] && importJSON(event.target.files[0]));
   document.querySelector("#reset-button").addEventListener("click", async () => {
-    if (!confirm("Réinitialiser toutes les données du site ?")) return;
+    if (!confirm(t("Réinitialiser toutes les données du site ?"))) return;
     try {
       await DataStore.reset();
     } catch (error) {
       console.error(error);
-      toast(error.message);
+      toast(t(error.message));
     }
   });
   document.querySelector("#logout-button").addEventListener("click", async () => {
@@ -517,6 +519,8 @@
     location.replace("/login.html");
   });
 
+  i18n?.apply(document);
+  document.querySelector("#collection-title").textContent = t(config[collection].label);
   renderTabs();
   renderList();
 })();
