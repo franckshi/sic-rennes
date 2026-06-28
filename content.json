@@ -731,22 +731,6 @@
   ],
   "activities": [
     {
-      "id": "voyage-paris-13e",
-      "symbol": "旅",
-      "title": "Voyage des classes de 3e à Paris 13e",
-      "year": "2026-2027",
-      "category": "Voyages scolaires",
-      "description": "Les élèves de 3e des collèges Landry et Émile Zola découvrent le quartier chinois, ses lieux culturels et la présence chinoise à Paris.",
-      "photos": [],
-      "videos": [],
-      "detail_intro": "Ce voyage réunit les classes de 3e des deux collèges SIC autour d’une découverte linguistique et culturelle du 13e arrondissement de Paris.",
-      "content_blocks": [
-        "text | Découvrir un territoire chinois en France | Les élèves observent le quartier, ses commerces, ses lieux culturels et les différentes formes de présence chinoise à Paris.",
-        "gallery | 1,2,3,4 | Images du voyage",
-        "text | Relier langue et expérience | Le déplacement permet de mobiliser le chinois dans une situation concrète, de préparer des observations et de partager les découvertes au retour."
-      ]
-    },
-    {
       "id": "voyage-chine-lyceens",
       "symbol": "华",
       "title": "Voyage des lycéens en Chine",
@@ -760,6 +744,22 @@
         "text | Trois villes, plusieurs visages de la Chine | Pékin, Shanghai et Nantong offrent des contextes complémentaires pour comprendre l’histoire, la vie urbaine, l’éducation et les transformations contemporaines.",
         "gallery | 1,2,3,4 | Carnet de voyage",
         "text | Pratiquer le chinois en situation réelle | Les élèves utilisent la langue au quotidien, échangent avec leurs partenaires et transforment le voyage en expérience d’apprentissage et d’autonomie."
+      ]
+    },
+    {
+      "id": "voyage-paris-13e",
+      "symbol": "旅",
+      "title": "Voyage des classes de 3e à Paris 13e",
+      "year": "2026-2027",
+      "category": "Voyages scolaires",
+      "description": "Les élèves de 3e des collèges Landry et Émile Zola découvrent le quartier chinois, ses lieux culturels et la présence chinoise à Paris.",
+      "photos": [],
+      "videos": [],
+      "detail_intro": "Ce voyage réunit les classes de 3e des deux collèges SIC autour d’une découverte linguistique et culturelle du 13e arrondissement de Paris.",
+      "content_blocks": [
+        "text | Découvrir un territoire chinois en France | Les élèves observent le quartier, ses commerces, ses lieux culturels et les différentes formes de présence chinoise à Paris.",
+        "gallery | 1,2,3,4 | Images du voyage",
+        "text | Relier langue et expérience | Le déplacement permet de mobiliser le chinois dans une situation concrète, de préparer des observations et de partager les découvertes au retour."
       ]
     },
     {
