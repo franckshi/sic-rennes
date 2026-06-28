@@ -193,11 +193,20 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     const bounds = [];
+    const markerLabels = {
+      "ecole-carle-bahon": "École Carle Bahon",
+      "ecole-la-poterie": "École La Poterie",
+      "college-le-landry": "Collège Landry",
+      "ecole-jules-ferry": "École Jules Ferry",
+      "ecole-lille": "École L'Ille",
+      "college-emile-zola": "Collège Émile Zola",
+      "emile-zola": "Lycée Émile Zola"
+    };
     points.forEach((school) => {
       const level = school.type.includes("primaire") ? "primary" : school.type === "Collège" ? "middle" : "high";
       const icon = window.L.divIcon({
-        className: "campus-leaflet-marker",
-        html: `<span class="campus-marker-${level}"><b>${escapeHTML(school.monogram || "•")}</b></span>`,
+        className: `campus-leaflet-marker campus-marker-site-${school.id}`,
+        html: `<span class="campus-marker-pin campus-marker-${level}"><b>${escapeHTML(school.monogram || "•")}</b></span><span class="campus-marker-name campus-marker-name-${escapeHTML(school.id)}">${escapeHTML(markerLabels[school.id] || school.name)}</span>`,
         iconSize: [42, 50],
         iconAnchor: [21, 48],
         tooltipAnchor: [0, -42]

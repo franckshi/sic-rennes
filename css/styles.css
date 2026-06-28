@@ -789,11 +789,12 @@ main {
 }
 
 .campus-leaflet-marker {
+  overflow: visible;
   border: 0;
   background: transparent;
 }
 
-.campus-leaflet-marker > span {
+.campus-leaflet-marker > .campus-marker-pin {
   width: 42px;
   height: 42px;
   display: grid;
@@ -808,19 +809,70 @@ main {
   transition: transform 160ms ease, background 160ms ease;
 }
 
-.campus-leaflet-marker > span b {
+.campus-leaflet-marker > .campus-marker-pin b {
   display: inline-block;
   font: inherit;
   transform: rotate(45deg);
 }
 
-.campus-leaflet-marker > span.campus-marker-primary { background: var(--brick); }
-.campus-leaflet-marker > span.campus-marker-middle { background: var(--jade-dark); }
-.campus-leaflet-marker > span.campus-marker-high { background: #9b6b21; }
+.campus-leaflet-marker > .campus-marker-primary { background: var(--brick); }
+.campus-leaflet-marker > .campus-marker-middle { background: var(--jade-dark); }
+.campus-leaflet-marker > .campus-marker-high { background: #9b6b21; }
 
-.campus-leaflet-marker:hover > span,
-.leaflet-marker-icon:focus > span {
+.campus-leaflet-marker:hover > .campus-marker-pin,
+.leaflet-marker-icon:focus > .campus-marker-pin {
   transform: rotate(-45deg) translate(3px, -3px);
+}
+
+.campus-marker-name {
+  position: absolute;
+  top: 8px;
+  left: 39px;
+  width: max-content;
+  max-width: 170px;
+  padding: 5px 9px;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 1px solid rgba(255, 253, 249, 0.72);
+  border-radius: 8px;
+  color: var(--ink);
+  background: rgba(255, 253, 249, 0.72);
+  box-shadow: 0 5px 16px rgba(47, 52, 55, 0.13);
+  font: 750 11px/1.2 var(--sans);
+  text-overflow: ellipsis;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: background 160ms ease, box-shadow 160ms ease;
+}
+
+.campus-leaflet-marker:hover > .campus-marker-name,
+.leaflet-marker-icon:focus > .campus-marker-name {
+  background: rgba(255, 253, 249, 0.9);
+  box-shadow: 0 7px 20px rgba(47, 52, 55, 0.18);
+}
+
+.campus-marker-name-college-le-landry,
+.campus-marker-name-college-emile-zola {
+  top: -18px;
+}
+
+.campus-marker-site-college-emile-zola > .campus-marker-pin {
+  position: relative;
+  left: -11px;
+}
+
+.campus-marker-site-emile-zola > .campus-marker-pin {
+  position: relative;
+  left: 11px;
+}
+
+.campus-marker-site-college-emile-zola > .campus-marker-name {
+  left: 28px;
+}
+
+.campus-marker-site-emile-zola > .campus-marker-name {
+  left: 50px;
 }
 
 .campus-leaflet-tooltip {
@@ -2039,6 +2091,12 @@ main {
 @media (max-width: 720px) {
   .container {
     width: min(calc(100% - 28px), var(--container));
+  }
+
+  .campus-marker-name {
+    max-width: 112px;
+    padding: 4px 6px;
+    font-size: 9px;
   }
 
   .map-canvas {
