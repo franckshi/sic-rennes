@@ -747,6 +747,22 @@
       ]
     },
     {
+      "id": "voyage-chine-lyceens",
+      "symbol": "华",
+      "title": "Voyage des lycéens en Chine",
+      "year": "2026-2027",
+      "category": "Mobilité internationale",
+      "description": "Un voyage à Pékin, Shanghai et Nantong pour pratiquer le chinois, rencontrer des partenaires et découvrir la Chine contemporaine.",
+      "photos": [],
+      "videos": [],
+      "detail_intro": "Les lycéens découvrent Pékin, Shanghai et Nantong dans un parcours associant pratique linguistique, rencontres scolaires et découverte de la Chine contemporaine.",
+      "content_blocks": [
+        "text | Trois villes, plusieurs visages de la Chine | Pékin, Shanghai et Nantong offrent des contextes complémentaires pour comprendre l’histoire, la vie urbaine, l’éducation et les transformations contemporaines.",
+        "gallery | 1,2,3,4 | Carnet de voyage",
+        "text | Pratiquer le chinois en situation réelle | Les élèves utilisent la langue au quotidien, échangent avec leurs partenaires et transforment le voyage en expérience d’apprentissage et d’autonomie."
+      ]
+    },
+    {
       "id": "examens-hsk",
       "symbol": "考",
       "title": "Organisation des examens HSK",
@@ -762,22 +778,6 @@
         "text | Une certification pour valoriser les progrès | Le HSK permet aux élèves de situer leur niveau, de se fixer un objectif et de faire reconnaître officiellement leurs compétences en chinois.",
         "gallery | 1,2,3,4 | Préparation et session d’examen",
         "text | Préparer sereinement l’examen | Les élèves découvrent le format des épreuves, s’entraînent aux différentes compétences et reçoivent les informations pratiques nécessaires à l’inscription."
-      ]
-    },
-    {
-      "id": "voyage-chine-lyceens",
-      "symbol": "华",
-      "title": "Voyage des lycéens en Chine",
-      "year": "2026-2027",
-      "category": "Mobilité internationale",
-      "description": "Un voyage à Pékin, Shanghai et Nantong pour pratiquer le chinois, rencontrer des partenaires et découvrir la Chine contemporaine.",
-      "photos": [],
-      "videos": [],
-      "detail_intro": "Les lycéens découvrent Pékin, Shanghai et Nantong dans un parcours associant pratique linguistique, rencontres scolaires et découverte de la Chine contemporaine.",
-      "content_blocks": [
-        "text | Trois villes, plusieurs visages de la Chine | Pékin, Shanghai et Nantong offrent des contextes complémentaires pour comprendre l’histoire, la vie urbaine, l’éducation et les transformations contemporaines.",
-        "gallery | 1,2,3,4 | Carnet de voyage",
-        "text | Pratiquer le chinois en situation réelle | Les élèves utilisent la langue au quotidien, échangent avec leurs partenaires et transforment le voyage en expérience d’apprentissage et d’autonomie."
       ]
     },
     {
