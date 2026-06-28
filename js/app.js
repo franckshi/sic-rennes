@@ -1,4 +1,5 @@
-(function () {
+(async function () {
+  await window.DataStore.ready;
   const body = document.body;
   const root = body.dataset.root || ".";
   const view = body.dataset.view || "home";

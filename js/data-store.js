@@ -9,6 +9,24 @@
     return clone((window.SEED_DATA && window.SEED_DATA[name]) || []);
   }
 
+  function validData(value) {
+    return value && typeof value === "object" && collections.every((name) => Array.isArray(value[name]));
+  }
+
+  const ready = (async () => {
+    const contentURL = window.SIC_CONTENT_URL || "/api/content";
+    try {
+      const response = await fetch(contentURL, { cache: "no-cache" });
+      if (!response.ok) throw new Error(`Contenu indisponible (${response.status})`);
+      const payload = await response.json();
+      const source = payload.data || payload;
+      if (!validData(source)) throw new Error("Structure de données invalide");
+      window.SEED_DATA = clone(source);
+    } catch (error) {
+      console.warn("Contenu en ligne indisponible, utilisation des données intégrées.", error);
+    }
+  })();
+
   async function request(url, options) {
     const response = await fetch(url, options);
     if (response.status === 401) {
@@ -28,6 +46,24 @@
       body: JSON.stringify({ value })
     });
     window.SEED_DATA[name] = clone(value);
+  }
+
+  async function uploadMedia(file) {
+    return request("/api/media", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: file.name, type: file.type, data: file.data })
+    }).then((payload) => payload.url);
+  }
+
+  async function deleteMedia(urls) {
+    const values = (urls || []).filter(Boolean);
+    if (!values.length) return;
+    await request("/api/media", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ urls: values })
+    });
   }
 
   function all() {
@@ -57,5 +93,5 @@
     location.reload();
   }
 
-  window.DataStore = { collections, get, set, all, exportAll, importAll, reset };
+  window.DataStore = { collections, ready, get, set, all, exportAll, importAll, reset, uploadMedia, deleteMedia };
 })();

@@ -4,10 +4,13 @@
   "private": true,
   "description": "Plateforme web administrable de la Section internationale chinoise à Rennes",
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   },
   "scripts": {
-    "start": "node server.js",
-    "check": "node --check server.js && node --check js/app.js && node --check js/admin.js && node --check js/data-store.js && node --check js/seed-data.js"
+    "check": "node --check server.js && node --check js/app.js && node --check js/admin.js && node --check js/data-store.js && node --check js/seed-data.js && node --check api/content.js && node --check api/login.js && node --check api/logout.js && node --check api/media.js && node --check api/import.js && node --check api/reset.js && node --check api/data/[collection].js",
+    "migrate:blob": "node scripts/migrate-content-to-blob.mjs"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.5.0"
   }
 }

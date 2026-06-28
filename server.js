@@ -246,7 +246,7 @@ function securityHeaders(response) {
   response.setHeader("X-Frame-Options", "SAMEORIGIN");
   response.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
   response.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
-  response.setHeader("Content-Security-Policy", "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tile.openstreetmap.org; media-src 'self' data: blob:; connect-src 'self'; base-uri 'self'; form-action 'self'");
+  response.setHeader("Content-Security-Policy", "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tile.openstreetmap.org https://*.public.blob.vercel-storage.com; media-src 'self' data: blob: https://*.public.blob.vercel-storage.com; connect-src 'self' https://*.public.blob.vercel-storage.com; base-uri 'self'; form-action 'self'");
 }
 
 const MIME = {
@@ -281,6 +281,10 @@ function staticFile(requestPath, response) {
 async function api(request, response, pathname) {
   if (pathname === "/api/health" && request.method === "GET") {
     return json(response, 200, { ok: true });
+  }
+
+  if (pathname === "/api/content" && request.method === "GET") {
+    return json(response, 200, readData());
   }
 
   if (pathname === "/api/auth/status" && request.method === "GET") {
@@ -334,6 +338,16 @@ async function api(request, response, pathname) {
 
   if (pathname === "/api/reset" && request.method === "POST") {
     await writeData(initialData());
+    return json(response, 200, { ok: true });
+  }
+
+  if (pathname === "/api/media" && request.method === "POST") {
+    const payload = await bodyJSON(request);
+    if (!String(payload.data || "").startsWith("data:image/")) return json(response, 400, { error: "Image invalide" });
+    return json(response, 201, { ok: true, url: payload.data });
+  }
+
+  if (pathname === "/api/media" && request.method === "DELETE") {
     return json(response, 200, { ok: true });
   }
 

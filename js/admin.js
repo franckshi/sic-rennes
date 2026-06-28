@@ -1,4 +1,16 @@
-(function () {
+(async function () {
+  try {
+    const status = await fetch("/api/auth/status", { cache: "no-store" }).then((response) => response.json());
+    if (!status.authenticated) {
+      location.replace("/login.html");
+      return;
+    }
+  } catch {
+    location.replace("/login.html");
+    return;
+  }
+  await window.DataStore.ready;
+  document.body.classList.remove("auth-pending");
   const i18n = window.AdminI18n;
   const t = i18n?.t || ((value) => value);
   const config = {
@@ -249,13 +261,39 @@
     mediaInput.value = "";
   }
 
-  function readFiles(files) {
-    return Promise.all([...files].map((file) => new Promise((resolve, reject) => {
+  function blobDataURL(blob) {
+    return new Promise((resolve, reject) => {
       const reader = new FileReader();
-      reader.onload = () => resolve({ name: file.name, type: file.type, data: reader.result });
+      reader.onload = () => resolve(reader.result);
       reader.onerror = reject;
-      reader.readAsDataURL(file);
-    })));
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  async function compressImage(file) {
+    if (!file.type.startsWith("image/")) throw new Error(t("Seules les images sont acceptées."));
+    const objectURL = URL.createObjectURL(file);
+    try {
+      const image = new Image();
+      image.src = objectURL;
+      await image.decode();
+      const maxSide = 1800;
+      const scale = Math.min(1, maxSide / Math.max(image.naturalWidth, image.naturalHeight));
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+      canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+      canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
+      let blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/webp", 0.82));
+      if (blob && blob.size > 3 * 1024 * 1024) blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/webp", 0.68));
+      if (!blob || blob.size > 3 * 1024 * 1024) throw new Error(t("Image trop volumineuse après compression."));
+      return { name: file.name.replace(/\.[a-z0-9]+$/i, ".webp"), type: "image/webp", data: await blobDataURL(blob) };
+    } finally {
+      URL.revokeObjectURL(objectURL);
+    }
+  }
+
+  function readFiles(files) {
+    return Promise.all([...files].map(compressImage));
   }
 
   function formValue(field, formData) {
@@ -321,20 +359,26 @@
       toast(t("Cet identifiant existe déjà."));
       return;
     }
-    if (cfg.media && pendingMedia.length) {
-      if (collection === "teachers") {
-        result.photo = pendingMedia[0].data;
-      } else if (collection === "activities") {
-        result.photos = pendingMedia.filter((file) => file.type.startsWith("image/")).slice(0, 4).map((file) => file.data);
-      } else {
-        result.photos = [...(result.photos || []), ...pendingMedia.map((file) => file.data)];
-      }
-    }
-    const index = records.findIndex((record) => record.id === selectedId);
-    if (index >= 0) records[index] = result;
-    else records.unshift(result);
     try {
+      let replacedMedia = [];
+      if (cfg.media && pendingMedia.length) {
+        const uploadedMedia = [];
+        for (const file of pendingMedia) uploadedMedia.push(await DataStore.uploadMedia(file));
+        if (collection === "teachers") {
+          replacedMedia = current.photo ? [current.photo] : [];
+          result.photo = uploadedMedia[0];
+        } else if (collection === "activities") {
+          replacedMedia = current.photos || [];
+          result.photos = uploadedMedia.slice(0, 4);
+        } else {
+          result.photos = [...(result.photos || []), ...uploadedMedia];
+        }
+      }
+      const index = records.findIndex((record) => record.id === selectedId);
+      if (index >= 0) records[index] = result;
+      else records.unshift(result);
       await DataStore.set(collection, records);
+      if (replacedMedia.length) await DataStore.deleteMedia(replacedMedia).catch(console.warn);
       selectedId = result.id;
       renderTabs();
       openEditor(result.id);

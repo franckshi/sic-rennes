@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/admin.css?v=3">
 </head>
-<body class="admin-body">
+<body class="admin-body auth-pending">
   <header class="admin-header">
     <a class="brand" href="./">
       <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 21h32M12 17h24l-4-5H16l-4 5Zm3 4v13m18-13v13M10 35h28M16 26h16M20 26v9m8-9v9M7 39h34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 5c2 3 5 4 8 5H16c3-1 6-2 8-5Z" fill="currentColor"/></svg>
@@ -54,7 +54,7 @@
             <div class="media-field" id="media-field" hidden>
               <label id="media-label" for="media-upload" data-admin-i18n>Médias</label>
               <input id="media-upload" type="file" multiple>
-              <small id="media-help" data-admin-i18n>Les fichiers sont enregistrés sur le serveur avec les contenus. Privilégiez des fichiers légers.</small>
+              <small id="media-help" data-admin-i18n>Les images sont optimisées puis enregistrées dans Vercel Blob.</small>
               <div id="media-preview" class="media-preview"></div>
             </div>
             <div class="editor-actions">
@@ -64,13 +64,14 @@
           </form>
         </section>
       </div>
-      <p class="storage-note" data-admin-i18n>Les modifications sont enregistrées sur le serveur et deviennent visibles immédiatement sur le site. Utilisez l’export JSON pour conserver une sauvegarde.</p>
+      <p class="storage-note" data-admin-i18n>Les modifications sont enregistrées dans Vercel Blob et deviennent visibles sur le site sous une minute. Utilisez l’export JSON pour conserver une sauvegarde.</p>
     </section>
   </main>
   <div id="admin-toast" class="admin-toast" role="status" aria-live="polite"></div>
   <script src="js/admin-i18n.js?v=1"></script>
   <script src="js/seed-data.js?v=2"></script>
-  <script src="js/data-store.js?v=2"></script>
-  <script src="js/admin.js?v=3"></script>
+  <script src="js/content-config.js?v=1"></script>
+  <script src="js/data-store.js?v=3"></script>
+  <script src="js/admin.js?v=4"></script>
 </body>
 </html>
