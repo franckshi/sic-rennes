@@ -129,14 +129,55 @@
       </article>`).join("")}</div>`;
   }
 
-  function campusMap(schools) {
+  function campusTree() {
+    const treeLink = (id, label, level) => {
+      const school = data.schools.find((item) => item.id === id);
+      if (!school) return "";
+      return `<a class="campus-tree-school campus-tree-school-${level}" href="${schoolURL(school)}" aria-label="${escapeHTML(school.name)}">
+        <span>${escapeHTML(label || school.name)}</span>
+      </a>`;
+    };
+    const branches = [
+      {
+        primary: [["ecole-carle-bahon", "Carle Bahon"], ["ecole-la-poterie", "La Poterie"]],
+        middle: ["college-le-landry", "Collège Landry"]
+      },
+      {
+        primary: [["ecole-jules-ferry", "Jules Ferry"], ["ecole-lille", "L'Ille"]],
+        middle: ["college-emile-zola", "Collège Émile Zola"]
+      }
+    ];
+    return `<div class="campus-tree-panel">
+      <h3>Le parcours des 7 pôles SIC</h3>
+      <p>Quatre écoles primaires mènent à deux collèges, puis à un même lycée.</p>
+      <div class="campus-tree" aria-label="Arbre du parcours des sept pôles SIC">
+        <div class="campus-tree-stage campus-tree-stage-primary">Écoles primaires (4)</div>
+        <div class="campus-tree-branches">
+          ${branches.map((branch) => `<div class="campus-tree-branch">
+            <div class="campus-tree-primary-pair">
+              ${branch.primary.map(([id, label]) => treeLink(id, label, "primary")).join("")}
+            </div>
+            ${treeLink(branch.middle[0], branch.middle[1], "middle")}
+          </div>`).join("")}
+        </div>
+        <div class="campus-tree-stage campus-tree-stage-middle">Collèges (2)</div>
+        <div class="campus-tree-high-wrap">
+          <div class="campus-tree-stage campus-tree-stage-high">Lycée (1)</div>
+          ${treeLink("emile-zola", "Lycée Émile Zola", "high")}
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function campusMap(schools, options = {}) {
     const points = schools.filter((school) => Number.isFinite(school.latitude) && Number.isFinite(school.longitude));
-    return `<div class="campus-map reveal">
-      <div class="map-copy">
+    const leftPanel = options.tree ? campusTree() : `<div class="map-copy">
         <h3>Carte des 7 pôles SIC à Rennes</h3>
         <p>Explorez les rues et les repères de Rennes. Survolez un marqueur pour lire le résumé de l’établissement et cliquez pour ouvrir sa page.</p>
         <div class="map-legend"><span>● Primaire</span><span>● Collège</span><span>● Lycée</span></div>
-      </div>
+      </div>`;
+    return `<div class="campus-map ${options.tree ? "campus-map-tree" : ""} reveal">
+      ${leftPanel}
       <div class="map-canvas" id="campus-real-map" data-point-count="${points.length}" aria-label="Carte interactive des pôles SIC"></div>
     </div>`;
   }
@@ -361,8 +402,8 @@
       </section>
       <section class="section section-white">
         <div class="container">
-          <div class="section-heading reveal"><h2>Les sept pôles de la SIC</h2><a class="section-link" href="${root}/etablissements/">Découvrir le parcours →</a></div>
-          <div class="school-list">${schoolRows(featured)}</div>
+          <div class="section-heading reveal"><div><h2>Les sept pôles de la SIC</h2></div><p>Visualisez le parcours scolaire et la répartition des sept établissements dans Rennes.</p></div>
+          ${campusMap(featured, { tree: true })}
         </div>
       </section>
       <section class="section">
